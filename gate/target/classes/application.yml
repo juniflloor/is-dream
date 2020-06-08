@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: DREAM-GATE
+
+server:
+  port: 10900
+  servlet:
+    context-path: /gate
+
+logging:
+  config:
+    classpath: logback.xml
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:9090/eureka

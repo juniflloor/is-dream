@@ -1,0 +1,2 @@
+16:37:11.402 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+16:37:11.410 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/

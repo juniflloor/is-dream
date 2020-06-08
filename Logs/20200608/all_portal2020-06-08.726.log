@@ -1,0 +1,32 @@
+15:55:27.474 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: localhost:10900
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+15:55:27.475 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Authorization: Basic ZXVyZWthOmV1cmVrYQ==
+15:55:27.484 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "188[\r][\n]"
+15:55:27.484 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "{"instance":{"instanceId":"DESKTOP-I4Q3LDK.domain.name:dream-gate:10900","hostName":"DESKTOP-I4Q3LDK.domain.name","app":"DREAM-GATE","ipAddr":"192.168.1.14","status":"UP","overriddenStatus":"UNKNOWN","port":{"$":10900,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"}"
+15:55:27.484 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:55:27.509 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "9d[\r][\n]"
+15:55:27.509 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0}"
+15:55:27.509 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:55:27.515 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "27[\r][\n]"
+15:55:27.515 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","metadata":{"management.port":"10900"}"
+15:55:27.515 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:55:27.517 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "17f[\r][\n]"
+15:55:27.517 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","homePageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/","statusPageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/info","healthCheckUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/health","vipAddress":"dream-gate","secureVipAddress":"dream-gate","isCoordinatingDiscoveryServer":"false","lastUpdatedTimestamp":"1591602926189","lastDirtyTimestamp":"1591602927360"}}"
+15:55:27.517 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:55:27.517 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "0[\r][\n]"
+15:55:27.517 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:55:27.540 [http-nio-10900-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:55:27.540 [http-nio-10900-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:55:27.540 [http-nio-10900-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+15:55:27.545 [http-nio-10900-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+15:55:27.545 [http-nio-10900-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+15:55:27.552 [http-nio-10900-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/eureka/apps/DREAM-GATE", parameters={}
+15:55:27.562 [http-nio-10900-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+15:55:27.564 [http-nio-10900-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+15:55:27.565 [http-nio-10900-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+15:55:27.573 [http-nio-10900-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}

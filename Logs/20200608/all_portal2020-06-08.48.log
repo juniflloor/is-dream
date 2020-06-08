@@ -1,0 +1,32 @@
+12:27:12.342 [main] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+12:27:12.343 [main] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+12:27:12.343 [main] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+12:27:12.343 [main] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+12:27:12.343 [main] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: GET /eureka/apps/ HTTP/1.1
+12:27:12.344 [main] DEBUG org.apache.http.wire -  >> "GET /eureka/apps/ HTTP/1.1[\r][\n]"
+12:27:12.344 [main] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
+12:27:12.344 [main] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> GET /eureka/apps/ HTTP/1.1
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> Accept: application/json
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> Host: localhost:9090
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+12:27:12.345 [main] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+12:27:12.503 [main] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 04:27:12 GMT[\r][\n]"
+12:27:12.505 [main] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"

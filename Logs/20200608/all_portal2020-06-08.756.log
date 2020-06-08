@@ -1,0 +1,2 @@
+15:57:27.552 [SpringContextShutdownHook] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@54a3ab8f, started on Mon Jun 08 15:55:58 CST 2020, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55493582
+15:57:27.554 [SpringContextShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application DREAM-GATE with eureka with status DOWN

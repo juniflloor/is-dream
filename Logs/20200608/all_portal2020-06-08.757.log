@@ -1,0 +1,16 @@
+15:57:27.554 [SpringContextShutdownHook] WARN  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591603047554, current=DOWN, previous=UP]
+15:57:27.554 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900: registering service...
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://eureka:eureka@localhost:9090/eureka/
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
+15:57:27.555 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
+15:57:27.555 [SpringContextShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+15:57:27.556 [SpringContextShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+15:57:27.557 [SpringContextShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483646
+15:57:27.557 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+15:57:27.557 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+15:57:27.557 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED

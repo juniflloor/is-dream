@@ -1,0 +1,20 @@
+12:27:11.989 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+12:27:11.991 [main] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
+12:27:11.993 [main] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+12:27:12.253 [main] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+12:27:12.270 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+12:27:12.270 [main] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+12:27:12.273 [main] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
+12:27:12.317 [main] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
+12:27:12.317 [main] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+12:27:12.317 [main] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://localhost:9090][null]
+12:27:12.317 [main] DEBUG c.n.d.shared.NamedConnectionPool - Available capacity: 50 out of 50 [{}->http://localhost:9090][null]
+12:27:12.317 [main] DEBUG c.n.d.shared.NamedConnectionPool - Creating new connection [{}->http://localhost:9090]
+12:27:12.324 [main] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090
+12:27:12.341 [main] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default

@@ -1,0 +1,2 @@
+14:55:29.890 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+14:55:29.895 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false

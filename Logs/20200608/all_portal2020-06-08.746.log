@@ -1,0 +1,32 @@
+15:56:03.376 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+15:56:03.377 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Authorization: Basic ZXVyZWthOmV1cmVrYQ==
+15:56:03.390 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "188[\r][\n]"
+15:56:03.391 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "{"instance":{"instanceId":"DESKTOP-I4Q3LDK.domain.name:dream-gate:10900","hostName":"DESKTOP-I4Q3LDK.domain.name","app":"DREAM-GATE","ipAddr":"192.168.1.14","status":"UP","overriddenStatus":"UNKNOWN","port":{"$":10900,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"}"
+15:56:03.391 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:56:03.423 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "9d[\r][\n]"
+15:56:03.424 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0}"
+15:56:03.424 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:56:03.431 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "27[\r][\n]"
+15:56:03.431 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","metadata":{"management.port":"10900"}"
+15:56:03.431 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:56:03.432 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "17f[\r][\n]"
+15:56:03.432 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","homePageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/","statusPageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/info","healthCheckUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/health","vipAddress":"dream-gate","secureVipAddress":"dream-gate","isCoordinatingDiscoveryServer":"false","lastUpdatedTimestamp":"1591602962083","lastDirtyTimestamp":"1591602963258"}}"
+15:56:03.432 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:56:03.432 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "0[\r][\n]"
+15:56:03.432 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+15:56:03.433 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:56:03 GMT[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+15:56:03.434 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"

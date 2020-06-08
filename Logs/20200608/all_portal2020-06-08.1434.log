@@ -1,0 +1,2 @@
+17:01:01.518 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+17:01:01.519 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://localhost:9090][null]

@@ -1,0 +1,13 @@
+15:43:46.062 [main] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+15:43:46.077 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+15:43:46.078 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+15:43:46.078 [main] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+15:43:46.081 [main] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
+15:43:46.122 [main] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
+15:43:46.122 [main] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+15:43:46.122 [main] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://localhost:9090][null]
