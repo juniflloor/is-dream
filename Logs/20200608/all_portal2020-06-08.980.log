@@ -1,2 +1,2 @@
-16:36:02.455 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-16:36:02.457 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
+21:00:43.694 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+21:00:43.696 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS

@@ -1,16 +1,14 @@
-15:11:32.073 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:11:32.073 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-15:11:32.077 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-15:11:32.077 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-15:11:32.077 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-15:11:32.077 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-15:11:32.077 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-15:11:32.078 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:11:32.078 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:11:32.078 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 1, total allocated: 2 out of 200
-15:11:32.078 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
+20:00:05.950 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'simpleDiscoveryClient' via factory method to bean named 'simpleDiscoveryProperties'
+20:00:05.953 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'discoveryClient'
+20:00:05.953 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration'
+20:00:05.954 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaClient'
+20:00:05.971 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaClientConfigBean'
+20:00:05.972 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration'
+20:00:05.972 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration' via constructor to bean named 'environment'
+20:00:05.973 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaClientConfigBean' via factory method to bean named 'environment'
+20:00:05.989 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'discoveryClient' via factory method to bean named 'eurekaClient'
+20:00:05.989 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'discoveryClient' via factory method to bean named 'eurekaClientConfigBean'
+20:00:05.990 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeDiscoveryClient' via factory method to bean named 'simpleDiscoveryClient'
+20:00:05.990 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeDiscoveryClient' via factory method to bean named 'discoveryClient'
+20:00:05.991 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration'
+20:00:05.992 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'discoveryClientOptionalArgs'

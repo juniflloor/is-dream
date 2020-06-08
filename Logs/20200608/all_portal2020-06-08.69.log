@@ -1,56 +1,16 @@
-12:28:48.564 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.security.oauth2.resourceserver-org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties'
-12:28:48.569 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
-12:28:48.570 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'taskSchedulerBuilder'
-12:28:48.571 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-12:28:48.573 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-12:28:48.575 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'multipartResolver'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurationPropertiesRebinder'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'configurationPropertiesRebinder' via factory method to bean named 'configurationPropertiesBeans'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.autoconfigure.LifecycleMvcEndpointAutoConfiguration'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'environmentManager'
-12:28:48.577 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'environmentManager' via factory method to bean named 'environment'
-12:28:48.578 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClientAutoConfiguration'
-12:28:48.578 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'compositeDiscoveryClient'
-12:28:48.579 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'simpleDiscoveryClient'
-12:28:48.579 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration'
-12:28:48.581 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'inetUtils'
-12:28:48.581 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.util.UtilAutoConfiguration'
-12:28:48.582 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'inetUtilsProperties'
-12:28:48.587 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'inetUtils' via factory method to bean named 'inetUtilsProperties'
-12:28:48.589 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'simpleDiscoveryProperties'
-12:28:48.989 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'simpleDiscoveryClient' via factory method to bean named 'simpleDiscoveryProperties'
-12:28:48.990 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'discoveryClient'
-12:28:48.990 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration'
-12:28:48.991 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaClient'
-12:28:49.005 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaClientConfigBean'
-12:28:49.006 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration'
-12:28:49.006 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration' via constructor to bean named 'environment'
-12:28:49.006 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaClientConfigBean' via factory method to bean named 'environment'
-12:28:49.025 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'discoveryClient' via factory method to bean named 'eurekaClient'
-12:28:49.025 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'discoveryClient' via factory method to bean named 'eurekaClientConfigBean'
-12:28:49.025 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeDiscoveryClient' via factory method to bean named 'simpleDiscoveryClient'
-12:28:49.025 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeDiscoveryClient' via factory method to bean named 'discoveryClient'
-12:28:49.026 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration'
-12:28:49.026 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'discoveryClientOptionalArgs'
-12:28:49.030 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaClientConfigurationRefresher'
-12:28:49.031 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaAutoServiceRegistration'
-12:28:49.032 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaServiceRegistry'
-12:28:49.033 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaRegistration'
-12:28:49.050 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ee86bcb'
-12:28:49.050 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'eurekaServiceRegistry'
-12:28:49.050 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'eurekaRegistration'
-12:28:49.051 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaDiscoverClientMarker'
-12:28:49.051 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration'
-12:28:49.051 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties'
-12:28:49.052 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration'
-12:28:49.054 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration'
-12:28:49.056 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaApplicationInfoManager'
-12:28:49.064 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaFeature'
-12:28:49.064 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'serviceManagementMetadataProvider'
-12:28:49.065 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaInstanceConfigBean'
-12:28:49.066 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaInstanceConfigBean' via factory method to bean named 'inetUtils'
-12:28:49.066 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaInstanceConfigBean' via factory method to bean named 'serviceManagementMetadataProvider'
-12:28:49.067 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'server.port' in PropertySource 'configurationProperties' with value of type Integer
+19:00:41.205 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+19:00:41.206 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591613891129 HTTP/1.1
+19:00:41.206 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591613891129 HTTP/1.1[\r][\n]"
+19:00:41.206 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+19:00:41.206 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Content-Length: 0[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591613891129 HTTP/1.1
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+19:00:41.207 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14

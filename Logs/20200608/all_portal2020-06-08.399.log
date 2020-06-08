@@ -1,2 +1,16 @@
-15:15:01.131 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-15:15:01.134 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
+20:01:12.782 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+20:01:12.783 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> POST /eureka/apps/DREAM-GATE HTTP/1.1
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Content-Type: application/json
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept: application/json
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+20:01:12.784 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+20:01:12.821 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "179[\r][\n]"

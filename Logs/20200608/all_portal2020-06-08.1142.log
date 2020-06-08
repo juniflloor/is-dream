@@ -1,15 +1,8 @@
-16:44:04.013 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.ConnectException: Connection refused: connect
-16:44:04.016 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900 - was unable to send heartbeat!
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+21:14:15.139 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://127.0.0.1:9090][null]
+21:14:15.140 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+21:14:15.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591620494165 HTTP/1.1

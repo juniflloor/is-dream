@@ -1,2 +1,1 @@
-16:37:32.462 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-16:37:32.467 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
+21:02:44.686 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1

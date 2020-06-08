@@ -1,16 +1,8 @@
-15:22:47.579 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
-15:22:47.582 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-15:22:47.582 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-15:22:47.583 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
-15:22:47.583 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
-15:22:47.583 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
-15:22:47.583 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'methodValidationPostProcessor'
-15:22:47.590 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
-15:22:47.593 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
-15:22:47.611 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
-15:22:47.611 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
-15:22:47.611 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurationPropertiesBeans'
-15:22:47.618 [main] DEBUG o.s.u.c.s.UiApplicationContextUtils - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@160396db]
-15:22:47.618 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
-15:22:47.618 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
-15:22:47.648 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
+20:10:42.981 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://127.0.0.1:9090, timeout = 5000
+20:10:42.982 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://127.0.0.1:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+20:10:42.982 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://127.0.0.1:9090][null]
+20:10:42.982 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
+20:10:42.984 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+20:10:42.984 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+20:10:42.984 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+20:10:42.984 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED

@@ -1,16 +1,32 @@
-14:58:00.076 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-14:58:00.078 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-14:58:00.081 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-14:58:00.081 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-14:58:00.081 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-14:58:00.081 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
-14:58:00.081 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: PUT /eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900?status=UP&lastDirtyTimestamp=1591590530710 HTTP/1.1
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "PUT /eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900?status=UP&lastDirtyTimestamp=1591590530710 HTTP/1.1[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Content-Length: 0[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-14:58:00.082 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+19:16:04.725 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
+19:16:04.727 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
+19:16:04.727 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
+19:16:04.728 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.733 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+19:16:04.770 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.770 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
+19:16:04.771 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.771 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
+19:16:04.771 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
+19:16:04.772 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
+19:16:04.772 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.773 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+19:16:04.773 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+19:16:04.776 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.805 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorPageCustomizer'
+19:16:04.806 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+19:16:04.806 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+19:16:04.807 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dispatcherServletRegistration'
+19:16:04.807 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
+19:16:04.808 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dispatcherServlet'
+19:16:04.808 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
+19:16:04.809 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+19:16:04.819 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+19:16:04.830 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
+19:16:04.830 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+19:16:04.832 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'multipartConfigElement'
+19:16:04.832 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
+19:16:04.833 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+19:16:04.837 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+19:16:04.842 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
+19:16:05.454 [main] DEBUG o.s.b.w.e.t.TomcatServletWebServerFactory - Code archive: C:\Users\24573\.m2\repository\org\springframework\boot\spring-boot\2.3.0.RELEASE\spring-boot-2.3.0.RELEASE.jar

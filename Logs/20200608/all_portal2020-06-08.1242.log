@@ -1,1 +1,2 @@
-16:50:16.555 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090
+21:22:43.840 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+21:22:43.841 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS

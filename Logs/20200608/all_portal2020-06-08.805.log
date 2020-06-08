@@ -1,9 +1,2 @@
-16:01:40.116 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-16:01:40.118 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
-16:01:40.591 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-16:01:40.591 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-16:01:40.591 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-16:01:40.591 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
-16:01:40.591 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-16:01:40.592 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-16:01:40.594 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+20:45:41.673 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+20:45:41.674 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS

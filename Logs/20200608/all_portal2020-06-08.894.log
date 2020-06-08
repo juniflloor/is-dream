@@ -1,16 +1,9 @@
-16:25:32.825 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900?status=UP&lastDirtyTimestamp=1591604552641 HTTP/1.1
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-16:25:32.826 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-16:25:32.832 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-16:25:32.833 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-16:25:32.833 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-16:25:32.833 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-16:25:32.833 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-16:25:32.833 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+20:51:43.636 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+20:51:43.637 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://127.0.0.1:9090/eureka/
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://127.0.0.1:9090, timeout = 5000
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://127.0.0.1:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://127.0.0.1:9090][null]
+20:51:44.292 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
+20:51:44.294 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default

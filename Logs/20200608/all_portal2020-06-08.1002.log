@@ -1,2 +1,16 @@
-16:37:15.452 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@4d44b6a8 closed
-16:37:15.454 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@4d44b6a8 shut down
+21:02:14.671 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+21:02:14.672 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+21:02:14.672 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+21:02:14.672 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591620494165 HTTP/1.1
+21:02:14.672 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+21:02:14.672 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+21:02:14.673 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+21:02:14.679 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+21:02:14.679 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+21:02:14.679 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+21:02:14.679 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"

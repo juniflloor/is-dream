@@ -1,1 +1,32 @@
-15:15:02.348 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
+20:01:12.821 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "{"instance":{"instanceId":"DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900","hostName":"192.168.1.14","app":"DREAM-GATE","ipAddr":"192.168.1.14","status":"UP","overriddenStatus":"UNKNOWN","port":{"$":10900,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"}"
+20:01:12.822 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.864 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "9d[\r][\n]"
+20:01:12.864 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0}"
+20:01:12.865 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.873 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "27[\r][\n]"
+20:01:12.873 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","metadata":{"management.port":"10900"}"
+20:01:12.873 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.875 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "15c[\r][\n]"
+20:01:12.875 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","homePageUrl":"http://192.168.1.14:10900/","statusPageUrl":"http://192.168.1.14:10900/gate/actuator/info","healthCheckUrl":"http://192.168.1.14:10900/gate/actuator/health","vipAddress":"DREAM-GATE","secureVipAddress":"DREAM-GATE","isCoordinatingDiscoveryServer":"false","lastUpdatedTimestamp":"1591617670316","lastDirtyTimestamp":"1591617672633"}}"
+20:01:12.875 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.875 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "0[\r][\n]"
+20:01:12.875 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:01:12.876 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 12:01:12 GMT[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+20:01:12.877 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Origin
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Content-Type: application/json
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 12:01:12 GMT
+20:01:12.878 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60

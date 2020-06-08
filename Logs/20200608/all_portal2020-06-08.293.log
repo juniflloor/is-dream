@@ -1,17 +1,14 @@
-15:05:01.023 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-15:05:01.027 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
-15:05:01.674 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-15:05:01.675 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-15:05:01.675 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-15:05:01.675 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-15:05:01.676 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-15:05:01.676 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-15:05:01.676 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-15:05:01.676 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:05:01.676 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:05:01.676 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:05:01.676 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:05:01.677 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:05:01.677 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-15:05:01.677 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:05:01.677 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
+19:55:01.967 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'hystrixCircuitBreakerFactory'
+19:55:01.971 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.ReactiveHystrixCircuitBreakerAutoConfiguration'
+19:55:01.972 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'reactiveHystrixCircuitBreakerFactory'
+19:55:01.974 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration'
+19:55:01.987 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 0
+19:55:01.990 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaClient'
+19:55:01.990 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaInstanceConfigBean'
+19:55:01.990 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaApplicationInfoManager'
+19:55:01.993 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaApplicationInfoManager' via factory method to bean named 'eurekaInstanceConfigBean'
+19:55:01.999 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+19:55:02.001 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaApplicationInfoManager'
+19:55:02.002 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaClientConfigBean'
+19:55:02.002 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaInstanceConfigBean'
+19:55:02.093 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1

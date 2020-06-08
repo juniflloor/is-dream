@@ -1,4 +1,0 @@
-16:55:25.048 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is not reusable.
-16:55:25.049 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-16:55:25.049 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@4617a8af closed
-16:55:25.049 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads

@@ -1,64 +1,16 @@
-16:05:03.906 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.name' in PropertySource 'configurationProperties' with value of type String
-16:05:03.913 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.CommonsClientAutoConfiguration'
-16:05:03.914 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.ReactiveCommonsClientAutoConfiguration'
-16:05:03.914 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration'
-16:05:03.915 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration.RibbonClientSpecification'
-16:05:03.917 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration.RibbonClientSpecification'
-16:05:03.918 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbon.eager-load-org.springframework.cloud.netflix.ribbon.RibbonEagerLoadProperties'
-16:05:03.920 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbonFeature'
-16:05:03.929 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springClientFactory'
-16:05:03.935 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerClient'
-16:05:03.938 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'propertiesFactory'
-16:05:03.940 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbon-org.springframework.cloud.netflix.ribbon.ServerIntrospectorProperties'
-16:05:03.943 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration'
-16:05:03.944 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'zoneConfig'
-16:05:03.944 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'zoneConfig' via factory method to bean named 'environment'
-16:05:03.945 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerClientFactory'
-16:05:03.947 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification'
-16:05:03.948 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification'
-16:05:03.949 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification'
-16:05:03.950 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerProperties'
-16:05:03.951 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration'
-16:05:03.952 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'blockingLoadBalancerClientRibbonWarnLogger'
-16:05:03.952 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-16:05:03.953 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig'
-16:05:03.953 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'asyncLoadBalancerInterceptor'
-16:05:03.953 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'asyncLoadBalancerInterceptor' via factory method to bean named 'loadBalancerClient'
-16:05:03.954 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'asyncRestTemplateCustomizer'
-16:05:03.955 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'asyncRestTemplateCustomizer' via factory method to bean named 'asyncLoadBalancerInterceptor'
-16:05:03.955 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$AsyncRestTemplateCustomizerConfig'
-16:05:03.957 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedAsyncRestTemplateInitializer'
-16:05:03.958 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'loadBalancedAsyncRestTemplateInitializer' via factory method to bean named 'asyncRestTemplateCustomizer'
-16:05:03.958 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration'
-16:05:03.958 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig'
-16:05:03.959 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbonInterceptor'
-16:05:03.959 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerRequestFactory'
-16:05:03.959 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration'
-16:05:03.960 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'loadBalancerRequestFactory' via factory method to bean named 'loadBalancerClient'
-16:05:03.961 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerClient'
-16:05:03.961 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerRequestFactory'
-16:05:03.962 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplateCustomizer'
-16:05:03.962 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restTemplateCustomizer' via factory method to bean named 'ribbonInterceptor'
-16:05:03.964 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedRestTemplateInitializerDeprecated'
-16:05:03.964 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.retry-org.springframework.cloud.client.loadbalancer.LoadBalancerRetryProperties'
-16:05:03.964 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration'
-16:05:03.964 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration$ApacheHttpClientConfiguration'
-16:05:03.965 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'connManFactory'
-16:05:03.966 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientBuilder'
-16:05:03.969 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientFactory'
-16:05:03.970 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'apacheHttpClientFactory' via factory method to bean named 'apacheHttpClientBuilder'
-16:05:03.970 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration'
-16:05:03.970 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.configuration.CompatibilityVerifierAutoConfiguration'
-16:05:03.971 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'compositeCompatibilityVerifier'
-16:05:03.971 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springBootVersionVerifier'
-16:05:03.972 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
-16:05:03.973 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'springBootVersionVerifier' via factory method to bean named 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
-16:05:03.976 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeCompatibilityVerifier' via factory method to bean named 'springBootVersionVerifier'
-16:05:03.976 [main] DEBUG o.s.c.c.SpringBootVersionVerifier - Version found in Boot manifest [2.3.0.RELEASE]
-16:05:03.976 [main] DEBUG o.s.c.c.SpringBootVersionVerifier - Predicate [Predicate for Boot 2.2] was matched
-16:05:03.976 [main] DEBUG o.s.c.c.CompositeCompatibilityVerifier - All conditions are passing
-16:05:03.976 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration'
-16:05:03.977 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaLoadBalancerProperties'
-16:05:03.977 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.eureka-org.springframework.cloud.netflix.eureka.loadbalancer.EurekaLoadBalancerProperties'
-16:05:03.978 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerAutoConfiguration'
-16:05:03.979 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'hystrixCircuitBreakerFactory'
+20:47:37.770 [restartedMain] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application DREAM-GATE with eureka with status UP
+20:47:37.772 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591620457772, current=UP, previous=STARTING]
+20:47:37.773 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
+20:47:37.773 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+20:47:37.774 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900: registering service...
+20:47:37.775 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'eurekaAutoServiceRegistration'
+20:47:37.775 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483646
+20:47:37.775 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+20:47:37.775 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-10900"]
+20:47:37.783 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://127.0.0.1:9090/eureka/
+20:47:37.807 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 10900 (http) with context path '/gate'
+20:47:37.808 [restartedMain] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 10900
+20:47:37.865 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://127.0.0.1:9090, timeout = 5000
+20:47:37.866 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://127.0.0.1:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+20:47:37.866 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://127.0.0.1:9090][null]
+20:47:37.866 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Available capacity: 50 out of 50 [{}->http://127.0.0.1:9090][null]

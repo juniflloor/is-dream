@@ -1,3 +1,0 @@
-16:58:45.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Available capacity: 50 out of 50 [{}->http://localhost:9090][null]
-16:58:45.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Creating new connection [{}->http://localhost:9090]
-16:58:45.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090

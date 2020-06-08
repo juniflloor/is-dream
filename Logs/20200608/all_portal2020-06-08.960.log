@@ -1,7 +1,16 @@
-16:34:02.436 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
-16:34:02.440 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS
-16:34:03.214 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-16:34:03.214 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-16:34:03.215 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-16:34:03.215 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
-16:34:03.215 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
+20:58:44.536 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Content-Length: 0[\r][\n]"
+20:58:44.537 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+20:58:44.537 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+20:58:44.537 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+20:58:44.537 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:58:44.537 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591620494165 HTTP/1.1
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+20:58:44.538 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+20:58:44.541 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+20:58:44.541 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"

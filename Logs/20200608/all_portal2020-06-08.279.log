@@ -1,32 +1,16 @@
-15:03:01.572 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090
-15:03:01.574 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:03:01 GMT[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-15:03:01.577 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 07:03:01 GMT
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: PUT /eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900?status=UP&lastDirtyTimestamp=1591599661462 HTTP/1.1
-15:03:01.578 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-15:03:01.578 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "PUT /eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900?status=UP&lastDirtyTimestamp=1591599661462 HTTP/1.1[\r][\n]"
-15:03:01.579 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-15:03:01.579 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-15:03:01.579 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-15:03:01.579 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
+19:54:58.228 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+19:54:58.233 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+19:54:58.233 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+19:54:58.233 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+19:54:58.234 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+19:54:58.234 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+19:54:58.234 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'methodValidationPostProcessor'
+19:54:58.243 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
+19:54:58.249 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+19:54:58.288 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+19:54:58.289 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+19:54:58.289 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurationPropertiesBeans'
+19:54:58.300 [main] DEBUG o.s.u.c.s.UiApplicationContextUtils - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@79767781]
+19:54:58.301 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
+19:54:58.301 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
+19:54:58.348 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'

@@ -1,2 +1,0 @@
-16:59:23.399 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@4f4ec349 shut down
-16:59:23.401 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is not reusable.

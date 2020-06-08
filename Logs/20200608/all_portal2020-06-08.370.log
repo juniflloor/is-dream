@@ -1,4 +1,16 @@
-15:12:32.147 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-15:12:32.149 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:12:32.151 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-15:12:32.152 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
+20:00:09.207 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+20:00:09.209 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> POST /eureka/apps/DREAM-GATE HTTP/1.1
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Content-Type: application/json
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept: application/json
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+20:00:09.210 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+20:00:09.227 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "179[\r][\n]"

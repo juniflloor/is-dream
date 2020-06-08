@@ -1,32 +1,8 @@
-16:32:03.140 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900?status=UP&lastDirtyTimestamp=1591604552641 HTTP/1.1
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-16:32:03.141 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-16:32:03.142 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 08:32:03 GMT[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 08:32:03 GMT
-16:32:03.146 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
+20:57:44.491 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://127.0.0.1:9090, timeout = 5000
+20:57:44.492 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://127.0.0.1:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+20:57:44.492 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://127.0.0.1:9090][null]
+20:57:44.492 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
+20:57:44.495 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+20:57:44.495 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+20:57:44.495 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+20:57:44.495 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED

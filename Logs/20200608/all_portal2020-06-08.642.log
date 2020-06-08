@@ -1,32 +1,32 @@
-15:46:46.287 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:46:46.289 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-15:46:46.291 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-15:46:46.291 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-15:46:46.291 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-15:46:46.291 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-15:46:46.291 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: GET /eureka/apps/ HTTP/1.1
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "GET /eureka/apps/ HTTP/1.1[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> GET /eureka/apps/ HTTP/1.1
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept: application/json
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-15:46:46.292 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-15:46:46.299 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:46:46.299 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:46:46.300 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:46:46.300 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:46:46.300 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900?status=UP&lastDirtyTimestamp=1591617672633 HTTP/1.1
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+20:23:13.403 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 12:23:13 GMT[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 12:23:13 GMT
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
+20:23:13.406 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
+20:23:13.407 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "a9[\r][\n]"

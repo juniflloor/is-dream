@@ -1,32 +1,32 @@
-15:22:48.069 [main] DEBUG o.s.b.w.e.t.TomcatServletWebServerFactory - Code archive: C:\Users\24573\.m2\repository\org\springframework\boot\spring-boot\2.3.0.RELEASE\spring-boot-2.3.0.RELEASE.jar
-15:22:48.070 [main] DEBUG o.s.b.w.e.t.TomcatServletWebServerFactory - None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-15:22:48.094 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 10900 (http)
-15:22:48.102 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-10900"]
-15:22:48.102 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-15:22:48.103 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-15:22:48.296 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:22:48.296 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-15:22:48.296 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1324 ms
-15:22:48.301 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'requestContextFilter'
-15:22:48.303 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'formContentFilter'
-15:22:48.303 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
-15:22:48.306 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'characterEncodingFilter'
-15:22:48.312 [main] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-15:22:48.312 [main] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
-15:22:48.332 [main] DEBUG o.s.b.w.s.f.OrderedRequestContextFilter - Filter 'requestContextFilter' configured for use
-15:22:48.332 [main] DEBUG o.s.b.w.s.f.OrderedCharacterEncodingFilter - Filter 'characterEncodingFilter' configured for use
-15:22:48.332 [main] DEBUG o.s.b.w.s.f.OrderedFormContentFilter - Filter 'formContentFilter' configured for use
-15:22:48.338 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'gateApplication'
-15:22:48.338 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
-15:22:48.339 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
-15:22:48.339 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
-15:22:48.339 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
-15:22:48.339 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
-15:22:48.339 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration$PropagateEventsConfiguration'
-15:22:48.340 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration'
-15:22:48.342 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurableEnvironmentConfiguration'
-15:22:48.342 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'configurableEnvironmentConfiguration' via factory method to bean named 'environment'
-15:22:48.342 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'configurableEnvironmentConfiguration' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e4bd84a'
-15:22:48.343 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurableEnvironmentConfiguration'
-15:22:48.343 [main] WARN  o.s.c.n.a.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
-15:22:48.346 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+20:10:42.986 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+20:10:42.988 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
+20:10:42.988 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+20:10:42.988 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+20:10:42.988 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+20:10:42.993 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+20:10:42.993 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 12:10:42 GMT[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 12:10:42 GMT
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "a9[\r][\n]"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T12:10:42.992+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900"}"
+20:10:42.994 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+20:10:42.995 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
+20:10:42.995 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+20:10:42.995 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.

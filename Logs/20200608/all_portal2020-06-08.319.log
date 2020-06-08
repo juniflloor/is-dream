@@ -1,150 +1,32 @@
-15:08:01.853 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
-15:08:01.857 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: GET /eureka/apps/ HTTP/1.1
-15:08:01.857 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "GET /eureka/apps/ HTTP/1.1[\r][\n]"
-15:08:01.857 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
-15:08:01.857 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-15:08:01.857 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> GET /eureka/apps/ HTTP/1.1
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept: application/json
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-15:08:01.858 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-15:08:01.860 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:08:01.860 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:08:01.860 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:08:01.860 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:08:01 GMT[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 07:08:01 GMT
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-15:08:01.861 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-15:08:01.862 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-15:08:01.862 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "9b[\r][\n]"
-15:08:01.862 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T07:08:01.858+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900"}"
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://localhost:9090][null]; keep alive for 60000 MILLISECONDS
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing global-level cache with size 0
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing app-level serialization cache with size 0
-15:08:01.863 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.p.DiscoveryJerseyProvider - Cannot parse request body
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1499)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1515)
-	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2188)
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2054)
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1431)
-	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213)
-	at com.netflix.discovery.converters.wrappers.CodecWrappers$LegacyJacksonJson.decode(CodecWrappers.java:314)
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-15:08:01.864 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP PUT http://localhost:9090/eureka//apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900; statusCode=404
-15:08:01.864 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:9090/eureka/}
-javax.ws.rs.WebApplicationException: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1499)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1515)
-	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2188)
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2054)
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1431)
-	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213)
-	at com.netflix.discovery.converters.wrappers.CodecWrappers$LegacyJacksonJson.decode(CodecWrappers.java:314)
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103)
-	... 23 common frames omitted
-15:08:01.865 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-15:08:01.865 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900 - was unable to send heartbeat!
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+19:56:22.088 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springClientFactory'
+19:56:22.096 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerClient'
+19:56:22.098 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'propertiesFactory'
+19:56:22.101 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbon-org.springframework.cloud.netflix.ribbon.ServerIntrospectorProperties'
+19:56:22.102 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration'
+19:56:22.102 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'zoneConfig'
+19:56:22.103 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'zoneConfig' via factory method to bean named 'environment'
+19:56:22.103 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerClientFactory'
+19:56:22.104 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification'
+19:56:22.105 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification'
+19:56:22.106 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification'
+19:56:22.107 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerProperties'
+19:56:22.109 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration'
+19:56:22.110 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'blockingLoadBalancerClientRibbonWarnLogger'
+19:56:22.110 [restartedMain] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+19:56:22.111 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig'
+19:56:22.111 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'asyncLoadBalancerInterceptor'
+19:56:22.111 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'asyncLoadBalancerInterceptor' via factory method to bean named 'loadBalancerClient'
+19:56:22.112 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'asyncRestTemplateCustomizer'
+19:56:22.113 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'asyncRestTemplateCustomizer' via factory method to bean named 'asyncLoadBalancerInterceptor'
+19:56:22.114 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$AsyncRestTemplateCustomizerConfig'
+19:56:22.116 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedAsyncRestTemplateInitializer'
+19:56:22.117 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'loadBalancedAsyncRestTemplateInitializer' via factory method to bean named 'asyncRestTemplateCustomizer'
+19:56:22.117 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration'
+19:56:22.118 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig'
+19:56:22.118 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbonInterceptor'
+19:56:22.119 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerRequestFactory'
+19:56:22.119 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration'
+19:56:22.120 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'loadBalancerRequestFactory' via factory method to bean named 'loadBalancerClient'
+19:56:22.121 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerClient'
+19:56:22.121 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerRequestFactory'
+19:56:22.121 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplateCustomizer'

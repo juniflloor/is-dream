@@ -1,1 +1,1 @@
-16:49:42.504 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090
+21:21:45.380 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1

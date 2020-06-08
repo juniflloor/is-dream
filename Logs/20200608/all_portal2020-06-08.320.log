@@ -1,44 +1,37 @@
-15:08:01.870 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:08:01 GMT[\r][\n]"
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-15:08:01.873 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 07:08:01 GMT
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "72[\r][\n]"
-15:08:01.874 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T07:08:01.868+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/"}"
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP GET http://localhost:9090/eureka//apps/?; statusCode=404
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://localhost:9090][null]; keep alive for 60000 MILLISECONDS
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.d.RedirectingEurekaHttpClient - Pinning to endpoint null
-15:08:01.875 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failure with status code 404; retrying on another server if available
-15:08:01.876 [DiscoveryClient-CacheRefreshExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900 - was unable to refresh its cache! status = Cannot execute request on any known server
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1081)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:995)
-	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1517)
-	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1484)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-15:08:01.876 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.netflix.discovery.DiscoveryClient - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+19:56:22.122 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restTemplateCustomizer' via factory method to bean named 'ribbonInterceptor'
+19:56:22.124 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedRestTemplateInitializerDeprecated'
+19:56:22.125 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.retry-org.springframework.cloud.client.loadbalancer.LoadBalancerRetryProperties'
+19:56:22.126 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration'
+19:56:22.126 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration$ApacheHttpClientConfiguration'
+19:56:22.126 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'connManFactory'
+19:56:22.128 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientBuilder'
+19:56:22.133 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientFactory'
+19:56:22.134 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'apacheHttpClientFactory' via factory method to bean named 'apacheHttpClientBuilder'
+19:56:22.134 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration'
+19:56:22.135 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.configuration.CompatibilityVerifierAutoConfiguration'
+19:56:22.135 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'compositeCompatibilityVerifier'
+19:56:22.135 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springBootVersionVerifier'
+19:56:22.136 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
+19:56:22.138 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'springBootVersionVerifier' via factory method to bean named 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
+19:56:22.140 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeCompatibilityVerifier' via factory method to bean named 'springBootVersionVerifier'
+19:56:22.141 [restartedMain] DEBUG o.s.c.c.SpringBootVersionVerifier - Version found in Boot manifest [2.3.0.RELEASE]
+19:56:22.141 [restartedMain] DEBUG o.s.c.c.SpringBootVersionVerifier - Predicate [Predicate for Boot 2.2] was matched
+19:56:22.141 [restartedMain] DEBUG o.s.c.c.CompositeCompatibilityVerifier - All conditions are passing
+19:56:22.141 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration'
+19:56:22.142 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaLoadBalancerProperties'
+19:56:22.143 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.eureka-org.springframework.cloud.netflix.eureka.loadbalancer.EurekaLoadBalancerProperties'
+19:56:22.144 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerAutoConfiguration'
+19:56:22.144 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'hystrixCircuitBreakerFactory'
+19:56:22.148 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.ReactiveHystrixCircuitBreakerAutoConfiguration'
+19:56:22.149 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'reactiveHystrixCircuitBreakerFactory'
+19:56:22.151 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration'
+19:56:22.165 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 0
+19:56:22.167 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaClient'
+19:56:22.167 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaInstanceConfigBean'
+19:56:22.167 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaApplicationInfoManager'
+19:56:22.172 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaApplicationInfoManager' via factory method to bean named 'eurekaInstanceConfigBean'
+19:56:22.178 [restartedMain] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+19:56:22.180 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaApplicationInfoManager'
+19:56:22.180 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaClientConfigBean'
+19:56:22.181 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaInstanceConfigBean'
+19:56:22.272 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1

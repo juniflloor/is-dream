@@ -1,2 +1,0 @@
-16:55:59.089 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@6b728863 closed
-16:55:59.091 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@6b728863 shut down

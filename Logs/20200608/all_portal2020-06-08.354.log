@@ -1,32 +1,16 @@
-15:11:02.045 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:11:02.046 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-15:11:02.049 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: GET /eureka/apps/ HTTP/1.1
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "GET /eureka/apps/ HTTP/1.1[\r][\n]"
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
-15:11:02.050 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Host: localhost:9090[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> GET /eureka/apps/ HTTP/1.1
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept: application/json
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-15:11:02.051 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-15:11:02.051 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-15:11:02.051 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-15:11:02.051 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-15:11:02.051 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
-15:11:02.051 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+20:00:04.454 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
+20:00:04.495 [restartedMain] DEBUG o.s.b.w.s.f.OrderedRequestContextFilter - Filter 'requestContextFilter' configured for use
+20:00:04.496 [restartedMain] DEBUG o.s.b.w.s.f.OrderedCharacterEncodingFilter - Filter 'characterEncodingFilter' configured for use
+20:00:04.496 [restartedMain] DEBUG o.s.b.w.s.f.OrderedFormContentFilter - Filter 'formContentFilter' configured for use
+20:00:04.508 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'gateApplication'
+20:00:04.509 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+20:00:04.510 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration'
+20:00:04.510 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+20:00:04.510 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties'
+20:00:04.512 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+20:00:04.513 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+20:00:04.513 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+20:00:04.514 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration$PropagateEventsConfiguration'
+20:00:04.515 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration'
+20:00:04.518 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurableEnvironmentConfiguration'
+20:00:04.518 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'configurableEnvironmentConfiguration' via factory method to bean named 'environment'

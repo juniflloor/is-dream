@@ -1,15 +1,2 @@
-15:22:49.553 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaInstanceConfigBean'
-15:22:49.554 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaApplicationInfoManager'
-15:22:49.556 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaApplicationInfoManager' via factory method to bean named 'eurekaInstanceConfigBean'
-15:22:49.560 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-15:22:49.562 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaApplicationInfoManager'
-15:22:49.562 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaClientConfigBean'
-15:22:49.562 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaInstanceConfigBean'
-15:22:49.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-15:22:50.054 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
-15:22:50.054 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
-15:22:50.174 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
-15:22:50.174 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
-15:22:50.335 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-15:22:50.336 [main] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
-15:22:50.337 [main] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+20:11:41.997 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+20:11:41.999 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS

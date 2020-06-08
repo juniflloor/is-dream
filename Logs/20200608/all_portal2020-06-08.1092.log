@@ -1,1 +1,16 @@
-16:41:32.504 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.s.MonitoredConnectionManager - Closing connections idle longer than 30 SECONDS
+18:55:35.705 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+18:55:35.707 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+18:55:35.707 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: POST /eureka/apps/DREAM-GATE HTTP/1.1
+18:55:35.705 [SpringContextShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+18:55:35.707 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "POST /eureka/apps/DREAM-GATE HTTP/1.1[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Content-Type: application/json[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Transfer-Encoding: chunked[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+18:55:35.708 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"

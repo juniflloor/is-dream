@@ -1,4 +1,0 @@
-16:52:32.673 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
-16:52:32.675 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.shared.resolver.AsyncResolver - Resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
-16:52:32.800 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connect to localhost:9090 timed out. Connection will be retried using another IP address
-16:52:32.800 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090

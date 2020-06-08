@@ -1,2 +1,0 @@
-16:53:40.900 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connect to localhost:9090 timed out. Connection will be retried using another IP address
-16:53:40.903 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090

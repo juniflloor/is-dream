@@ -1,1 +1,2 @@
-16:38:55.566 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connect to localhost:9090 timed out. Connection will be retried using another IP address
+21:05:14.792 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
+21:05:14.793 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://127.0.0.1:9090/eureka/

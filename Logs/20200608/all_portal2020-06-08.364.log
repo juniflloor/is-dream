@@ -1,3 +1,37 @@
-15:12:02.106 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:12:02.107 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-15:12:02.109 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
+20:00:07.026 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restTemplateCustomizer' via factory method to bean named 'ribbonInterceptor'
+20:00:07.029 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedRestTemplateInitializerDeprecated'
+20:00:07.030 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.retry-org.springframework.cloud.client.loadbalancer.LoadBalancerRetryProperties'
+20:00:07.031 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration'
+20:00:07.031 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration$ApacheHttpClientConfiguration'
+20:00:07.031 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'connManFactory'
+20:00:07.033 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientBuilder'
+20:00:07.038 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientFactory'
+20:00:07.039 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'apacheHttpClientFactory' via factory method to bean named 'apacheHttpClientBuilder'
+20:00:07.039 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration'
+20:00:07.040 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.configuration.CompatibilityVerifierAutoConfiguration'
+20:00:07.040 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'compositeCompatibilityVerifier'
+20:00:07.040 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springBootVersionVerifier'
+20:00:07.041 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
+20:00:07.043 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'springBootVersionVerifier' via factory method to bean named 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
+20:00:07.045 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeCompatibilityVerifier' via factory method to bean named 'springBootVersionVerifier'
+20:00:07.046 [restartedMain] DEBUG o.s.c.c.SpringBootVersionVerifier - Version found in Boot manifest [2.3.0.RELEASE]
+20:00:07.046 [restartedMain] DEBUG o.s.c.c.SpringBootVersionVerifier - Predicate [Predicate for Boot 2.2] was matched
+20:00:07.046 [restartedMain] DEBUG o.s.c.c.CompositeCompatibilityVerifier - All conditions are passing
+20:00:07.046 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration'
+20:00:07.046 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaLoadBalancerProperties'
+20:00:07.048 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.eureka-org.springframework.cloud.netflix.eureka.loadbalancer.EurekaLoadBalancerProperties'
+20:00:07.049 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerAutoConfiguration'
+20:00:07.050 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'hystrixCircuitBreakerFactory'
+20:00:07.054 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.ReactiveHystrixCircuitBreakerAutoConfiguration'
+20:00:07.055 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'reactiveHystrixCircuitBreakerFactory'
+20:00:07.057 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.ribbon.eureka.RibbonEurekaAutoConfiguration'
+20:00:07.070 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 0
+20:00:07.072 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaClient'
+20:00:07.072 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaInstanceConfigBean'
+20:00:07.072 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaApplicationInfoManager'
+20:00:07.076 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaApplicationInfoManager' via factory method to bean named 'eurekaInstanceConfigBean'
+20:00:07.080 [restartedMain] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+20:00:07.083 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaApplicationInfoManager'
+20:00:07.083 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaClientConfigBean'
+20:00:07.083 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaInstanceConfigBean'
+20:00:07.175 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1

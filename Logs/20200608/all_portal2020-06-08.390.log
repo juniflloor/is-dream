@@ -1,16 +1,5 @@
-15:14:02.275 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-15:14:02.276 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:14:02.279 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-15:14:02.279 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-15:14:02.279 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:14:02.279 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 2, total issued: 0, total allocated: 2 out of 200
-15:14:02.280 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:14:02.280 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-15:14:02.280 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:14:02.280 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 1, total allocated: 2 out of 200
-15:14:02.280 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Getting free connection [{}->http://localhost:9090][null]
-15:14:02.280 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Stale connection check
-15:14:02.282 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
-15:14:02.282 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
-15:14:02.282 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
-15:14:02.282 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+20:01:10.190 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.cloud.client.hostname' in PropertySource 'configurationProperties' with value of type String
+20:01:10.192 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.name' in PropertySource 'configurationProperties' with value of type String
+20:01:10.192 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'server.port' in PropertySource 'configurationProperties' with value of type Integer
+20:01:10.193 [restartedMain] DEBUG o.s.c.n.e.m.DefaultManagementMetadataProvider - Constructed eureka meta-data healthcheckUrl: http://192.168.1.14:10900/gate/actuator/health
+20:01:10.193 [restartedMain] DEBUG o.s.c.n.e.m.DefaultManagementMetadataProvider - Constructed eureka meta-data statusPageUrl: http://192.168.1.14:10900/gate/actuator/info

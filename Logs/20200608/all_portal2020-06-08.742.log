@@ -1,32 +1,7 @@
-15:56:02.003 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ribbonInterceptor'
-15:56:02.005 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancerRequestFactory'
-15:56:02.005 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration'
-15:56:02.006 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'loadBalancerRequestFactory' via factory method to bean named 'loadBalancerClient'
-15:56:02.007 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerClient'
-15:56:02.007 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'ribbonInterceptor' via factory method to bean named 'loadBalancerRequestFactory'
-15:56:02.007 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'restTemplateCustomizer'
-15:56:02.008 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'restTemplateCustomizer' via factory method to bean named 'ribbonInterceptor'
-15:56:02.009 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'loadBalancedRestTemplateInitializerDeprecated'
-15:56:02.009 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.retry-org.springframework.cloud.client.loadbalancer.LoadBalancerRetryProperties'
-15:56:02.010 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration'
-15:56:02.010 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration$ApacheHttpClientConfiguration'
-15:56:02.011 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'connManFactory'
-15:56:02.012 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientBuilder'
-15:56:02.018 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'apacheHttpClientFactory'
-15:56:02.019 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'apacheHttpClientFactory' via factory method to bean named 'apacheHttpClientBuilder'
-15:56:02.020 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.commons.httpclient.HttpClientConfiguration'
-15:56:02.020 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.configuration.CompatibilityVerifierAutoConfiguration'
-15:56:02.020 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'compositeCompatibilityVerifier'
-15:56:02.021 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springBootVersionVerifier'
-15:56:02.021 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
-15:56:02.022 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'springBootVersionVerifier' via factory method to bean named 'spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties'
-15:56:02.025 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'compositeCompatibilityVerifier' via factory method to bean named 'springBootVersionVerifier'
-15:56:02.025 [main] DEBUG o.s.c.c.SpringBootVersionVerifier - Version found in Boot manifest [2.3.0.RELEASE]
-15:56:02.026 [main] DEBUG o.s.c.c.SpringBootVersionVerifier - Predicate [Predicate for Boot 2.2] was matched
-15:56:02.026 [main] DEBUG o.s.c.c.CompositeCompatibilityVerifier - All conditions are passing
-15:56:02.026 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration'
-15:56:02.027 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaLoadBalancerProperties'
-15:56:02.047 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.loadbalancer.eureka-org.springframework.cloud.netflix.eureka.loadbalancer.EurekaLoadBalancerProperties'
-15:56:02.048 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.HystrixCircuitBreakerAutoConfiguration'
-15:56:02.051 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'hystrixCircuitBreakerFactory'
-15:56:02.055 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.hystrix.ReactiveHystrixCircuitBreakerAutoConfiguration'
+20:39:11.204 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+20:39:11.206 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+20:39:11.415 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+20:39:11.415 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+20:39:11.658 [restartedMain] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+20:39:11.659 [restartedMain] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
+20:39:11.661 [restartedMain] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]

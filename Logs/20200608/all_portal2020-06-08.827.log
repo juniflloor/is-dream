@@ -1,32 +1,16 @@
-16:04:10.724 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
-16:04:10.727 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-16:04:10.728 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> PUT /eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900?status=UP&lastDirtyTimestamp=1591603060368 HTTP/1.1
-16:04:10.728 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-16:04:10.728 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-16:04:10.728 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-16:04:10.729 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
-16:04:10.729 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
-16:04:10.729 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-16:04:10.729 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-16:04:10.729 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 08:04:10 GMT[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 08:04:10 GMT
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-16:04:10.737 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
+20:47:31.091 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+20:47:31.095 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+20:47:31.095 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+20:47:31.098 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurationPropertiesBeans'
+20:47:31.106 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'bootstrapImportSelectorConfiguration'
+20:47:31.109 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration'
+20:47:31.115 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+20:47:31.115 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+20:47:31.115 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.cloud.config-org.springframework.cloud.bootstrap.config.PropertySourceBootstrapProperties'
+20:47:31.124 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.bootstrap.encrypt.EncryptionBootstrapConfiguration'
+20:47:31.126 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'encrypt-org.springframework.cloud.bootstrap.encrypt.KeyProperties'
+20:47:31.128 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'environmentDecryptApplicationListener'
+20:47:31.129 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration'
+20:47:31.129 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'configurationPropertiesRebinder'
+20:47:31.130 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'configurationPropertiesRebinder' via factory method to bean named 'configurationPropertiesBeans'
+20:47:31.135 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'

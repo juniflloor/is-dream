@@ -1,15 +1,18 @@
-15:01:00.213 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaInstanceConfigBean'
-15:01:00.213 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaRegistration' via factory method to bean named 'eurekaApplicationInfoManager'
-15:01:00.216 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaApplicationInfoManager' via factory method to bean named 'eurekaInstanceConfigBean'
-15:01:00.219 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-15:01:00.221 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaApplicationInfoManager'
-15:01:00.221 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaClientConfigBean'
-15:01:00.221 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'scopedTarget.eurekaClient' via factory method to bean named 'eurekaInstanceConfigBean'
-15:01:00.279 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-15:01:00.707 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
-15:01:00.707 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
-15:01:00.829 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
-15:01:00.829 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
-15:01:00.990 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-15:01:00.991 [main] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
-15:01:00.992 [main] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+19:18:28.513 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+19:18:28.514 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+19:18:28.650 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+19:18:28.650 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+19:18:28.822 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+19:18:28.823 [main] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
+19:18:28.824 [main] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+19:18:29.288 [main] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+19:18:29.299 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+19:18:29.301 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+19:18:29.304 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1591615109302 with initial instances count: 0
+19:18:29.305 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application DREAM-GATE with eureka with status UP
+19:18:29.305 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591615109305, current=UP, previous=STARTING]
+19:18:29.306 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
+19:18:29.306 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+19:18:29.307 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'eurekaAutoServiceRegistration'
+19:18:29.307 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483646
+19:18:29.307 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900: registering service...

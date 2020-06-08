@@ -1,17 +1,32 @@
-15:01:01.217 [main] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-15:01:01.231 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-15:01:01.232 [main] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
-15:01:01.234 [main] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-15:01:01.272 [main] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-15:01:01.273 [main] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
-15:01:01.273 [main] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://localhost:9090][null]
-15:01:01.273 [main] DEBUG c.n.d.shared.NamedConnectionPool - Available capacity: 50 out of 50 [{}->http://localhost:9090][null]
-15:01:01.273 [main] DEBUG c.n.d.shared.NamedConnectionPool - Creating new connection [{}->http://localhost:9090]
-15:01:01.279 [main] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:9090
-15:01:01.293 [main] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+19:18:29.308 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
+19:18:29.308 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-10900"]
+19:18:29.317 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://127.0.0.1:9090/eureka/
+19:18:29.340 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 10900 (http) with context path '/gate'
+19:18:29.340 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 10900
+19:18:29.379 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://127.0.0.1:9090, timeout = 5000
+19:18:29.380 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://127.0.0.1:9090] total kept alive: 0, total issued: 0, total allocated: 0 out of 200
+19:18:29.381 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - No free connections [{}->http://127.0.0.1:9090][null]
+19:18:29.381 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Available capacity: 50 out of 50 [{}->http://127.0.0.1:9090][null]
+19:18:29.381 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Creating new connection [{}->http://127.0.0.1:9090]
+19:18:29.389 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to 127.0.0.1:9090
+19:18:29.406 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: default
+19:18:29.407 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+19:18:29.407 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+19:18:29.407 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+19:18:29.407 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+19:18:29.407 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: POST /eureka/apps/DREAM-GATE HTTP/1.1
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "POST /eureka/apps/DREAM-GATE HTTP/1.1[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Content-Type: application/json[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Name: DefaultClient[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Version: 1.4[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "DiscoveryIdentity-Id: 192.168.1.14[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Transfer-Encoding: chunked[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Host: 127.0.0.1:9090[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "User-Agent: Java-EurekaClient/v1.9.21[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> POST /eureka/apps/DREAM-GATE HTTP/1.1
+19:18:29.408 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+19:18:29.409 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Content-Type: application/json

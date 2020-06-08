@@ -1,5 +1,9 @@
-16:05:03.901 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.cloud.client.hostname' in PropertySource 'configurationProperties' with value of type String
-16:05:03.903 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.name' in PropertySource 'configurationProperties' with value of type String
-16:05:03.903 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'server.port' in PropertySource 'configurationProperties' with value of type Integer
-16:05:03.905 [main] DEBUG o.s.c.n.e.m.DefaultManagementMetadataProvider - Constructed eureka meta-data healthcheckUrl: http://192.168.1.14:10900/actuator/health
-16:05:03.905 [main] DEBUG o.s.c.n.e.m.DefaultManagementMetadataProvider - Constructed eureka meta-data statusPageUrl: http://192.168.1.14:10900/actuator/info
+20:47:37.038 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+20:47:37.039 [restartedMain] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+20:47:37.245 [restartedMain] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+20:47:37.247 [restartedMain] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
+20:47:37.248 [restartedMain] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+20:47:37.748 [restartedMain] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+20:47:37.762 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+20:47:37.764 [restartedMain] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+20:47:37.768 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1591620457767 with initial instances count: 0

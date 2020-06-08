@@ -1,2 +1,1 @@
-16:47:28.306 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@b126428 closed
-16:47:28.309 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@b126428 shut down
+21:18:14.190 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.shared.resolver.AsyncResolver - Resolved to [AwsEndpoint{ serviceUrl='http://127.0.0.1:9090/eureka/', region='us-east-1', zone='defaultZone'}]

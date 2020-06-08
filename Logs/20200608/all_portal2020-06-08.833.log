@@ -1,10 +1,8 @@
-16:04:53.458 [SpringContextShutdownHook] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@53bc1328, started on Mon Jun 08 15:57:35 CST 2020, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5812f68b
-16:04:53.460 [SpringContextShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application DREAM-GATE with eureka with status DOWN
-16:04:53.460 [SpringContextShutdownHook] WARN  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591603493460, current=DOWN, previous=UP]
-16:04:53.460 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
-16:04:53.460 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
-16:04:53.460 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900: registering service...
-16:04:53.460 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1
-16:04:53.461 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Created client for url: http://localhost:9090/eureka/
-16:04:53.461 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Get connection: {}->http://localhost:9090, timeout = 5000
-16:04:53.461 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - [{}->http://localhost:9090] total kept alive: 1, total issued: 0, total allocated: 1 out of 200
+20:47:33.923 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/gate] - Initializing Spring embedded WebApplicationContext
+20:47:33.925 [restartedMain] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+20:47:33.925 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1978 ms
+20:47:33.931 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'requestContextFilter'
+20:47:33.933 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'formContentFilter'
+20:47:33.934 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+20:47:33.938 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'characterEncodingFilter'
+20:47:33.944 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105

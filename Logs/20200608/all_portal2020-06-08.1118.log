@@ -1,4 +1,1 @@
-16:42:32.660 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.discovery.endpoint.EndpointUtils - The availability zone for the given region us-east-1 are [defaultZone]
-16:42:32.664 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.s.r.aws.ConfigClusterResolver - Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
-16:42:32.664 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.s.r.a.ZoneAffinityClusterResolver - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
-16:42:32.664 [AsyncResolver-bootstrap-executor-0] DEBUG c.n.d.shared.resolver.AsyncResolver - Resolved to [AwsEndpoint{ serviceUrl='http://localhost:9090/eureka/', region='us-east-1', zone='defaultZone'}]
+21:12:15.060 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.RetryableEurekaHttpClient - Clearing quarantined list of size 1

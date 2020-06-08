@@ -1,137 +1,32 @@
-15:09:31.966 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-15:09:31.970 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-15:09:31.974 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:09:31.974 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:09:31.974 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:09:31.974 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:09:31 GMT[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 07:09:31 GMT
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "9b[\r][\n]"
-15:09:31.975 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T07:09:31.972+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900"}"
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://localhost:9090][null]; keep alive for 60000 MILLISECONDS
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing global-level cache with size 0
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing app-level serialization cache with size 0
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 07:09:31 GMT[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-15:09:31.976 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-15:09:31.976 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.p.DiscoveryJerseyProvider - Cannot parse request body
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1499)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1515)
-	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2188)
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2054)
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1431)
-	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213)
-	at com.netflix.discovery.converters.wrappers.CodecWrappers$LegacyJacksonJson.decode(CodecWrappers.java:314)
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-15:09:31.977 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP PUT http://localhost:9090/eureka//apps/UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900; statusCode=404
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 07:09:31 GMT
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "72[\r][\n]"
-15:09:31.977 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:9090/eureka/}
-javax.ws.rs.WebApplicationException: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634)
-	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586)
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:107)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
-	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:874)
-	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1443)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1499)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportPropertyInputMismatch(DeserializationContext.java:1515)
-	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2188)
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2054)
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1431)
-	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213)
-	at com.netflix.discovery.converters.wrappers.CodecWrappers$LegacyJacksonJson.decode(CodecWrappers.java:314)
-	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103)
-	... 23 common frames omitted
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T07:09:31.975+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/"}"
-15:09:31.977 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: com.fasterxml.jackson.databind.exc.MismatchedInputException: Root name 'timestamp' does not match expected ('instance') for type [simple type, class com.netflix.appinfo.InstanceInfo]
- at [Source: (com.sun.jersey.client.apache4.ApacheHttpClient4Handler$HttpClientResponseInputStream); line: 1, column: 2] (through reference chain: com.netflix.appinfo.InstanceInfo["timestamp"])
-15:09:31.977 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP GET http://localhost:9090/eureka//apps/?; statusCode=404
-15:09:31.978 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:09:31.978 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
+19:57:54.317 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 11:57:54 GMT[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Origin
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Content-Type: application/json
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 11:57:54 GMT
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - << Connection: keep-alive
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "a9[\r][\n]"
+19:57:54.320 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T11:57:54.316+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900"}"
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://127.0.0.1:9090][null]
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://127.0.0.1:9090][null]; keep alive for 60000 MILLISECONDS
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing global-level cache with size 0
+19:57:54.321 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.util.DeserializerStringCache - clearing app-level serialization cache with size 0

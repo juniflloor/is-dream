@@ -1,65 +1,62 @@
-12:27:12.552 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Content-Type: application/json
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept: application/json
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: localhost:9090
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
-12:27:12.553 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
-12:27:12.566 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "17a[\r][\n]"
-12:27:12.566 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "{"instance":{"instanceId":"DESKTOP-I4Q3LDK.domain.name:10900","hostName":"DESKTOP-I4Q3LDK.domain.name","app":"UNKNOWN","ipAddr":"192.168.1.14","status":"UP","overriddenStatus":"UNKNOWN","port":{"$":10900,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"}"
-12:27:12.566 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-12:27:12.567 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 10900 (http) with context path ''
-12:27:12.569 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 10900
-12:27:12.596 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "9d[\r][\n]"
-12:27:12.597 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0}"
-12:27:12.597 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-12:27:12.604 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "27[\r][\n]"
-12:27:12.604 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","metadata":{"management.port":"10900"}"
-12:27:12.604 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "179[\r][\n]"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","homePageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/","statusPageUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/info","healthCheckUrl":"http://DESKTOP-I4Q3LDK.domain.name:10900/actuator/health","vipAddress":"unknown","secureVipAddress":"unknown","isCoordinatingDiscoveryServer":"false","lastUpdatedTimestamp":"1591590431141","lastDirtyTimestamp":"1591590432532"}}"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "0[\r][\n]"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
-12:27:12.605 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 04:27:12 GMT[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Origin
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Content-Type: application/json
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 04:27:12 GMT
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Connection: keep-alive
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "79[\r][\n]"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T04:27:12.570+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/UNKNOWN"}"
-12:27:12.606 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP POST http://localhost:9090/eureka//apps/UNKNOWN with instance DESKTOP-I4Q3LDK.domain.name:10900; statusCode=404
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://localhost:9090][null]; keep alive for 60000 MILLISECONDS
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.RedirectingEurekaHttpClient - Pinning to endpoint null
-12:27:12.607 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900 - registration status: 404
-12:27:12.912 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerStartStop'
-12:27:12.912 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
-12:27:12.912 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerGracefulShutdown'
-12:27:12.933 [main] DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+18:58:11.231 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Accept: application/json
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Transfer-Encoding: chunked
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+18:58:11.232 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+18:58:11.242 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "179[\r][\n]"
+18:58:11.242 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "{"instance":{"instanceId":"DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900","hostName":"192.168.1.14","app":"DREAM-GATE","ipAddr":"192.168.1.14","status":"UP","overriddenStatus":"UNKNOWN","port":{"$":10900,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"}"
+18:58:11.242 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+18:58:11.268 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "9d[\r][\n]"
+18:58:11.268 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0}"
+18:58:11.268 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+18:58:11.273 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "27[\r][\n]"
+18:58:11.273 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","metadata":{"management.port":"10900"}"
+18:58:11.273 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "15c[\r][\n]"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> ","homePageUrl":"http://192.168.1.14:10900/","statusPageUrl":"http://192.168.1.14:10900/gate/actuator/info","healthCheckUrl":"http://192.168.1.14:10900/gate/actuator/health","vipAddress":"DREAM-GATE","secureVipAddress":"DREAM-GATE","isCoordinatingDiscoveryServer":"false","lastUpdatedTimestamp":"1591613889403","lastDirtyTimestamp":"1591613891129"}}"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "0[\r][\n]"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+18:58:11.276 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Content-Type: application/json[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Transfer-Encoding: chunked[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Date: Mon, 08 Jun 2020 10:58:11 GMT[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Keep-Alive: timeout=60[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "Connection: keep-alive[\r][\n]"
+18:58:11.277 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << HTTP/1.1 404 
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Origin
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Method
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Vary: Access-Control-Request-Headers
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Content-Type: application/json
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Transfer-Encoding: chunked
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Date: Mon, 08 Jun 2020 10:58:11 GMT
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Keep-Alive: timeout=60
+18:58:11.278 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.headers - << Connection: keep-alive
+18:58:11.282 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive for 60000 MILLISECONDS
+18:58:11.289 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "7c[\r][\n]"
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T10:58:11.245+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/DREAM-GATE"}"
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP POST http://127.0.0.1:9090/eureka//apps/DREAM-GATE with instance DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900; statusCode=404
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
+18:58:11.290 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://127.0.0.1:9090][null]
+18:58:11.291 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://127.0.0.1:9090][null]; keep alive for 60000 MILLISECONDS
+18:58:11.291 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
+18:58:11.291 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.d.s.t.d.RedirectingEurekaHttpClient - Pinning to endpoint null
+18:58:11.291 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900 - registration status: 404
+18:58:11.854 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerStartStop'
+18:58:11.854 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+18:58:11.854 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerGracefulShutdown'
+18:58:11.876 [main] DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 
 ============================
@@ -1223,4 +1220,4 @@ Unconditional classes:
 
 
 
-12:27:12.936 [main] INFO  is.dream.GateApplication - Started GateApplication in 6.483 seconds (JVM running for 7.175)
+18:58:11.878 [main] INFO  is.dream.GateApplication - Started GateApplication in 9.029 seconds (JVM running for 9.88)

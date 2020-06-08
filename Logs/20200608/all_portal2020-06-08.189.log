@@ -1,2 +1,1 @@
-14:55:29.890 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.d.SessionedEurekaHttpClient - Ending a session and starting anew
-14:55:29.895 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+19:13:40.641 [Apache-HttpClient-Conn-Cleaner2] DEBUG c.n.d.shared.NamedConnectionPool - Closing connections idle longer than 30 SECONDS

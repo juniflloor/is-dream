@@ -1,4 +1,16 @@
-16:41:47.812 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-16:41:47.813 [DiscoveryClient-HeartbeatExecutor-0] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@4786e920 closed
-16:41:47.813 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-16:41:47.813 [DiscoveryClient-HeartbeatExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP PUT http://localhost:9090/eureka//apps/DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:dream-gate:10900; statusCode=N/A
+21:10:45.017 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Name: DefaultClient
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Version: 1.4
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> DiscoveryIdentity-Id: 192.168.1.14
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Content-Length: 0
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Host: 127.0.0.1:9090
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+21:10:45.018 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.headers - >> User-Agent: Java-EurekaClient/v1.9.21
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "HTTP/1.1 404 [\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Origin[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Method[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Vary: Access-Control-Request-Headers[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "X-Content-Type-Options: nosniff[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "X-XSS-Protection: 1; mode=block[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+21:10:45.022 [DiscoveryClient-HeartbeatExecutor-0] DEBUG org.apache.http.wire -  << "Pragma: no-cache[\r][\n]"

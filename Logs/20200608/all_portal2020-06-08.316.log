@@ -1,29 +1,19 @@
-15:07:31.840 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "72[\r][\n]"
-15:07:31.844 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "{"timestamp":"2020-06-08T07:07:31.836+00:00","status":404,"error":"Not Found","message":"","path":"/eureka/apps/"}"
-15:07:31.844 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.j.AbstractJerseyEurekaHttpClient - Jersey HTTP GET http://localhost:9090/eureka//apps/?; statusCode=404
-15:07:31.844 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:07:31.844 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "0[\r][\n]"
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG org.apache.http.wire -  << "[\r][\n]"
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.MonitoredConnectionManager - Released connection is reusable.
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Releasing connection [{}->http://localhost:9090][null]
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Pooling connection [{}->http://localhost:9090][null]; keep alive for 60000 MILLISECONDS
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.shared.NamedConnectionPool - Notifying no-one, there are no waiting threads
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.n.d.s.t.d.RedirectingEurekaHttpClient - Pinning to endpoint null
-15:07:31.845 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failure with status code 404; retrying on another server if available
-15:07:31.846 [DiscoveryClient-CacheRefreshExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_UNKNOWN/DESKTOP-I4Q3LDK.domain.name:10900 - was unable to refresh its cache! status = Cannot execute request on any known server
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
-	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1081)
-	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:995)
-	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1517)
-	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1484)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-15:07:31.846 [DiscoveryClient-CacheRefreshExecutor-0] DEBUG c.netflix.discovery.DiscoveryClient - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+19:56:21.145 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaClientConfigurationRefresher'
+19:56:21.148 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaAutoServiceRegistration'
+19:56:21.150 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaServiceRegistry'
+19:56:21.151 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaRegistration'
+19:56:21.177 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@424972f'
+19:56:21.178 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'eurekaServiceRegistry'
+19:56:21.178 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaAutoServiceRegistration' via factory method to bean named 'eurekaRegistration'
+19:56:21.178 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaDiscoverClientMarker'
+19:56:21.179 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration'
+19:56:21.180 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration'
+19:56:21.183 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaApplicationInfoManager'
+19:56:21.193 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaFeature'
+19:56:21.194 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'serviceManagementMetadataProvider'
+19:56:21.195 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eurekaInstanceConfigBean'
+19:56:21.197 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaInstanceConfigBean' via factory method to bean named 'inetUtils'
+19:56:21.197 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'eurekaInstanceConfigBean' via factory method to bean named 'serviceManagementMetadataProvider'
+19:56:21.197 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'eureka.instance.prefer-ip-address' in PropertySource 'configurationProperties' with value of type Boolean
+19:56:21.197 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'server.servlet.context-path' in PropertySource 'configurationProperties' with value of type String
+19:56:21.197 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'server.port' in PropertySource 'configurationProperties' with value of type Integer
