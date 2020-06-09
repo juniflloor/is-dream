@@ -1,8 +1,0 @@
-18:56:31.708 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1591613791707 with initial instances count: 0
-18:56:31.711 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application DREAM-GATE with eureka with status UP
-18:56:31.711 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591613791711, current=UP, previous=STARTING]
-18:56:31.712 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
-18:56:31.712 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
-18:56:31.714 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'eurekaAutoServiceRegistration'
-18:56:31.714 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483646
-18:56:31.714 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900: registering service...

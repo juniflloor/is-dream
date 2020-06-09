@@ -1,8 +1,0 @@
-20:39:12.297 [restartedMain] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application DREAM-GATE with eureka with status UP
-20:39:12.300 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591619952300, current=UP, previous=STARTING]
-20:39:12.301 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Executing on-demand update of local InstanceInfo
-20:39:12.301 [DiscoveryClient-InstanceInfoReplicator-0] DEBUG c.n.discovery.InstanceInfoReplicator - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
-20:39:12.303 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'eurekaAutoServiceRegistration'
-20:39:12.303 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_DREAM-GATE/DESKTOP-I4Q3LDK.domain.name:DREAM-GATE:10900: registering service...
-20:39:12.303 [restartedMain] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483646
-20:39:12.304 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-10900"]

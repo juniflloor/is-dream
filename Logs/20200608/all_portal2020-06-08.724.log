@@ -1,3 +1,0 @@
-20:39:06.473 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=68c83d31-eb14-3650-94b2-7b0b6e8c9d4e
-20:39:06.475 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
-20:39:06.477 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator'
