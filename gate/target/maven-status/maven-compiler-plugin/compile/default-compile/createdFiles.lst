@@ -1,5 +1,5 @@
-is\dream\gate\entity\Result.class
 is\dream\gate\filter\AuthFilter.class
 is\dream\gate\contants\URLConstant.class
 is\dream\GateApplication.class
+META-INF\gate.kotlin_module
 is\dream\gate\tools\JWTTools.class

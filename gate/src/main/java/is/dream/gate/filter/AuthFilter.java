@@ -46,6 +46,7 @@ public class AuthFilter extends ZuulFilter {
             return null;
         }
 
+        // TODO check token
 
 
         return null;

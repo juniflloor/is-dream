@@ -1,4 +1,5 @@
-package is.dream.gate.entity;
+package is.dream.common;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

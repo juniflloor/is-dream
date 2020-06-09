@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: DREAM-AUTH
+  datasource:
+    driver-class: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dream?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+
+server:
+  port: 10900
+  servlet:
+    context-path: /auth
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9090/eureka
