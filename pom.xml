@@ -17,6 +17,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>gate</module>
+        <module>dao</module>
     </modules>
 
     <properties>
