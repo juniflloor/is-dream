@@ -18,6 +18,7 @@
     <modules>
         <module>gate</module>
         <module>dao</module>
+        <module>common</module>
     </modules>
 
     <properties>

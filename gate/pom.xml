@@ -25,7 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>is.dream</groupId>
-            <artifactId>dao</artifactId>
+            <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -44,6 +44,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
             <version>2.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
