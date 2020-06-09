@@ -1,6 +1,11 @@
 spring:
   application:
     name: DREAM-GATE
+  datasource:
+    driver-class: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dream?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
 
 server:
   port: 10900

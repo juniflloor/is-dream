@@ -8,3 +8,4 @@ userHeadImageUrl varchar(150) not null COMMENT '用户头像地址',
 primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 
+ALTER table  user add password varchar(32) not null COMMENT '用户密码';

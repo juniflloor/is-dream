@@ -1,0 +1,30 @@
+package is.dream.dao.inter;
+
+import is.dream.dao.entiry.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author chendongzhao
+ * @version 1.0
+ * @date 2020/6/9 18:57
+ */
+@Mapper
+@Component
+public interface UserDao {
+
+    @Results({
+        @Result(property = "id", column = "id"),
+        @Result(property = "userId", column = "userId"),
+        @Result(property = "userName", column = "userName"),
+        @Result(property = "password", column = "password"),
+        @Result(property = "userHeadImageUrl", column = "userHeadImageUrl")
+    })
+
+    @Select("SELECT * FROM user WHERE userName = #{userName} and password = #{password}")
+    User getByUserNameAndPassword(String userName, String password);
+
+}
