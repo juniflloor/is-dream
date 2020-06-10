@@ -1,9 +1,9 @@
 package is.dream.common.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import java.util.Date;
 import java.util.HashMap;

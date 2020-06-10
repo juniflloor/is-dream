@@ -1,9 +1,12 @@
 package is.dream.auth.controller;
 
+import is.dream.auth.service.UserBusinessService;
 import is.dream.common.Result;
 import is.dream.dao.entiry.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,10 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController( value = "/userIdentity")
 public class UserController {
 
+    @Autowired
+    private UserBusinessService userBusinessService;
+
     @PostMapping( value = "/login")
     public Result<Object> login(@RequestBody User user){
 
-        return null;
+        return userBusinessService.login(user);
     }
 
     @PostMapping( value = "/register")
@@ -36,5 +42,10 @@ public class UserController {
     public Result<Object> isLogin(@RequestBody User user){
 
         return null;
+    }
+
+    @PostMapping( value = "/isLawful")
+    public Result<Object> isLawful(@RequestParam("token") String token){
+        return userBusinessService.isLawful(token);
     }
 }

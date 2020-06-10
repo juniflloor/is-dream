@@ -3,12 +3,13 @@ package is.dream.gate.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import is.dream.cache.constants.CacheConstants;
-import is.dream.cache.utils.RedisUtils;
+import is.dream.common.Result;
 import is.dream.common.utils.JWTUtil;
 import is.dream.gate.contants.URLConstant;
+import is.dream.gate.fegin.AuthFegin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,10 +29,11 @@ import javax.servlet.http.HttpServletRequest;
  * if the redis version is null, we think redis service is down and go to auth to check this token
  * is lawful.
  */
+@Component
 public class AuthFilter extends ZuulFilter {
 
     @Autowired
-    private RedisUtils redisUtils;
+    private AuthFegin authFegin;
 
     @Override
     public String filterType() {
@@ -55,9 +57,19 @@ public class AuthFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         Object token = request.getHeader(JWTUtil.TOKEN);
         String uri = request.getRequestURI();
+        Boolean isNoAuthenticationUrl = uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER);
+        if (ObjectUtils.isEmpty(token) && isNoAuthenticationUrl) {
+            return null;
+        }
+        Boolean tokenIsLawful = true;
+        Result result = authFegin.checkTokenIsLawful((String) token);
+        if (!result.getCode().equals(Result.OK.getCode())) {
+            tokenIsLawful = false;
+        }
 
-        if (uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER)) {
-            return  null;
+        if (!tokenIsLawful) {
+            // 抛出异常
+            throw new RuntimeException("TOKEN ERROR");
         }
 
         return null;

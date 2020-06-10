@@ -2,10 +2,10 @@ spring:
   application:
     name: DREAM-AUTH
   profiles:
-    include: mysql
+    include: mysql,redis
 
 server:
-  port: 10900
+  port: 10910
   servlet:
     context-path: /auth
 

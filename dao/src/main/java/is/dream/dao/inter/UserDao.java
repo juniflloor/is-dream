@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
  * @date 2020/6/9 18:57
  */
 @Mapper
-@Component
 public interface UserDao {
 
     @Results({

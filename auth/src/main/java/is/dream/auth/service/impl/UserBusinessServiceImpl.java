@@ -8,6 +8,7 @@ import is.dream.common.utils.JWTUtil;
 import is.dream.dao.base.service.UserService;
 import is.dream.dao.entiry.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.util.ObjectUtils;
  * @version 1.0
  * @date 2020/6/10 1:01
  */
+@Service
 public class UserBusinessServiceImpl implements UserBusinessService {
 
     @Autowired
@@ -69,7 +71,6 @@ public class UserBusinessServiceImpl implements UserBusinessService {
             if (!token.equals(cacheToken)) {
                 return Result.ERROR_TOKEN;
             }
-
             return  result;
         }
 
