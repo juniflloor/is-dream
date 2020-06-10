@@ -3,8 +3,11 @@ package is.dream.gate.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import is.dream.cache.constants.CacheConstants;
+import is.dream.cache.utils.RedisUtils;
 import is.dream.common.utils.JWTUtil;
 import is.dream.gate.contants.URLConstant;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.util.ObjectUtils;
 
@@ -26,6 +29,9 @@ import javax.servlet.http.HttpServletRequest;
  * is lawful.
  */
 public class AuthFilter extends ZuulFilter {
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     @Override
     public String filterType() {
@@ -49,7 +55,6 @@ public class AuthFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         Object token = request.getHeader(JWTUtil.TOKEN);
         String uri = request.getRequestURI();
-        Boolean tokenIsLawful = checkTokenIsLawful(token);
 
         if (uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER)) {
             return  null;
@@ -58,8 +63,4 @@ public class AuthFilter extends ZuulFilter {
         return null;
     }
 
-    private boolean checkTokenIsLawful (Object token) {
-
-        return true;
-    }
 }

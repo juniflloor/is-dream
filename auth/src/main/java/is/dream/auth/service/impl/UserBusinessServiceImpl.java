@@ -1,7 +1,7 @@
 package is.dream.auth.service.impl;
 
 import is.dream.auth.service.UserBusinessService;
-import is.dream.cache.constants.AuthCacheConstants;
+import is.dream.cache.constants.CacheConstants;
 import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
 import is.dream.common.utils.JWTUtil;
@@ -34,9 +34,9 @@ public class UserBusinessServiceImpl implements UserBusinessService {
             return Result.USER_ERROR;
         }
 
-        String token = JWTUtil.createToken(dbUser, AuthCacheConstants.USER_TOKEN_EXPIRE);
+        String token = JWTUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
         userService.updateUserToken(dbUser.getUserId(),token);
-        redisUtils.set(AuthCacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getUserId(),token,AuthCacheConstants.USER_TOKEN_EXPIRE);
+        redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getUserId(),token, CacheConstants.USER_TOKEN_EXPIRE);
 
         return Result.OK;
     }
@@ -52,7 +52,32 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     }
 
     @Override
-    public Result<Object> isLogin(String token) {
-        return null;
+    public Result<Object> isLogin(String token) { return null; }
+
+    @Override
+    public Result<Object> isLawful(String token) {
+
+        Result result = Result.OK;
+        User user = JWTUtil.deciphering(token,User.class);
+        if (ObjectUtils.isEmpty(user)) {
+            return Result.ERROR_TOKEN;
+        }
+        result.setData(user);
+        Object redisVersion = redisUtils.get(CacheConstants.REDIS_START_VERSION);
+        if (!ObjectUtils.isEmpty(redisVersion)) {
+            String cacheToken =  (String) redisUtils.get(CacheConstants.USER_TOKEN_REDIS_PREFIX + user.getUserId());
+            if (!token.equals(cacheToken)) {
+                return Result.ERROR_TOKEN;
+            }
+
+            return  result;
+        }
+
+        User dbUser = userService.getByUserId(user.getUserId());
+        if (!token.equals(dbUser.getToken())) {
+            return Result.ERROR_TOKEN;
+        }
+
+        return result;
     }
 }

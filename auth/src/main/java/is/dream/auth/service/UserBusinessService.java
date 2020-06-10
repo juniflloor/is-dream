@@ -18,4 +18,6 @@ public interface UserBusinessService {
 
      Result<Object> isLogin(String token);
 
+     Result<Object> isLawful(String token);
+
 }

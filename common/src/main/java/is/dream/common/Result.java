@@ -25,4 +25,6 @@ public class Result<T>{
     public static final Result PARAM_FAIL = new Result<String>("1","参数错误","");
 
     public static final Result USER_ERROR = new Result<String>("2","用户命或者密码错误","");
+
+    public static final Result ERROR_TOKEN = new Result<String>("3","令牌错误","");
 }

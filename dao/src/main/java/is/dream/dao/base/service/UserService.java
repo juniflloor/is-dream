@@ -8,7 +8,10 @@ import is.dream.dao.entiry.User;
  * @date 2020/6/9 19:14
  */
 public interface UserService {
+
     User getByUserNameAndPassword(String userName, String password);
 
     void updateUserToken(String userId,String token);
+
+    User getByUserId(String userId);
 }

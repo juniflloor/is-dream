@@ -5,7 +5,7 @@ package is.dream.cache.constants;
  * @version 1.0
  * @date 2020/6/11 1:22
  */
-public class AuthCacheConstants {
+public class CacheConstants {
 
     /**
      * User Cache Constant
