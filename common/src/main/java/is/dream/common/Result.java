@@ -19,4 +19,10 @@ public class Result<T>{
     private String message;
 
     private T data;
+
+    public static final Result OK = new Result<String>("0","SUCCESS","成功");
+
+    public static final Result PARAM_FAIL = new Result<String>("1","参数错误","");
+
+    public static final Result USER_ERROR = new Result<String>("2","用户命或者密码错误","");
 }

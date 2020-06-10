@@ -16,10 +16,10 @@ import java.util.Map;
  */
 public class JWTUtil {
 
-    private static final String JWT_SECRET_KEY = "#isdreamgo$";
+    public  static final String TOKEN = "token";
     private static final String JWT_EXPIRE = "expire";
     private static final String JWT_PAYLOAD = "payload";
-    public static final String TOKEN = "token";
+    private static final String JWT_SECRET_KEY = "#isdreamgo$";
 
     public static <T> String createToken(T object, long time) {
         try {
@@ -40,9 +40,10 @@ public class JWTUtil {
         }
     }
 
-    public static <T> T deciphering(String token, Class<T> clazz) {
+    public static <T> T deciphering(Object token, Class<T> clazz) {
         try {
-            final Claims claims = Jwts.parser().setSigningKey(JWT_SECRET_KEY).parseClaimsJws(token).getBody();
+
+            final Claims claims = Jwts.parser().setSigningKey(JWT_SECRET_KEY).parseClaimsJws((String) token).getBody();
             Long expire =  (long) claims.get(JWT_EXPIRE);
             Long currentTimeMillis = System.currentTimeMillis();
             if (expire.compareTo(currentTimeMillis) < 0 ) {

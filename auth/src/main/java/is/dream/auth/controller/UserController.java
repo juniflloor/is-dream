@@ -15,25 +15,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @PostMapping( value = "/login")
-    public Result<Boolean> login(@RequestBody User user){
+    public Result<Object> login(@RequestBody User user){
 
         return null;
     }
 
     @PostMapping( value = "/register")
-    public Result<Boolean> register(@RequestBody User user){
+    public Result<Object> register(@RequestBody User user){
 
         return null;
     }
 
     @PostMapping( value = "/logout")
-    public Result<Boolean> logout(@RequestBody User user){
+    public Result<Object> logout(@RequestBody User user){
 
         return null;
     }
 
     @PostMapping( value = "/isLogin")
-    public Result<Boolean> isLogin(@RequestBody User user){
+    public Result<Object> isLogin(@RequestBody User user){
 
         return null;
     }

@@ -9,3 +9,5 @@ primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 ALTER table  user add password varchar(32) not null COMMENT '用户密码';
+
+ALTER table  user add token varchar(128)  COMMENT '用户登录令牌';

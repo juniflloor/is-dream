@@ -1,5 +1,6 @@
 package is.dream.auth.service;
 
+import is.dream.common.Result;
 import is.dream.dao.entiry.User;
 
 /**
@@ -9,12 +10,12 @@ import is.dream.dao.entiry.User;
  */
 public interface UserBusinessService {
 
-     User login();
+     Result<Object> login(User user);
 
-     User register();
+     Result<Object> register(User user);
 
-     User logout();
+     Result<Object> logout(User user);
 
-     Boolean isLogin();
+     Result<Object> isLogin(String token);
 
 }

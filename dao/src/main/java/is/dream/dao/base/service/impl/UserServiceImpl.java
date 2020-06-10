@@ -21,4 +21,9 @@ public class UserServiceImpl implements UserService {
     public User getByUserNameAndPassword(String userName, String password){
         return userDao.getByUserNameAndPassword(userName,password);
     }
+
+    @Override
+    public void updateUserToken(String userId, String token) {
+        userDao.updateUserToken(userId,token);
+    }
 }

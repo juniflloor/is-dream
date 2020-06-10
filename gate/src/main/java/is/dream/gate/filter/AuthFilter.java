@@ -49,15 +49,17 @@ public class AuthFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         Object token = request.getHeader(JWTUtil.TOKEN);
         String uri = request.getRequestURI();
-        if (!ObjectUtils.isEmpty(token)) {
-            // TODO skip login url
-            return null;
-        }
+        Boolean tokenIsLawful = checkTokenIsLawful(token);
 
         if (uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER)) {
             return  null;
         }
 
         return null;
+    }
+
+    private boolean checkTokenIsLawful (Object token) {
+
+        return true;
     }
 }

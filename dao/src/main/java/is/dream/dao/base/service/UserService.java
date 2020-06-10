@@ -9,4 +9,6 @@ import is.dream.dao.entiry.User;
  */
 public interface UserService {
     User getByUserNameAndPassword(String userName, String password);
+
+    void updateUserToken(String userId,String token);
 }
