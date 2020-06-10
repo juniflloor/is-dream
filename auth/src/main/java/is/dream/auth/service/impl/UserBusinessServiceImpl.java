@@ -11,10 +11,7 @@ import is.dream.dao.entiry.User;
 public class UserBusinessServiceImpl implements UserBusinessService {
 
     @Override
-    public User login() {
-
-        return null;
-    }
+    public User login() { return null; }
 
     @Override
     public User register() {

@@ -20,6 +20,7 @@
         <module>dao</module>
         <module>common</module>
         <module>auth</module>
+        <module>cache</module>
     </modules>
 
     <properties>
