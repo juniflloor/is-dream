@@ -28,3 +28,9 @@ zuul:
     dream-auth:
       path: /auth/**
       serviceId: dream-auth
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

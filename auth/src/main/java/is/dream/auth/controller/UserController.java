@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserBusinessService userBusinessService;
 
-    @PostMapping( value = "/login")
+    @GetMapping( value = "/login")
     public Result<Object> login(@RequestParam("userName") String userName,@RequestParam("password") String password){
 
         return userBusinessService.login(userName,password);

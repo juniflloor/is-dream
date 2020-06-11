@@ -6,8 +6,6 @@ spring:
 
 server:
   port: 10910
-  servlet:
-    context-path: /auth
 
 eureka:
   instance:
