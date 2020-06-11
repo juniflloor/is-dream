@@ -10,7 +10,7 @@ import is.dream.dao.entiry.User;
  */
 public interface UserBusinessService {
 
-     Result<Object> login(User user);
+     Result<Object> login(String userName, String password);
 
      Result<Object> register(User user);
 

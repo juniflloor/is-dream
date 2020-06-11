@@ -26,12 +26,13 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     private RedisUtils redisUtils;
 
     @Override
-    public Result<Object> login(User user) {
+    public Result<Object> login(String userName, String password) {
 
-        if (ObjectUtils.isEmpty(user)) {
+        if (ObjectUtils.isEmpty(userName) || ObjectUtils.isEmpty(password)) {
             return Result.PARAM_FAIL;
         }
-        User dbUser = userService.getByUserNameAndPassword(user.getUserName(), user.getPassword());
+
+        User dbUser = userService.getByUserNameAndPassword(userName, password);
         if (ObjectUtils.isEmpty(dbUser)) {
             return Result.USER_ERROR;
         }

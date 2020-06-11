@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 1.0
  * @date 2020/6/11 2:32
  */
-@FeignClient( value = "DREAM-AUTH" )
+@FeignClient( value = "dream-auth" )
 public interface AuthFegin {
 
     @PostMapping( value = "" )
