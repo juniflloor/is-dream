@@ -11,6 +11,16 @@
 
     <artifactId>common</artifactId>
 
+    <properties>
+        <maven.deploy.skip>false</maven.deploy.skip>
+
+        <alibaba-fastjson.version>1.2.59</alibaba-fastjson.version>
+        <javaee-api.version>8.0</javaee-api.version>
+        <ribbon-core.version>2.7.17</ribbon-core.version>
+        <feign-core.version>10.4.0</feign-core.version>
+    </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -26,6 +36,20 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon-core</artifactId>
+            <version>${ribbon-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-core</artifactId>
+            <version>${feign-core.version}</version>
         </dependency>
     </dependencies>
 

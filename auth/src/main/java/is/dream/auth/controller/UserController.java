@@ -2,9 +2,9 @@ package is.dream.auth.controller;
 
 import is.dream.auth.service.UserBusinessService;
 import is.dream.common.Result;
+import is.dream.common.exception.BusinessException;
 import is.dream.dao.entiry.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,7 +20,7 @@ public class UserController {
     private UserBusinessService userBusinessService;
 
     @GetMapping( value = "/login")
-    public Result<Object> login(@RequestParam("userName") String userName,@RequestParam("password") String password){
+    public Result<Object> login(@RequestParam("userName") String userName,@RequestParam("password") String password) throws BusinessException {
 
         return userBusinessService.login(userName,password);
     }
@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @PostMapping( value = "/isLawful")
-    public Result<Object> isLawful(@RequestParam("token") String token){
+    public Result<Object> isLawful(@RequestParam("token") String token) throws BusinessException {
         return userBusinessService.isLawful(token);
     }
 }

@@ -57,6 +57,7 @@ public class AuthFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         Object token = request.getHeader(JWTUtil.TOKEN);
         String uri = request.getRequestURI();
+        System.out.println("=========================>" + uri);
         Boolean isNoAuthenticationUrl = uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER);
         if (ObjectUtils.isEmpty(token) && isNoAuthenticationUrl) {
             return null;

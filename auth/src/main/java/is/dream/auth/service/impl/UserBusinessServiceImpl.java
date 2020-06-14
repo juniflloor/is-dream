@@ -4,6 +4,8 @@ import is.dream.auth.service.UserBusinessService;
 import is.dream.cache.constants.CacheConstants;
 import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
+import is.dream.common.exception.BusinessException;
+import is.dream.common.exception.BusinessExceptionCode;
 import is.dream.common.utils.JWTUtil;
 import is.dream.dao.base.service.UserService;
 import is.dream.dao.entiry.User;
@@ -26,22 +28,23 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     private RedisUtils redisUtils;
 
     @Override
-    public Result<Object> login(String userName, String password) {
+    public Result<Object> login(String userName, String password) throws BusinessException {
 
+        Result<Object> result = Result.OK;
         if (ObjectUtils.isEmpty(userName) || ObjectUtils.isEmpty(password)) {
-            return Result.PARAM_FAIL;
+            throw new BusinessException(BusinessExceptionCode.PARAM_FAIL);
         }
 
         User dbUser = userService.getByUserNameAndPassword(userName, password);
         if (ObjectUtils.isEmpty(dbUser)) {
-            return Result.USER_ERROR;
+            throw new BusinessException(BusinessExceptionCode.USER_ERROR);
         }
 
         String token = JWTUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
-        userService.updateUserToken(dbUser.getUserId(),token);
+        userService.updateUserToken(dbUser.getUserId(), token.substring(0,50));
         redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getUserId(),token, CacheConstants.USER_TOKEN_EXPIRE);
-
-        return Result.OK;
+        result.setData(dbUser);
+        return result;
     }
 
     @Override
@@ -58,26 +61,26 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     public Result<Object> isLogin(String token) { return null; }
 
     @Override
-    public Result<Object> isLawful(String token) {
+    public Result<Object> isLawful(String token) throws BusinessException {
 
         Result result = Result.OK;
         User user = JWTUtil.deciphering(token,User.class);
         if (ObjectUtils.isEmpty(user)) {
-            return Result.ERROR_TOKEN;
+            throw new BusinessException(BusinessExceptionCode.ERROR_TOKEN);
         }
         result.setData(user);
         Object redisVersion = redisUtils.get(CacheConstants.REDIS_START_VERSION);
         if (!ObjectUtils.isEmpty(redisVersion)) {
             String cacheToken =  (String) redisUtils.get(CacheConstants.USER_TOKEN_REDIS_PREFIX + user.getUserId());
             if (!token.equals(cacheToken)) {
-                return Result.ERROR_TOKEN;
+                throw new BusinessException(BusinessExceptionCode.ERROR_TOKEN);
             }
             return  result;
         }
 
         User dbUser = userService.getByUserId(user.getUserId());
         if (!token.equals(dbUser.getToken())) {
-            return Result.ERROR_TOKEN;
+            throw new BusinessException(BusinessExceptionCode.ERROR_TOKEN);
         }
 
         return result;

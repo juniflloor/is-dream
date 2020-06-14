@@ -1,8 +1,10 @@
 package is.dream.common;
 
 
+import is.dream.common.exception.CommonExceptionCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author chendongzhao
@@ -11,6 +13,7 @@ import lombok.Data;
  * A uniform entity format for the request response
  */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Result<T>{
 
@@ -20,11 +23,19 @@ public class Result<T>{
 
     private T data;
 
+    public static Result ofFail(CommonExceptionCode resultEnum) {
+        Result result = new Result();
+        result.code = resultEnum.getCode();
+        result.message = resultEnum.getMessage();
+        return result;
+    }
+
+    public static Result ofFail(String code, String message) {
+        Result result = new Result();
+        result.code = code;
+        result.message = message;
+        return result;
+    }
+
     public static final Result OK = new Result<String>("0","SUCCESS","成功");
-
-    public static final Result PARAM_FAIL = new Result<String>("1","参数错误","");
-
-    public static final Result USER_ERROR = new Result<String>("2","用户命或者密码错误","");
-
-    public static final Result ERROR_TOKEN = new Result<String>("3","令牌错误","");
 }
