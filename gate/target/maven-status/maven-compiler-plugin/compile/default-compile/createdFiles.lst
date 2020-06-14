@@ -2,3 +2,4 @@ is\dream\gate\filter\AuthFilter.class
 is\dream\gate\contants\URLConstant.class
 is\dream\GateApplication.class
 is\dream\gate\fegin\AuthFegin.class
+is\dream\gate\filter\ExceptionFilter.class

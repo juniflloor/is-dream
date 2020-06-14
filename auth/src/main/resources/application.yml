@@ -19,3 +19,9 @@ eureka:
 ribbon:
   eureka:
     enabled: true
+
+
+zuul:
+  SendErrorFilter:
+    post:
+      disable: true

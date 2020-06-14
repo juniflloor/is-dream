@@ -55,7 +55,12 @@ public enum CommonExceptionCode {
     /**
      * rpc调用异常
      */
-    RPC_ERROR("RPC-510", "网络出问题啦！");
+    RPC_ERROR("RPC-510", "网络出问题啦！"),
+
+    /**
+     * 路由異常
+     */
+    ZUUL_ERROR("ZUUL-500", "理由問題");
 
     private String code;
 

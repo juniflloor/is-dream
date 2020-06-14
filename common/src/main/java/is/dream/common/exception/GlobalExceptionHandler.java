@@ -1,6 +1,7 @@
 package is.dream.common.exception;
 
 import com.netflix.client.ClientException;
+import com.netflix.zuul.exception.ZuulException;
 import feign.FeignException;
 import is.dream.common.Result;
 import org.springframework.context.MessageSource;
@@ -87,6 +88,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = ClientException.class)
     public Result handlerClientException(ClientException e) throws Throwable {
         return Result.ofFail(CommonExceptionCode.RPC_ERROR);
+    }
+
+    /**
+     * ZuulException 类捕获
+     */
+    @ExceptionHandler(value = ZuulException.class)
+    public Result handlerZuulException(ZuulException e) throws Throwable {
+        return Result.ofFail(CommonExceptionCode.ZUUL_ERROR);
     }
 
     /**
