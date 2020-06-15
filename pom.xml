@@ -21,6 +21,7 @@
         <module>common</module>
         <module>auth</module>
         <module>cache</module>
+        <module>media</module>
     </modules>
 
     <properties>
