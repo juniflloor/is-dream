@@ -5,7 +5,6 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import is.dream.common.Result;
 import is.dream.common.exception.BaseBusinessException;
-import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.JWTUtil;
 import is.dream.gate.contants.URLConstant;
 import is.dream.gate.fegin.AuthFegin;

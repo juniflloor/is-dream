@@ -39,7 +39,7 @@ public class MediaUtil {
     public final static String[] AUDIO_TYPE = { "AAC" };
 
     /**
-     * 视频帧抽取时的默认时间点，第10s（秒）
+     *  视频帧抽取时的默认时间点，第10s（秒）
      * （Time类构造参数的单位:ms）
      */
     private static final Time DEFAULT_TIME = new Time(0, 0, 10);

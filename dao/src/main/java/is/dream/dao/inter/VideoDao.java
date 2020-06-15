@@ -18,10 +18,12 @@ public interface VideoDao {
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "name", column = "name"),
+            @Result(property = "title", column = "title"),
             @Result(property = "uploadTime", column = "uploadTime"),
             @Result(property = "coverImageUrl", column = "coverImageUrl"),
             @Result(property = "duration", column = "duration"),
             @Result(property = "playUrl", column = "playUrl"),
+            @Result(property = "suffix", column = "suffix"),
             @Result(property = "watchCount", column = "watchCount"),
             @Result(property = "commentCount", column = "commentCount"),
             @Result(property = "startNumber", column = "startNumber"),

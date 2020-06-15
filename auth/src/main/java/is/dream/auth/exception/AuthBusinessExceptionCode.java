@@ -7,9 +7,9 @@ package is.dream.auth.exception;
  */
 public enum AuthBusinessExceptionCode {
 
-    USER_ERROR ("2","用户命或者密码错误"),
+    USER_ERROR ("A_100000","用户命或者密码错误"),
 
-    ERROR_TOKEN ("3","令牌無效"),;
+    ERROR_TOKEN ("A_100001","令牌無效"),;
 
     private String code;
 

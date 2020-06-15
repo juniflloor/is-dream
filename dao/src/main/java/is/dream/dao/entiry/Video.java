@@ -16,13 +16,17 @@ public class Video {
 
     private String name;
 
-    private String uploadTime;
+    private String title;
+
+    private Date uploadTime;
 
     private String coverImageUrl;
 
     private String duration;;
 
     private String playUrl;
+
+    private String suffix;
 
     private long watchCount;
 
