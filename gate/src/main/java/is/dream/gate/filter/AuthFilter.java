@@ -4,8 +4,8 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import is.dream.common.Result;
-import is.dream.common.exception.BusinessException;
-import is.dream.common.exception.BusinessExceptionCode;
+import is.dream.common.exception.BaseBusinessException;
+import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.JWTUtil;
 import is.dream.gate.contants.URLConstant;
 import is.dream.gate.fegin.AuthFegin;
@@ -66,16 +66,12 @@ public class AuthFilter extends ZuulFilter {
             if (ObjectUtils.isEmpty(token) && isNoAuthenticationUrl) {
                 return null;
             }
-            Boolean tokenIsLawful = true;
+
             Result result = authFegin.checkTokenIsLawful((String) token);
             if (!result.getCode().equals(Result.OK.getCode())) {
-                tokenIsLawful = false;
+                throw new BaseBusinessException(result.getCode(),result.getMessage());
             }
 
-            if (!tokenIsLawful) {
-                // 抛出异常
-                throw new BusinessException(BusinessExceptionCode.ERROR_TOKEN);
-            }
         } catch (Exception e) {
             requestContext.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             requestContext.set("error.exception", e);

@@ -1,7 +1,7 @@
 package is.dream.common;
 
 
-import is.dream.common.exception.CommonExceptionCode;
+import is.dream.common.exception.BaseExceptionCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +23,7 @@ public class Result<T>{
 
     private T data;
 
-    public static Result ofFail(CommonExceptionCode resultEnum) {
+    public static Result ofFail(BaseExceptionCode resultEnum) {
         Result result = new Result();
         result.code = resultEnum.getCode();
         result.message = resultEnum.getMessage();

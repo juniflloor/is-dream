@@ -1,17 +1,15 @@
-package is.dream.common.exception;
+package is.dream.auth.exception;
 
 /**
  * @author chendongzhao
  * @version 1.0
- * @date 2020/6/15 1:37
+ * @date 2020/6/16 4:23
  */
-public enum BusinessExceptionCode {
-
-    PARAM_FAIL ("1","参数错误"),
+public enum AuthBusinessExceptionCode {
 
     USER_ERROR ("2","用户命或者密码错误"),
 
-    ERROR_TOKEN ("3","令牌错误");
+    ERROR_TOKEN ("3","令牌無效"),;
 
     private String code;
 
@@ -25,7 +23,7 @@ public enum BusinessExceptionCode {
         return message;
     }
 
-    BusinessExceptionCode(String code, String message) {
+    AuthBusinessExceptionCode(String code, String message) {
         this.code = code;
         this.message = message;
     }

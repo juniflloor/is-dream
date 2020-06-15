@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public Result handlerNoHandlerFoundException(NoHandlerFoundException e) throws Throwable {
 
-        return Result.ofFail(CommonExceptionCode.NOT_FOUND);
+        return Result.ofFail(BaseExceptionCode.NOT_FOUND);
     }
 
     /**
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Result handlerHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) throws Throwable {
-        return Result.ofFail(CommonExceptionCode.METHOD_NOT_ALLOWED);
+        return Result.ofFail(BaseExceptionCode.METHOD_NOT_ALLOWED);
     }
 
     /**
@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
     public Result handlerHttpMediaTypeNotSupportedException(HttpMediaTypeNotSupportedException e) throws Throwable {
-        return Result.ofFail(CommonExceptionCode.UNSUPPORTED_MEDIA_TYPE);
+        return Result.ofFail(BaseExceptionCode.UNSUPPORTED_MEDIA_TYPE);
     }
 
     /**
@@ -70,7 +70,7 @@ public class GlobalExceptionHandler {
         if (cause instanceof FeignException) {
             return handlerFeignException((FeignException) cause);
         }
-        return Result.ofFail(CommonExceptionCode.EXCEPTION);
+        return Result.ofFail(BaseExceptionCode.EXCEPTION);
     }
 
     /**
@@ -78,7 +78,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = FeignException.class)
     public Result handlerFeignException(FeignException e) throws Throwable {
-        return Result.ofFail(CommonExceptionCode.RPC_ERROR);
+        return Result.ofFail(BaseExceptionCode.RPC_ERROR);
     }
 
     /**
@@ -86,7 +86,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = ClientException.class)
     public Result handlerClientException(ClientException e) throws Throwable {
-        return Result.ofFail(CommonExceptionCode.RPC_ERROR);
+        return Result.ofFail(BaseExceptionCode.RPC_ERROR);
     }
 
     /**
@@ -94,14 +94,14 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = ZuulException.class)
     public Result handlerZuulException(ZuulException e) throws Throwable {
-        return Result.ofFail(CommonExceptionCode.ZUUL_ERROR);
+        return Result.ofFail(BaseExceptionCode.ZUUL_ERROR);
     }
 
     /**
      * BusinessException 类捕获
      */
-    @ExceptionHandler(value = BusinessException.class)
-    public Result handlerBusinessException(BusinessException e) throws Throwable {
+    @ExceptionHandler(value = BaseBusinessException.class)
+    public Result handlerBusinessException(BaseBusinessException e) throws Throwable {
         return Result.ofFail(e.getCode(), e.getMessage());
     }
 

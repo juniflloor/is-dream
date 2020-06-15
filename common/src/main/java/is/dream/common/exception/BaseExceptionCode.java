@@ -7,9 +7,20 @@ import org.springframework.http.HttpStatus;
  * @version 1.0
  * @date 2020/6/15 1:17
  */
-public enum CommonExceptionCode {
+public enum BaseExceptionCode {
 
-     /** 404 Web 服务器找不到您所请求的文件或脚本。请检查URL 以确保路径正确。
+    /**
+     * 無效用戶
+     */
+    B_NOT_INVALID("B_NOT_INVALID_100000", "用戶無效"),
+
+    /**
+     * 無效用戶
+     */
+    B_PARAM_FAIL("B_PARAM_FAIL_100001", "參數錯誤"),
+
+
+    /** 404 Web 服务器找不到您所请求的文件或脚本。请检查URL 以确保路径正确。
             */
     NOT_FOUND("CLOUD-404",
               String.format("哎呀，无法找到这个资源啦(%s)", HttpStatus.NOT_FOUND.getReasonPhrase())),
@@ -74,7 +85,7 @@ public enum CommonExceptionCode {
         return message;
     }
 
-    CommonExceptionCode(String code, String message) {
+    BaseExceptionCode(String code, String message) {
         this.code = code;
         this.message = message;
     }

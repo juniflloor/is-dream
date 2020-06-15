@@ -1,13 +1,11 @@
 package is.dream.common.exception;
 
-import is.dream.common.Result;
-
 /**
  * @author chendongzhao
  * @version 1.0
  * @date 2020/6/15 1:34
  */
-public class BusinessException extends Exception{
+public class BaseBusinessException extends Exception{
 
 
     private String code;
@@ -20,14 +18,14 @@ public class BusinessException extends Exception{
      * @param code 值
      * @param message  详情
      */
-    public BusinessException(String code, String message) {
+    public BaseBusinessException(String code, String message) {
         super(message);
         this.code = code;
     }
 
-    public BusinessException(BusinessExceptionCode businessExceptionCode) {
-        super(businessExceptionCode.getMessage());
-        this.code = businessExceptionCode.getCode();
+    public BaseBusinessException(BaseExceptionCode baseExceptionCode) {
+        super(baseExceptionCode.getMessage());
+        this.code = baseExceptionCode.getCode();
     }
 
 }

@@ -1,7 +1,7 @@
 package is.dream.auth.service;
 
 import is.dream.common.Result;
-import is.dream.common.exception.BusinessException;
+import is.dream.common.exception.BaseBusinessException;
 import is.dream.dao.entiry.User;
 
 /**
@@ -11,7 +11,7 @@ import is.dream.dao.entiry.User;
  */
 public interface UserBusinessService {
 
-     Result<Object> login(String userName, String password) throws BusinessException;
+     Result<Object> login(String userName, String password) throws BaseBusinessException;
 
      Result<Object> register(User user);
 
@@ -19,6 +19,6 @@ public interface UserBusinessService {
 
      Result<Object> isLogin(String token);
 
-     Result<Object> isLawful(String token) throws BusinessException;
+     Result<Object> isLawful(String token) throws BaseBusinessException;
 
 }
