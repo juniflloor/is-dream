@@ -23,6 +23,9 @@ zuul:
     dream-auth:
       path: /auth/**
       serviceId: dream-auth
+    dream-media:
+      path: /media/**
+      serviceId: dream-media
 
 ribbon:
   ReadTimeout: 60000

@@ -82,13 +82,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(targetFile);
-
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
-
         videoService.saveFull(video);
-
         return Result.OK;
-
     }
 }
