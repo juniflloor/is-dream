@@ -11,7 +11,13 @@ public enum MediaBusinessExceptionCode {
 
     VIDEO_FORMAT_FAIL ("M_100001","文件格式不正确"),
 
-    VIDEO_UPLOAD_FAIL ("M_100002","文件上傳失敗"),
+    VIDEO_FILE_IS_NULL("M_100002","视频文件为空"),
+
+    VIDEO_TITLE_IS_NULL ("M_100003","视频标题为空"),
+
+    VIDEO_SAVE_SOURCE_FAIL ("M_100004","保存原视频失败"),
+
+    VIDEO_TRANS_TARGET_FAIL ("M_100004","视频转换失败"),
 
     ;
 

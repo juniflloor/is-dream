@@ -14,7 +14,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class VideoConfig {
 
-    private String localPath;
+    /**
+     * 上传视频存放路径
+     */
+    private String sourcePath;
 
+    /**
+     * 视频解析后存放路径
+     */
+    private String targetPath;
+
+    /**
+     * 视频访问地址
+     */
     private String accessUrl;
 }

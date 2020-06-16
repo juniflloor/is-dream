@@ -59,7 +59,7 @@ public class MediaUtil {
      * FFmpeg程序执行路径
      * 当前系统安装好ffmpeg程序并配置好相应的环境变量后，值为ffmpeg可执行程序文件在实际系统中的绝对路径
      */
-    private static String FFMPEG_PATH = "/usr/bin/ffmpeg"; // /usr/bin/ffmpeg
+    private static String FFMPEG_PATH = "/usr/bin/ffmpeg";
 
 
     /**
@@ -118,22 +118,49 @@ public class MediaUtil {
         return true;
     }
 
-    /**
-     * 测试当前多媒体工具是否可以正常工作
-     * @return
-     */
-    public static boolean isExecutable() {
-        File ffmpegFile = new File(FFMPEG_PATH);
-        if (!ffmpegFile.exists()) {
-            return false;
+    //ffmpeg -i 1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list playlist.m3u8 -segment_time 10 D:\test\out%03d.ts
+    public static void convertM3u8(File fileInput, File fileOutPut, String outName){
+
+        if (null == fileOutPut) {
+            throw new RuntimeException("转换后的视频路径为空，请检查转换后的视频存放路径是否正确");
         }
-        List<String> cmds = new ArrayList<>(1);
-        cmds.add("-version");
-        String ffmpegVersionStr = executeCommand(cmds);
-        if (StringUtils.isEmpty(ffmpegVersionStr)) {
-            return false;
+
+        if (!fileOutPut.exists()) {
+            try {
+                fileOutPut.createNewFile();
+            } catch (IOException e) {
+
+            }
         }
-        return true;
+
+        String format = getFormat(fileInput);
+        if (!isLegalFormat(format, VIDEO_TYPE)) {
+            throw new RuntimeException("无法解析的视频格式：" + format);
+        }
+
+        try {
+            List<String> commond = new ArrayList<String>();
+            commond.add("-i");
+            commond.add(fileInput.getAbsolutePath());
+            commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
+            commond.add("libx264"); // 指定使用x264编码器
+            commond.add("-acodec");
+            commond.add("mp3");
+            commond.add("-map");
+            commond.add("0");
+            commond.add("-f");
+            commond.add("ssegment");
+            commond.add("-segment_format");
+            commond.add("mpegts");
+            commond.add("-segment_list");
+            commond.add(outName + ".m3u8");
+            commond.add("-segment_time");
+            commond.add("5");
+            commond.add(fileOutPut.getAbsolutePath() + outName + "%03d.ts");
+            executeCommand(commond);
+        }catch (Exception e) {
+
+        }
     }
 
 
@@ -186,92 +213,6 @@ public class MediaUtil {
     }
 
 
-    /**
-     * 视频转换
-     *
-     * 注意指定视频分辨率时，宽度和高度必须同时有值；
-     *
-     * @param fileInput 源视频路径
-     * @param fileOutPut 转换后的视频输出路径
-     * @param withAudio 是否保留音频；true-保留，false-不保留
-     * @param crf 指定视频的质量系数（值越小，视频质量越高，体积越大；该系数取值为0-51，直接影响视频码率大小）,取值参考：CrfValueEnum.code
-     * @param preset 指定视频的编码速率（速率越快压缩率越低），取值参考：PresetVauleEnum.presetValue
-     * @param width 视频宽度；为空则保持源视频宽度
-     * @param height 视频高度；为空则保持源视频高度
-     */
-    public static void convertVideo(File fileInput, File fileOutPut, boolean withAudio, Integer crf, String preset, Integer width, Integer height) {
-        if (null == fileInput || !fileInput.exists()) {
-            throw new RuntimeException("源视频文件不存在，请检查源视频路径");
-        }
-        if (null == fileOutPut) {
-            throw new RuntimeException("转换后的视频路径为空，请检查转换后的视频存放路径是否正确");
-        }
-
-        if (!fileOutPut.exists()) {
-            try {
-                fileOutPut.createNewFile();
-            } catch (IOException e) {
-
-            }
-        }
-
-        String format = getFormat(fileInput);
-        if (!isLegalFormat(format, VIDEO_TYPE)) {
-            throw new RuntimeException("无法解析的视频格式：" + format);
-        }
-
-        List<String> commond = new ArrayList<String>();
-        commond.add("-i");
-        commond.add(fileInput.getAbsolutePath());
-        if (!withAudio) { // 设置是否保留音频
-            commond.add("-an");  // 去掉音频
-        }
-        if (null != width && width > 0 && null != height && height > 0) { // 设置分辨率
-            commond.add("-s");
-            String resolution = width.toString() + "x" + height.toString();
-            commond.add(resolution);
-        }
-
-        commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
-        commond.add("libx264"); // 指定使用x264编码器
-        commond.add("-preset"); // 当使用x264时需要带上该参数
-        commond.add(preset); // 指定preset参数
-        commond.add("-crf"); // 指定输出视频质量
-        commond.add(crf.toString()); // 视频质量参数，值越小视频质量越高
-        commond.add("-y"); // 当已存在输出文件时，不提示是否覆盖
-        commond.add(fileOutPut.getAbsolutePath());
-
-        executeCommand(commond);
-    }
-
-
-    /**
-     * 视频帧抽取
-     * 默认抽取第10秒的帧画面
-     * 抽取的帧图片默认宽度为300px
-     *
-     * 转换后的文件路径以.gif结尾时，默认截取从第10s开始，后10s以内的帧画面来生成gif
-     *
-     * @param videoFile 源视频路径
-     * @param fileOutPut 转换后的文件路径
-     */
-    public static void cutVideoFrame(File videoFile, File fileOutPut) {
-        cutVideoFrame(videoFile, fileOutPut, DEFAULT_TIME);
-    }
-
-    /**
-     * 视频帧抽取（抽取指定时间点的帧画面）
-     * 抽取的视频帧图片宽度默认为320px
-     *
-     * 转换后的文件路径以.gif结尾时，默认截取从指定时间点开始，后10s以内的帧画面来生成gif
-     *
-     * @param videoFile 源视频路径
-     * @param fileOutPut 转换后的文件路径
-     * @param time 指定抽取视频帧的时间点（单位：s）
-     */
-    public static void cutVideoFrame(File videoFile, File fileOutPut, Time time) {
-        cutVideoFrame(videoFile, fileOutPut, time, DEFAULT_WIDTH);
-    }
 
     /**
      * 视频帧抽取（抽取指定时间点、指定宽度值的帧画面）
