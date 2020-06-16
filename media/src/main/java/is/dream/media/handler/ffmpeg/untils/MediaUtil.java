@@ -59,7 +59,7 @@ public class MediaUtil {
      * FFmpeg程序执行路径
      * 当前系统安装好ffmpeg程序并配置好相应的环境变量后，值为ffmpeg可执行程序文件在实际系统中的绝对路径
      */
-    private static String FFMPEG_PATH = "/usr/bin/ffmpeg";
+    private static String FFMPEG_PATH = "D:\\Learn\\Soft\\ffmpeg-20200612-38737b3-win64-static\\ffmpeg-20200612-38737b3-win64-static\\bin";
 
 
     /**
@@ -118,6 +118,7 @@ public class MediaUtil {
         return true;
     }
 
+    //-i D:\media\1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list D:\media\1\1.m3u8 -segment_time 5 D:\media\1\1%03d.ts
     //ffmpeg -i 1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list playlist.m3u8 -segment_time 10 D:\test\out%03d.ts
     public static void convertM3u8(File fileInput, File fileOutPut, String outName){
 
@@ -140,6 +141,7 @@ public class MediaUtil {
 
         try {
             List<String> commond = new ArrayList<String>();
+            commond.add("ffmpeg");
             commond.add("-i");
             commond.add(fileInput.getAbsolutePath());
             commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
@@ -153,10 +155,10 @@ public class MediaUtil {
             commond.add("-segment_format");
             commond.add("mpegts");
             commond.add("-segment_list");
-            commond.add(outName + ".m3u8");
+            commond.add(fileOutPut.getAbsolutePath() + "\\" + outName + ".m3u8");
             commond.add("-segment_time");
             commond.add("5");
-            commond.add(fileOutPut.getAbsolutePath() + outName + "%03d.ts");
+            commond.add(fileOutPut.getAbsolutePath() + "\\" + outName + "%03d.ts");
             executeCommand(commond);
         }catch (Exception e) {
 
@@ -174,8 +176,8 @@ public class MediaUtil {
             return null;
         }
         LinkedList<String> ffmpegCmds = new LinkedList<>(commonds);
-        ffmpegCmds.addFirst(FFMPEG_PATH); // 设置ffmpeg程序所在路径
-
+        String cmdStr = Arrays.toString(ffmpegCmds.toArray()).replace(",", "");
+        System.out.println("执行命令 ========》" + cmdStr);
         Runtime runtime = Runtime.getRuntime();
         Process ffmpeg = null;
         try {
@@ -196,8 +198,8 @@ public class MediaUtil {
             String result = errorStream.stringBuffer.append(inputStream.stringBuffer).toString();
 
             // 输出执行的命令信息
-            String cmdStr = Arrays.toString(ffmpegCmds.toArray()).replace(",", "");
             String resultStr = StringUtils.isEmpty(result) ? "【异常】" : "正常";
+            System.out.println("执行结果 ========》" + resultStr);
             return result;
 
         } catch (Exception e) {

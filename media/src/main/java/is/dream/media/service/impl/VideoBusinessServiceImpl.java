@@ -47,31 +47,32 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         }
 
 
-        File upload = new File(videoConfig.getSourcePath());
-        if (!upload.exists()) {
-            upload.mkdirs();
-        }
-
         Video video = new Video();
         String originalFilename = file.getOriginalFilename();
+        String fileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
         File sourceFile = null, targetFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
             file.transferTo(sourceFile);
         } catch (Exception e) {
-            SystemUtils.deleteLocalFiles(sourceFile);
+            if (!ObjectUtils.isEmpty(sourceFile)) {
+                SystemUtils.deleteLocalFiles(sourceFile);
+            }
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
         }
 
         try {
-            targetFile = new File(videoConfig.getTargetPath() + originalFilename );
-            MediaUtil.convertM3u8(sourceFile, targetFile, originalFilename);
+            targetFile = new File(videoConfig.getTargetPath() + fileName );
+            if (!targetFile.exists()) {
+                targetFile.mkdirs();
+            }
+            MediaUtil.convertM3u8(sourceFile, targetFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
             video.setName(originalFilename);
-            VideoMetaInfo videoMetaInfo = MediaUtil.getVideoMetaInfo(sourceFile);
-            video.setDuration(videoMetaInfo.getDuration());
+//            VideoMetaInfo videoMetaInfo = MediaUtil.getVideoMetaInfo(sourceFile);
+//            video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
             video.setCoverImageUrl("");
             String playUrl = videoConfig.getAccessUrl() + originalFilename + ".m3u8";
@@ -84,7 +85,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             SystemUtils.deleteLocalFiles(targetFile);
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
-        videoService.saveFull(video);
+//        videoService.saveFull(video);
         return Result.OK;
     }
 }

@@ -3,6 +3,13 @@ spring:
     name: dream-media
   profiles:
     include: mysql
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 100MB
+      max-file-size: 500MB
+      file-size-threshold: 20MB
+
 
 server:
   port: 10920
@@ -28,5 +35,6 @@ zuul:
 
 
 video:
-  local-path:  D:/media
-  access-url:  http://localhost/media/
+  sourcePath:  D:\\media\\
+  targetPath:  D:\\media\\
+  accessUrl:  http://localhost/media/

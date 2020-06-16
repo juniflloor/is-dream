@@ -4,9 +4,7 @@ import is.dream.common.Result;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -22,7 +20,7 @@ public class VideoController {
     private VideoBusinessService videoBusinessService;
 
     @PostMapping("/upload")
-    public Result<Object> upload(MultipartFile file, String title, String introduction) throws MediaBusinessException{
+    public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title, @RequestParam("introduction") String introduction) throws MediaBusinessException{
 
         return videoBusinessService.upload(file, title, introduction);
     }
