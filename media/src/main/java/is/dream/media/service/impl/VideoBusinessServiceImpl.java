@@ -37,7 +37,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     private VideoService videoService;
 
     @Override
-    public Result<Object> upload(MultipartFile file, String title,String introduction) throws MediaBusinessException {
+    public Result<Object> upload(MultipartFile file, String title,String introduction,String startTime) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_FILE_IS_NULL);
@@ -47,11 +47,10 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TITLE_IS_NULL);
         }
 
-
         Video video = new Video();
         String originalFilename = file.getOriginalFilename();
         String fileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
-        File sourceFile = null, targetFile = null;
+        File sourceFile = null, targetFile = null, imageFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
             file.transferTo(sourceFile);
@@ -62,13 +61,25 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
         }
 
+        VideoMetaInfo videoMetaInfo = null;
+        try {
+            imageFile = new File(videoConfig.getCoverImagePath() + fileName );
+            if (!imageFile.exists()) {
+                imageFile.mkdirs();
+            }
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime);
+        } catch (Exception e) {
+            if (!ObjectUtils.isEmpty(imageFile)) {
+                SystemUtils.deleteLocalFiles(imageFile);
+            }
+            throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_CUT_IMAGE_FAIL);
+        }
+
         try {
             targetFile = new File(videoConfig.getTargetPath() + fileName );
             if (!targetFile.exists()) {
                 targetFile.mkdirs();
             }
-            VideoMetaInfo videoMetaInfo = MediaUtil.getVideoMetaInfo(sourceFile);
-
             convertM3u8(sourceFile, targetFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
@@ -76,7 +87,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setName(originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl("");
+            video.setCoverImageUrl(videoConfig.getAccessUrl() + fileName + "jpg");
             String playUrl = videoConfig.getAccessUrl() + originalFilename + ".m3u8";
             video.setPlayUrl(playUrl);
             Timestamp timestamp = new Timestamp(new Date().getTime());

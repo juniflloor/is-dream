@@ -168,35 +168,32 @@ public class MediaUtil {
      *
      * 转换后的文件路径以.gif结尾时，默认截取从指定时间点开始，后10s以内的帧画面来生成gif
      *
-     * @param videoFile 源视频路径
-     * @param fileOutPut 转换后的文件路径
-     * @param time 指定要抽取第几秒的视频帧（单位：s）
-     * @param width 抽取的视频帧图片的宽度（单位：px）
+     * @param sourceFile 源视频路径
+     * @param targetFile 转换后的文件路径
      */
-    public static void cutVideoFrame(File videoFile, File fileOutPut, Time time, int width, VideoMetaInfo videoMetaInfo) {
+    public static VideoMetaInfo cutVideoFrame(File sourceFile, File targetFile, String startTime) {
 
-        int height = width * videoMetaInfo.getHeight() / videoMetaInfo.getWidth(); // 根据宽度计算适合的高度，防止画面变形
-        String fileOutPutPath = fileOutPut.getAbsolutePath();
+        String fileOutPutPath = targetFile.getAbsolutePath();
         // 输出路径不是以.gif结尾，抽取并生成一张静态图
-        try {
-            List<String> commond = new ArrayList<String>();
-            commond.add("ffmpeg");
-            commond.add("-ss");
-            commond.add(time.toString());
-            commond.add("-vframes");
-            commond.add("1");
-            commond.add("-i");
-            commond.add(videoFile.getAbsolutePath());
-            commond.add("-an");
-            commond.add("-f");
-            commond.add("image2");
-            commond.add("-s");
-            commond.add(width + "*" + height);
-            commond.add(fileOutPutPath);
-            executeCommand(commond);
-        } catch (Exception e) {
+        List<String> commond = new ArrayList<String>();
+        commond.add("ffmpeg");
+        commond.add("-i");
+        commond.add(sourceFile.getAbsolutePath());
+        commond.add("-ss");
+        commond.add(startTime);
+        commond.add("-t");
+        commond.add("1");
+        commond.add("-r");
+        commond.add("1");
+        commond.add("-q:v");
+        commond.add("2");
+        commond.add("-f");
+        commond.add("image2");
+        commond.add(fileOutPutPath);
+        String parseResult = executeCommand(commond);
+        VideoMetaInfo videoMetaInfo = getVideoMetaInfo(parseResult,sourceFile);
+        return videoMetaInfo;
 
-        }
     }
 
     /**
@@ -213,16 +210,11 @@ public class MediaUtil {
      * Stream #0:0(eng): Video: h264【视频编码格式】 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080【视频分辨率，宽x高】, 18684【视频比特率】 kb/s, 25【视频帧率】 fps, 25 tbr, 25k tbn, 50 tbc (default)
      * Stream #0:1(eng): Audio: aac【音频格式】 (LC) (mp4a / 0x6134706D), 48000【音频采样率】 Hz, stereo, fltp, 317【音频码率】 kb/s (default)
      *
-     * @param videoFile 源视频路径
+     * @param parseResult 需要解析的字符串
      * @return 视频的基本信息，解码失败时返回null
      */
-    public static VideoMetaInfo getVideoMetaInfo(File videoFile) {
-        if (null == videoFile || !videoFile.exists()) {
+    public static VideoMetaInfo getVideoMetaInfo(String parseResult, File videoFile) {
 
-            return null;
-        }
-
-        String parseResult = getMetaInfoFromFFmpeg(videoFile);
         Matcher durationMacher = durationPattern.matcher(parseResult);
         Matcher videoStreamMacher = videoStreamPattern.matcher(parseResult);
         Matcher videoMusicStreamMacher = musicStreamPattern.matcher(parseResult);
@@ -241,38 +233,34 @@ public class MediaUtil {
         Long samplerate = 0L; // 音频采样率
         Integer musicBitrate = 0; // 音频码率
 
-        try {
-            // 匹配视频播放时长等信息
-            if (durationMacher.find()) {
-                long hours = (long)Integer.parseInt(durationMacher.group(1));
-                long minutes = (long)Integer.parseInt(durationMacher.group(2));
-                long seconds = (long)Integer.parseInt(durationMacher.group(3));
-                long dec = (long)Integer.parseInt(durationMacher.group(4));
-                duration = dec * 100L + seconds * 1000L + minutes * 60L * 1000L + hours * 60L * 60L * 1000L;
-                //String startTime = durationMacher.group(5) + "ms";
-                videoBitrate = Integer.parseInt(durationMacher.group(6));
-            }
-            // 匹配视频分辨率等信息
-            if (videoStreamMacher.find()) {
-                videoEncoder = videoStreamMacher.group(1);
-                String s2 = videoStreamMacher.group(2);
-                videoWidth = Integer.parseInt(videoStreamMacher.group(3));
-                videoHeight = Integer.parseInt(videoStreamMacher.group(4));
-                String s5 = videoStreamMacher.group(5);
-                videoFramerate = Float.parseFloat(videoStreamMacher.group(6));
-            }
-            // 匹配视频中的音频信息
-            if (videoMusicStreamMacher.find()) {
-                musicFormat = videoMusicStreamMacher.group(1); // 提取音频格式
-                //String s2 = videoMusicStreamMacher.group(2);
-                samplerate = Long.parseLong(videoMusicStreamMacher.group(3)); // 提取采样率
-                //String s4 = videoMusicStreamMacher.group(4);
-                //String s5 = videoMusicStreamMacher.group(5);
-                musicBitrate = Integer.parseInt(videoMusicStreamMacher.group(6)); // 提取比特率
-            }
-        } catch (Exception e) {
 
-            return null;
+            // 匹配视频播放时长等信息
+        if (durationMacher.find()) {
+            long hours = (long)Integer.parseInt(durationMacher.group(1));
+            long minutes = (long)Integer.parseInt(durationMacher.group(2));
+            long seconds = (long)Integer.parseInt(durationMacher.group(3));
+            long dec = (long)Integer.parseInt(durationMacher.group(4));
+            duration = dec * 100L + seconds * 1000L + minutes * 60L * 1000L + hours * 60L * 60L * 1000L;
+            //String startTime = durationMacher.group(5) + "ms";
+            videoBitrate = Integer.parseInt(durationMacher.group(6));
+        }
+        // 匹配视频分辨率等信息
+        if (videoStreamMacher.find()) {
+            videoEncoder = videoStreamMacher.group(1);
+            String s2 = videoStreamMacher.group(2);
+            videoWidth = Integer.parseInt(videoStreamMacher.group(3));
+            videoHeight = Integer.parseInt(videoStreamMacher.group(4));
+            String s5 = videoStreamMacher.group(5);
+            videoFramerate = Float.parseFloat(videoStreamMacher.group(6));
+        }
+        // 匹配视频中的音频信息
+        if (videoMusicStreamMacher.find()) {
+            musicFormat = videoMusicStreamMacher.group(1); // 提取音频格式
+            //String s2 = videoMusicStreamMacher.group(2);
+            samplerate = Long.parseLong(videoMusicStreamMacher.group(3)); // 提取采样率
+            //String s4 = videoMusicStreamMacher.group(4);
+            //String s5 = videoMusicStreamMacher.group(5);
+            musicBitrate = Integer.parseInt(videoMusicStreamMacher.group(6)); // 提取比特率
         }
 
         // 封装视频中的音频信息
@@ -294,23 +282,6 @@ public class MediaUtil {
         videoMetaInfo.setMusicMetaInfo(musicMetaInfo);
 
         return videoMetaInfo;
-    }
-
-    /**
-     * 使用FFmpeg的"-i"命令来解析视频信息
-     * @param inputFile 源媒体文件
-     * @return 解析后的结果字符串，解析失败时为空
-     */
-    public static String getMetaInfoFromFFmpeg(File inputFile) {
-        if (inputFile == null || !inputFile.exists()) {
-            throw new RuntimeException("源媒体文件不存在，源媒体文件路径： ");
-        }
-        List<String> commond = new ArrayList<String>();
-        commond.add("ffmpeg");
-        commond.add("-i");
-        commond.add(inputFile.getAbsolutePath());
-        String executeResult = MediaUtil.executeCommand(commond);
-        return executeResult;
     }
 
     /**

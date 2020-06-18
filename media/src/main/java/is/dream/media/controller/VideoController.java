@@ -20,9 +20,10 @@ public class VideoController {
     private VideoBusinessService videoBusinessService;
 
     @PostMapping("/upload")
-    public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title, @RequestParam("introduction") String introduction) throws MediaBusinessException{
+    public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title,
+                                 @RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime) throws MediaBusinessException{
 
-        return videoBusinessService.upload(file, title, introduction);
+        return videoBusinessService.upload(file, title, introduction,startTime);
     }
 
 }

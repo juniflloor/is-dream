@@ -17,7 +17,9 @@ public enum MediaBusinessExceptionCode {
 
     VIDEO_SAVE_SOURCE_FAIL ("M_100004","保存原视频失败"),
 
-    VIDEO_TRANS_TARGET_FAIL ("M_100004","视频转换失败"),
+    VIDEO_TRANS_TARGET_FAIL ("M_100005","视频转换失败"),
+
+    VIDEO_CUT_IMAGE_FAIL ("M_100006","视频截取图片失败"),
 
     ;
 
