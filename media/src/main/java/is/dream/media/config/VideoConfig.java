@@ -25,6 +25,11 @@ public class VideoConfig {
     private String targetPath;
 
     /**
+     * 视频解截取封面图片 (正常的应该自己制作然后上传)
+     */
+    private String coverImagePath;
+
+    /**
      * 视频访问地址
      */
     private String accessUrl;

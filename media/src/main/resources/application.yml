@@ -37,4 +37,12 @@ zuul:
 video:
   sourcePath:  D:\\media\\
   targetPath:  D:\\media\\
+  coverImagePath:  D:\\media\\image
   accessUrl:  http://localhost/media/
+
+task:
+  pool:
+    corePoolSize: 20
+    maxPoolSize: 40
+    keepAliveSeconds: 300
+    queueCapacity: 1000

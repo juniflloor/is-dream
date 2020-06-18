@@ -24,4 +24,5 @@ public class VideoController {
 
         return videoBusinessService.upload(file, title, introduction);
     }
+
 }
