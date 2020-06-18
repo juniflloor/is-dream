@@ -13,6 +13,7 @@ ALTER table  user add password varchar(32) not null COMMENT '用户密码';
 ALTER table  user add token varchar(128)  COMMENT '用户登录令牌';
 
 
+
 --视频表
 
 CREATE TABLE `video` (
