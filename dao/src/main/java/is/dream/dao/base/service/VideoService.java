@@ -11,8 +11,6 @@ import java.util.List;
  */
 public interface VideoService {
 
-    Video getByUserId(String id);
-
     void saveFull(Video video);
 
     Video getHighestScore();
@@ -20,4 +18,6 @@ public interface VideoService {
     Video getHottest();
 
     List<Video> getNewest();
+
+    Video getVideoById(String id);
 }

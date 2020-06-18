@@ -120,8 +120,12 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         data.addAll(videoService.getNewest());
         data.add(videoService.getHottest());
         data.add(videoService.getHighestScore());
-
         return Result.setSpecialData(data);
+    }
+
+    @Override
+    public Result<Object> getVideoById(String id) {
+        return Result.setSpecialData(videoService.getVideoById(id));
     }
 
 }

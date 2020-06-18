@@ -34,4 +34,11 @@ public class VideoController {
         return videoBusinessService.getSift();
     }
 
+    @CrossOrigin
+    @GetMapping("/getVideoById")
+    public Result<Object> getVideoById(@RequestParam("id") String id) {
+
+        return videoBusinessService.getVideoById(id);
+    }
+
 }

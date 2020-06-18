@@ -3,7 +3,6 @@ package is.dream.dao.base.service.impl;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.Video;
 import is.dream.dao.inter.VideoDao;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +18,6 @@ public class VideoServiceImpl implements VideoService {
 
     @Autowired
     private VideoDao videoDao;
-
-    @Override
-    public Video getByUserId(String id){
-        return videoDao.getByUserId(id);
-    }
 
     @Override
     public void saveFull(Video video){
@@ -43,5 +37,10 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<Video> getNewest(){
         return videoDao.getNewest();
+    }
+
+    @Override
+    public Video getVideoById(String id) {
+        return videoDao.getVideoById(id);
     }
 }

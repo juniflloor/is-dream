@@ -35,9 +35,6 @@ public interface VideoDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Update("SELECT * FROM video WHERE id = #{id}")
-    Video getByUserId(String id);
-
     @Insert("INSERT into Video values(#{id},#{name},#{type},#{tag},#{title},#{year},#{coverImageUrl},#{duration},#{playUrl}," +
             "#{suffix},#{watchCount},#{commentCount},#{startNumber},#{likeCount},#{notLikeCount},#{introduction}," +
             "#{associatedCommentsId},#{createTime},#{updateTime})")
@@ -49,6 +46,9 @@ public interface VideoDao {
     @Select("Select * from video ORDER BY watchCount DESC limit 1")
     Video getHottest();
 
-    @Select("Select * from video ORDER BY createTime DESC limit 3")
+    @Select("Select * from video ORDER BY createTime DESC limit 4")
     List<Video> getNewest();
+
+    @Select("SELECT * FROM video WHERE id = #{id}")
+    Video getVideoById(String id);
 }
