@@ -19,7 +19,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -53,7 +55,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         Video video = new Video();
         String originalFilename = file.getOriginalFilename();
         String fileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
-        File sourceFile = null, targetFile = null, imageFile = null;
+        File sourceFile = null, videoFile = null, imageFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
             file.transferTo(sourceFile);
@@ -79,11 +81,11 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         }
 
         try {
-            targetFile = new File(videoConfig.getTargetPath() + fileName );
-            if (!targetFile.exists()) {
-                targetFile.mkdirs();
+            videoFile = new File(videoConfig.getTargetPath() + fileName );
+            if (!videoFile.exists()) {
+                videoFile.mkdirs();
             }
-            asyncService.convertM3u8(sourceFile, targetFile, fileName);
+            asyncService.convertM3u8(sourceFile, videoFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
@@ -93,7 +95,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setType("1");
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl(videoConfig.getAccessUrl() + "image/" + fileName + ".jpg");
+            video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + ".jpg");
             String playUrl = videoConfig.getAccessUrl() + fileName + ".m3u8";
             video.setPlayUrl(playUrl);
             Timestamp timestamp = new Timestamp(new Date().getTime());
@@ -102,7 +104,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             videoService.saveFull(video);
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
-            SystemUtils.deleteLocalFiles(targetFile);
+            SystemUtils.deleteLocalFiles(videoFile);
             if (!ObjectUtils.isEmpty(imageFile)) {
                 SystemUtils.deleteLocalFiles(imageFile);
             }
@@ -111,5 +113,15 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         return Result.OK;
     }
 
+    @Override
+    public Result<Object> getSift() {
+
+        List<Video> data = new ArrayList<>();
+        data.addAll(videoService.getNewest());
+        data.add(videoService.getHottest());
+        data.add(videoService.getHighestScore());
+
+        return Result.setSpecialData(data);
+    }
 
 }

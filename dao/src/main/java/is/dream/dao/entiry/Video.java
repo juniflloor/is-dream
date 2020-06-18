@@ -18,6 +18,8 @@ public class Video {
 
     private String type;
 
+    private String tag;
+
     private String title;
 
     private String year;

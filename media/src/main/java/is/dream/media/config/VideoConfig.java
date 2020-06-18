@@ -30,6 +30,11 @@ public class VideoConfig {
     private String coverImagePath;
 
     /**
+     * 封面图片url
+     */
+    private String imageUrl;
+
+    /**
      * 视频访问地址
      */
     private String accessUrl;

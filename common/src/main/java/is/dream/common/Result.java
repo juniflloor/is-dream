@@ -5,6 +5,7 @@ import is.dream.common.exception.BaseExceptionCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.util.ObjectUtils;
 
 /**
  * @author chendongzhao
@@ -37,5 +38,11 @@ public class Result<T>{
         return result;
     }
 
-    public static final Result OK = new Result<String>("0","SUCCESS","成功");
+    public static final Result OK = new Result<>("0","SUCCESS","成功");
+
+    public static Result setSpecialData(Object data) {
+        Result result = OK;
+        result.data = data;
+        return result;
+    }
 }

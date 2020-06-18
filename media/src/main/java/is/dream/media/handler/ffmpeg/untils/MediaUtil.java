@@ -189,7 +189,7 @@ public class MediaUtil {
         commond.add("2");
         commond.add("-f");
         commond.add("image2");
-        commond.add(fileOutPutPath + "\\"+ ".jpg");
+        commond.add(fileOutPutPath + "\\"+ fileName + ".jpg");
         String parseResult = executeCommand(commond);
         VideoMetaInfo videoMetaInfo = getVideoMetaInfo(parseResult,sourceFile);
         return videoMetaInfo;

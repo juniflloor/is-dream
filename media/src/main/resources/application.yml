@@ -35,10 +35,11 @@ zuul:
 
 
 video:
-  sourcePath:  D:\\media\\
-  targetPath:  D:\\media\\
-  coverImagePath:  D:\\media\\image\\
+  sourcePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\
+  targetPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\video\\
+  coverImagePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
   accessUrl:  http://localhost/media/
+  imageUrl:  http://localhost/image/
 
 task:
   pool:
