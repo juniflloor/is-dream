@@ -36,3 +36,7 @@ CREATE TABLE `video` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='视频信息表'
 
+ALTER table  video modify id varchar(100) COMMENT '主键';
+
+ALTER table  video modify `associatedCommentsId` varchar(36) NULL  COMMENT '评论关联编号';
+

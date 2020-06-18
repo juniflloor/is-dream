@@ -9,9 +9,9 @@ import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.handler.ffmpeg.entity.VideoMetaInfo;
 import is.dream.media.handler.ffmpeg.untils.MediaUtil;
 import is.dream.media.handler.ffmpeg.untils.SystemUtils;
+import is.dream.media.service.AsyncService;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -35,6 +35,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
     @Autowired
     private VideoService videoService;
+
+    @Autowired
+    private AsyncService asyncService;
 
     @Override
     public Result<Object> upload(MultipartFile file, String title,String introduction,String startTime) throws MediaBusinessException {
@@ -80,13 +83,14 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!targetFile.exists()) {
                 targetFile.mkdirs();
             }
-//            convertM3u8(sourceFile, targetFile, fileName);
+            asyncService.convertM3u8(sourceFile, targetFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
             video.setName(originalFilename);
             video.setYear("2020");
             video.setSuffix("mp4");
+            video.setType("1");
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
             video.setCoverImageUrl(videoConfig.getAccessUrl() + "image/" + fileName + ".jpg");
@@ -107,12 +111,5 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         return Result.OK;
     }
 
-    @Async("myTaskAsyncPool")
-    private void convertM3u8(File sourceFile, File targetFile, String fileName) throws MediaBusinessException {
-        try {
-            MediaUtil.convertM3u8(sourceFile, targetFile, fileName);
-        } catch (Exception e) {
-            throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
-        }
-    }
+
 }
