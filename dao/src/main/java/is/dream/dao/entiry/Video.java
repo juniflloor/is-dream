@@ -52,9 +52,9 @@ public class Video {
 
     public void setDefault(){
         this.setLikeCount(0);
-        this.setCommentCount(0);
+        this.setCommentCount(0l);
         this.setNotLikeCount(0);
         this.setStartNumber(0);
-        this.setWatchCount(0);
+        this.setWatchCount(0l);
     }
 }

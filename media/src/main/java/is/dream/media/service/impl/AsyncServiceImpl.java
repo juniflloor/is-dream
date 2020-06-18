@@ -18,8 +18,8 @@ public class AsyncServiceImpl implements AsyncService {
 
     @Async("myTaskAsyncPool")
     @Override
-    public void convertM3u8(File sourceFile, File targetFile, String fileName) throws MediaBusinessException {
+    public void convertM3u8(File sourceFile, File videoFile,File imageFile, String fileName) throws MediaBusinessException {
 
-        MediaUtil.convertM3u8(sourceFile, targetFile, fileName);
+        MediaUtil.convertM3u8(sourceFile, videoFile, imageFile, fileName);
     }
 }

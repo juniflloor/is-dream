@@ -5,7 +5,7 @@ package is.dream.common.exception;
  * @version 1.0
  * @date 2020/6/15 1:34
  */
-public class BaseBusinessException extends Exception{
+public class BaseBusinessException extends RuntimeException{
 
 
     private String code;

@@ -1,5 +1,7 @@
 package is.dream.media.handler.ffmpeg.untils;
 
+import is.dream.media.exception.MediaBusinessException;
+import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.handler.ffmpeg.entity.MusicMetaInfo;
 import is.dream.media.handler.ffmpeg.entity.VideoMetaInfo;
 import org.springframework.util.CollectionUtils;
@@ -81,10 +83,10 @@ public class MediaUtil {
 
 
     //ffmpeg -i 1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list playlist.m3u8 -segment_time 10 D:\test\out%03d.ts
-    public static void convertM3u8(File fileInput, File fileOutPut, String outName){
+    public static void convertM3u8(File sourceFile, File videoFile, File imageFile, String outName){
 
 
-        String format = getFormat(fileInput);
+        String format = getFormat(sourceFile);
         if (!isLegalFormat(format, VIDEO_TYPE)) {
             throw new RuntimeException("无法解析的视频格式：" + format);
         }
@@ -92,7 +94,7 @@ public class MediaUtil {
             List<String> commond = new ArrayList<String>();
             commond.add("ffmpeg");
             commond.add("-i");
-            commond.add(fileInput.getAbsolutePath());
+            commond.add(sourceFile.getAbsolutePath());
             commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
             commond.add("libx264"); // 指定使用x264编码器
             commond.add("-acodec");
@@ -104,13 +106,16 @@ public class MediaUtil {
             commond.add("-segment_format");
             commond.add("mpegts");
             commond.add("-segment_list");
-            commond.add(fileOutPut.getAbsolutePath() + "\\" + outName + ".m3u8");
+            commond.add(videoFile.getAbsolutePath() + "\\" + outName + ".m3u8");
             commond.add("-segment_time");
             commond.add("5");
-            commond.add(fileOutPut.getAbsolutePath() + "\\" + outName + "%03d.ts");
+            commond.add(videoFile.getAbsolutePath() + "\\" + outName + "%03d.ts");
             executeCommand(commond);
         }catch (Exception e) {
-
+            SystemUtils.deleteLocalFiles(sourceFile);
+            SystemUtils.deleteLocalFiles(videoFile);
+            SystemUtils.deleteLocalFiles(imageFile);
+            throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
     }
 

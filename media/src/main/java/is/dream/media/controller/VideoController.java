@@ -26,7 +26,8 @@ public class VideoController {
         return videoBusinessService.upload(file, title, introduction,startTime);
     }
 
-    @PostMapping("/getSift")
+    @CrossOrigin
+    @GetMapping("/getSift")
     public Result<Object> getSift() {
 
         return videoBusinessService.getSift();

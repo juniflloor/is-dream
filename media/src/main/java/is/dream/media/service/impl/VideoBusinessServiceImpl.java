@@ -73,6 +73,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
                 imageFile.mkdirs();
             }
             videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime,fileName);
+
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(imageFile)) {
                 SystemUtils.deleteLocalFiles(imageFile);
@@ -85,11 +86,12 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }
-            asyncService.convertM3u8(sourceFile, videoFile, fileName);
+            asyncService.convertM3u8(sourceFile, videoFile,imageFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
             video.setName(originalFilename);
+            video.setTag("1");
             video.setYear("2020");
             video.setSuffix("mp4");
             video.setType("1");
@@ -105,9 +107,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
-            if (!ObjectUtils.isEmpty(imageFile)) {
-                SystemUtils.deleteLocalFiles(imageFile);
-            }
+            SystemUtils.deleteLocalFiles(imageFile);
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
         return Result.OK;
