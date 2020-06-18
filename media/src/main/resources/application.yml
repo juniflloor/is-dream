@@ -37,7 +37,7 @@ zuul:
 video:
   sourcePath:  D:\\media\\
   targetPath:  D:\\media\\
-  coverImagePath:  D:\\media\\image
+  coverImagePath:  D:\\media\\image\\
   accessUrl:  http://localhost/media/
 
 task:

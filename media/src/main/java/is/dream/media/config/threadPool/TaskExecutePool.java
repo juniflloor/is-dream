@@ -3,7 +3,6 @@ package is.dream.media.config.threadPool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
@@ -15,7 +14,6 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @date 2020/6/18 13:03
  */
 @Configuration
-@EnableAsync
 public class TaskExecutePool {
 
     @Autowired

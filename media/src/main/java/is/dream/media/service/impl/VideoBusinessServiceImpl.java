@@ -67,7 +67,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!imageFile.exists()) {
                 imageFile.mkdirs();
             }
-            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime);
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime,fileName);
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(imageFile)) {
                 SystemUtils.deleteLocalFiles(imageFile);
@@ -80,25 +80,30 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!targetFile.exists()) {
                 targetFile.mkdirs();
             }
-            convertM3u8(sourceFile, targetFile, fileName);
+//            convertM3u8(sourceFile, targetFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
             video.setName(originalFilename);
+            video.setYear("2020");
+            video.setSuffix("mp4");
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl(videoConfig.getAccessUrl() + fileName + "jpg");
-            String playUrl = videoConfig.getAccessUrl() + originalFilename + ".m3u8";
+            video.setCoverImageUrl(videoConfig.getAccessUrl() + "image/" + fileName + ".jpg");
+            String playUrl = videoConfig.getAccessUrl() + fileName + ".m3u8";
             video.setPlayUrl(playUrl);
             Timestamp timestamp = new Timestamp(new Date().getTime());
             video.setCreateTime(timestamp);
             video.setUpdateTime(timestamp);
+            videoService.saveFull(video);
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(targetFile);
+            if (!ObjectUtils.isEmpty(imageFile)) {
+                SystemUtils.deleteLocalFiles(imageFile);
+            }
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
-        videoService.saveFull(video);
         return Result.OK;
     }
 
