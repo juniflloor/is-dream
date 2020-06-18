@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface VideoBusinessService {
 
-    Result<Object> upload(MultipartFile file, String title,String introduction,String startTime) throws MediaBusinessException;
+    Result<Object> upload(MultipartFile file, String title,String introduction,String startTime,int width,int high) throws MediaBusinessException;
 
     Result<Object> getSift();
 }

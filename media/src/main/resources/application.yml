@@ -38,7 +38,7 @@ video:
   sourcePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\
   targetPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\video\\
   coverImagePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
-  accessUrl:  http://localhost/media/
+  accessUrl:  http://localhost/video/
   imageUrl:  http://localhost/image/
 
 task:

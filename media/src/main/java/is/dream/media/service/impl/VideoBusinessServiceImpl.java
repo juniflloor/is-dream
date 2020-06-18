@@ -42,7 +42,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     private AsyncService asyncService;
 
     @Override
-    public Result<Object> upload(MultipartFile file, String title,String introduction,String startTime) throws MediaBusinessException {
+    public Result<Object> upload(MultipartFile file, String title,String introduction,String startTime,int width,int high) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_FILE_IS_NULL);
@@ -72,7 +72,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!imageFile.exists()) {
                 imageFile.mkdirs();
             }
-            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime,fileName);
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime,fileName,width,high);
 
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(imageFile)) {
@@ -97,8 +97,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setType("1");
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + ".jpg");
-            String playUrl = videoConfig.getAccessUrl() + fileName + ".m3u8";
+            video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + "/" +fileName + ".jpg");
+            String playUrl = videoConfig.getAccessUrl() + fileName + "/" +fileName + ".m3u8";
             video.setPlayUrl(playUrl);
             Timestamp timestamp = new Timestamp(new Date().getTime());
             video.setCreateTime(timestamp);
