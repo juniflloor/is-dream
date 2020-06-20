@@ -17,12 +17,12 @@ public class ImageUiSettingServiceImpl implements ImageUiSettingService {
     @Autowired
     private ImageUiSettingDao imageUiSettingDao;
 
-    @Autowired
+    @Override
     public void updateByImageLocation(String imageLocation,String width, String high){
         imageUiSettingDao.updateByImageLocation(imageLocation,width,high);
     }
 
-    @Autowired
+    @Override
     public void save(ImageUiSetting imageUiSetting){
         imageUiSettingDao.save(imageUiSetting);
     }

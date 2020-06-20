@@ -6,7 +6,6 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author chendongzhao
@@ -14,7 +13,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date 2020/6/11 18:36
  */
 @Configuration
-@EnableSwagger2
 public class SwaggerConfig {
     @Bean
     public Docket api() {

@@ -1,7 +1,6 @@
 package is.dream.dao.base.service;
 
 import is.dream.dao.entiry.ImageUiSetting;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author chendongzhao

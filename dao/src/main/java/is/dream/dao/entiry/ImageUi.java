@@ -2,7 +2,7 @@ package is.dream.dao.entiry;
 
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
  * @author chendongzhao
@@ -20,7 +20,7 @@ public class ImageUi {
 
     private String associatedVideoId;
 
-    private Timestamp createTime;
+    private Date createTime;
 
-    private Timestamp updateTime;
+    private Date updateTime;
 }

@@ -18,9 +18,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -101,9 +100,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + "/" +fileName + ".jpg");
             String playUrl = videoConfig.getAccessUrl() + fileName + "/" +fileName + ".m3u8";
             video.setPlayUrl(playUrl);
-            Timestamp timestamp = new Timestamp(new Date().getTime());
-            video.setCreateTime(timestamp);
-            video.setUpdateTime(timestamp);
+            Date currentDate = new Date(System.currentTimeMillis());
+            video.setCreateTime(currentDate);
+            video.setUpdateTime(currentDate);
             videoService.saveFull(video);
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);

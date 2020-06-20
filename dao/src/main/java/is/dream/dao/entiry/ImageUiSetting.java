@@ -1,8 +1,9 @@
 package is.dream.dao.entiry;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
  * @author chendongzhao
@@ -10,6 +11,7 @@ import java.sql.Timestamp;
  * @date 2020/6/21 4:09
  */
 @Data
+@AllArgsConstructor
 public class ImageUiSetting {
 
     private String id;
@@ -22,7 +24,7 @@ public class ImageUiSetting {
 
     private String remark;
 
-    private Timestamp createTime;
+    private Date createTime;
 
-    private Timestamp updateTime;
+    private Date updateTime;
 }

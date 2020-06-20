@@ -2,7 +2,7 @@ package is.dream.dao.entiry;
 
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
  * @author chendongzhao
@@ -48,9 +48,9 @@ public class Video {
 
     private String associatedCommentsId;
 
-    private Timestamp createTime;
+    private Date createTime;
 
-    private Timestamp updateTime;
+    private Date updateTime;
 
     public void setDefault(){
         this.setLikeCount(0);

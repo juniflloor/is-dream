@@ -21,7 +21,7 @@ public interface ImageUiSettingDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{createTime},#{updateTime}")
+    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{remark},#{createTime},#{updateTime}")
     void save(ImageUiSetting imageUiSetting);
 
     @Update("UPDATE ImageUiSetting set width=#{width},high=#{high} WHERE imageLocation=#{imageLocation}")

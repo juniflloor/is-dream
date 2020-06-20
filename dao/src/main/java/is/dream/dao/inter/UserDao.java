@@ -2,7 +2,6 @@ package is.dream.dao.inter;
 
 import is.dream.dao.entiry.User;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Component;
 
 /**
  * @author chendongzhao
