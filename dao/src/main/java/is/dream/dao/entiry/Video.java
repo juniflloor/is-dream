@@ -16,6 +16,8 @@ public class Video {
 
     private String name;
 
+    private String sourceLocation;
+
     private String type;
 
     private String tag;

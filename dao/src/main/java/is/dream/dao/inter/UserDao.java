@@ -27,6 +27,6 @@ public interface UserDao {
     @Update("UPDATE user set token = #{token} WHERE userId = #{userId}")
     void updateUserToken(String userId,String token);
 
-    @Update("SELECT * FROM user WHERE userId = #{userId}")
+    @Select("SELECT * FROM user WHERE userId = #{userId}")
     User getByUserId(String userId);;
 }

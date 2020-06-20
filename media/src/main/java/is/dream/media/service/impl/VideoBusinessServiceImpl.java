@@ -95,6 +95,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setYear("2020");
             video.setSuffix("mp4");
             video.setType("1");
+            video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
             video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + "/" +fileName + ".jpg");

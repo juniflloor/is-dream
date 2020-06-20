@@ -12,7 +12,7 @@ ALTER table  user add password varchar(32) not null COMMENT '用户密码';
 
 ALTER table  user add token varchar(128)  COMMENT '用户登录令牌';
 
-
+ALTER table  video add sourceLocation varchar(100) NOT NULL COMMENT '视频保存位置' after name;
 
 --视频表
 
@@ -39,3 +39,29 @@ CREATE TABLE `video` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='视频信息表'
 
+--图片前端位置表
+
+CREATE TABLE `imageUi` (
+  `id` varchar(100) NOT NULL COMMENT '主键',
+  `imageUrl` varchar(36) NOT NULL COMMENT '图片显示的地址',
+  `associatedImageUiSettingId` varchar(36) DEFAULT NULL COMMENT '关联图片设置编号',
+  `associatedVideoId` varchar(36) DEFAULT NULL COMMENT '关联视频编号',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片前端位置表'
+
+
+--图片参数设置表
+
+CREATE TABLE `imageUiSetting` (
+  `id` varchar(100) NOT NULL COMMENT '主键',
+  `imageLocation` varchar(150) NOT NULL COMMENT '图片前端位置',
+  `width` varchar(20) NOT NULL COMMENT '图片宽度',
+  `hight` varchar(26) NOT NULL COMMENT '图片高度',
+  `remark` varchar(26) NOT NULL COMMENT '说明',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `imageLocation` (`imageLocation`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片参数设置表'
