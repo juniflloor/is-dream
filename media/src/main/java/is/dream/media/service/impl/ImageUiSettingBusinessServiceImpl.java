@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.sql.Date;
+import java.util.UUID;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -22,12 +25,13 @@ public class ImageUiSettingBusinessServiceImpl implements ImageUiSettingBusiness
     private ImageUiSettingService imageUiSettingService;
 
     @Override
-    public Result<Object> updateByImageLocation(String imageLocation, String width, String high){
+    public Result<Object> updateByImageLocation(String imageLocation, int width, int high,String remark){
 
         if (StringUtils.isEmpty(imageLocation) || StringUtils.isEmpty(width) || StringUtils.isEmpty(high)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
-        imageUiSettingService.updateByImageLocation(imageLocation,width,high);
+        Date updateTime = new Date(System.currentTimeMillis());
+        imageUiSettingService.updateByImageLocation(imageLocation,width,high,remark,updateTime);
 
         return Result.OK;
     }
@@ -39,6 +43,9 @@ public class ImageUiSettingBusinessServiceImpl implements ImageUiSettingBusiness
             StringUtils.isEmpty(imageUiSetting.getImageLocation())) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
+        imageUiSetting.setId(UUID.randomUUID().toString());
+        imageUiSetting.setCreateTime(new Date(System.currentTimeMillis()));
+        imageUiSetting.setUpdateTime(new Date(System.currentTimeMillis()));
         imageUiSettingService.save(imageUiSetting);
 
         return Result.OK;

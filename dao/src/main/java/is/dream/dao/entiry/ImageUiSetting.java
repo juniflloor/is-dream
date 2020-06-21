@@ -1,5 +1,6 @@
 package is.dream.dao.entiry;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,15 +13,16 @@ import java.sql.Date;
  */
 @Data
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ImageUiSetting {
 
     private String id;
 
     private String imageLocation;
 
-    private String width;
+    private int width;
 
-    private String high;
+    private int high;
 
     private String remark;
 

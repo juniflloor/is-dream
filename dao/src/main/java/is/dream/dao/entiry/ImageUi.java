@@ -1,5 +1,6 @@
 package is.dream.dao.entiry;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.sql.Date;
@@ -10,6 +11,7 @@ import java.sql.Date;
  * @date 2020/6/21 3:15
  */
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ImageUi {
 
     private String id;

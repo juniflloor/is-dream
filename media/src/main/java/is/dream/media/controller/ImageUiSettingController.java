@@ -19,8 +19,9 @@ public class ImageUiSettingController {
     private ImageUiSettingBusinessService imageUiSettingBusinessService;
 
     @PostMapping("/updateByImageLocation")
-    public Result<Object> updateByImageLocation(@RequestParam("imageLocation") String imageLocation, @RequestParam("width") String width, @RequestParam("high") String high){
-        return imageUiSettingBusinessService.updateByImageLocation(imageLocation,width,high);
+    public Result<Object> updateByImageLocation(@RequestParam("imageLocation") String imageLocation, @RequestParam("width") int width,
+                                                @RequestParam("high") int high, @RequestParam("remark") String remark){
+        return imageUiSettingBusinessService.updateByImageLocation(imageLocation,width,high,remark);
     }
 
     @PostMapping("/save")

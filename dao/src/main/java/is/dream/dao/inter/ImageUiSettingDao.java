@@ -3,6 +3,8 @@ package is.dream.dao.inter;
 import is.dream.dao.entiry.ImageUiSetting;
 import org.apache.ibatis.annotations.*;
 
+import java.sql.Date;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -21,10 +23,10 @@ public interface ImageUiSettingDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{remark},#{createTime},#{updateTime}")
+    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{remark},#{createTime},#{updateTime})")
     void save(ImageUiSetting imageUiSetting);
 
-    @Update("UPDATE ImageUiSetting set width=#{width},high=#{high} WHERE imageLocation=#{imageLocation}")
-    void updateByImageLocation(String imageLocation,String width, String high);
+    @Update("UPDATE ImageUiSetting set width=#{width},high=#{high},remark=#{remark},updateTime=#{updateTime} WHERE imageLocation=#{imageLocation}")
+    void updateByImageLocation(String imageLocation, int width, int high,String remark,Date updateTime);
 
 }

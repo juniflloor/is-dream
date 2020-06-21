@@ -2,6 +2,8 @@ package is.dream.dao.base.service;
 
 import is.dream.dao.entiry.ImageUiSetting;
 
+import java.sql.Date;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -9,7 +11,7 @@ import is.dream.dao.entiry.ImageUiSetting;
  */
 public interface ImageUiSettingService {
 
-    void updateByImageLocation(String imageLocation,String width, String high);
+    void updateByImageLocation(String imageLocation, int width, int high,String remark,Date updateTime);
 
     void save(ImageUiSetting imageUiSetting);
 }
