@@ -3,10 +3,7 @@ package is.dream.media.controller;
 import is.dream.common.Result;
 import is.dream.media.service.ImageUiBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -21,6 +18,7 @@ public class ImageUiController {
     @Autowired
     private ImageUiBusinessService imageUiBusinessService;
 
+    @PostMapping("/generateImageUrl")
     public Result<Object> generateImageUrl(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title,
                                            @RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime,
                                            @RequestParam("width") int width,@RequestParam("high") int high, @RequestParam("imageLocation") String imageLocation){

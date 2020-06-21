@@ -151,8 +151,7 @@ public class MediaUtil {
             String result = errorStream.stringBuffer.append(inputStream.stringBuffer).toString();
 
             // 输出执行的命令信息
-            String resultStr = StringUtils.isEmpty(result) ? "【异常】" : "正常";
-            System.out.println("执行结果 ========》" + resultStr);
+            System.out.println("执行结果 ========》" + result);
             return result;
 
         } catch (Exception e) {

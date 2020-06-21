@@ -39,10 +39,9 @@ video:
   targetPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\video\\
   imageDefaultPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
   imageDefaultUrl:  http://localhost/defaultImage/
-  imageUIPath:  D:\\Learn\\Soft\\nginx-1.16.1\\html\\UI\\
+  imageUIPath:  D:\\Learn\\Soft\\nginx-1.16.1\\html\\ui\\
   imageUIUrl: http://localhost/uiImage/
   accessUrl:  http://localhost/video/
-
 
 task:
   pool:

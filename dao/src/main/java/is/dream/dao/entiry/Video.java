@@ -28,7 +28,7 @@ public class Video {
 
     private String year;
 
-    private String coverImageUrl;
+    private String defaultImageUrl;
 
     private Long duration;;
 

@@ -2,6 +2,7 @@ package is.dream.media.service.impl;
 
 import is.dream.common.Result;
 import is.dream.dao.base.service.VideoService;
+import is.dream.dao.entiry.ImageUi;
 import is.dream.dao.entiry.ImageUiSetting;
 import is.dream.dao.entiry.Video;
 import is.dream.media.config.VideoConfig;
@@ -70,6 +71,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
         }
 
+        ImageUi imageui = null;
         if (isGenerateUiImage) {
 
             try {
@@ -77,13 +79,19 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
                 if (!imageUIFile.exists()) {
                     imageUIFile.mkdirs();
                 }
-                MediaUtil.cutVideoFrame(sourceFile, imageDefaultFile, startTime, fileName, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
+                MediaUtil.cutVideoFrame(sourceFile, imageUIFile, startTime, fileName, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
             } catch (Exception e) {
                 if (!ObjectUtils.isEmpty(imageUIFile)) {
                     SystemUtils.deleteLocalFiles(imageUIFile);
                 }
                 throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
             }
+            imageui = new ImageUi();
+            imageui.setId(UUID.randomUUID().toString());
+            imageui.setImageUrl(videoConfig.getImageUIUrl() + imageUiSetting.getImageLocation() + "/" + fileName + ".jpg");
+            imageui.setAssociatedImageUiSettingId(imageUiSetting.getId());
+            imageui.setCreateTime(new Date(System.currentTimeMillis()));
+            imageui.setUpdateTime(new Date(System.currentTimeMillis()));
         }
 
         VideoMetaInfo videoMetaInfo = null;
@@ -118,13 +126,14 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl(videoConfig.getImageDefaultUrl() + fileName + "/" +fileName + ".jpg");
+            video.setDefaultImageUrl(videoConfig.getImageDefaultUrl() + fileName + "/" +fileName + ".jpg");
             String playUrl = videoConfig.getAccessUrl() + fileName + "/" +fileName + ".m3u8";
             video.setPlayUrl(playUrl);
             Date currentDate = new Date(System.currentTimeMillis());
             video.setCreateTime(currentDate);
             video.setUpdateTime(currentDate);
             videoService.saveFull(video);
+            imageui.setAssociatedImageUiSettingId(video.getId());
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
