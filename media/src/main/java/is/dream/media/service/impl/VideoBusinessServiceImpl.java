@@ -2,6 +2,7 @@ package is.dream.media.service.impl;
 
 import is.dream.common.Result;
 import is.dream.dao.base.service.VideoService;
+import is.dream.dao.entiry.ImageUiSetting;
 import is.dream.dao.entiry.Video;
 import is.dream.media.config.VideoConfig;
 import is.dream.media.exception.MediaBusinessException;
@@ -41,7 +42,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     private AsyncService asyncService;
 
     @Override
-    public Result<Object> upload(MultipartFile file, String title,String introduction,String startTime,int width,int high) throws MediaBusinessException {
+    public Result<Object> upload(MultipartFile file, String title, String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_FILE_IS_NULL);
@@ -51,10 +52,14 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TITLE_IS_NULL);
         }
 
+        if (isGenerateUiImage && StringUtils.isEmpty(imageUiSetting)) {
+            throw new MediaBusinessException(MediaBusinessExceptionCode.IMAGE_UI_SETTING_NOT_FOUND);
+        }
+
         Video video = new Video();
         String originalFilename = file.getOriginalFilename();
         String fileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
-        File sourceFile = null, videoFile = null, imageFile = null;
+        File sourceFile = null, videoFile = null, imageDefaultFile = null, imageUIFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
             file.transferTo(sourceFile);
@@ -65,17 +70,33 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
         }
 
+        if (isGenerateUiImage) {
+
+            try {
+                imageUIFile = new File(videoConfig.getImageUIPath() + imageUiSetting.getImageLocation());
+                if (!imageUIFile.exists()) {
+                    imageUIFile.mkdirs();
+                }
+                MediaUtil.cutVideoFrame(sourceFile, imageDefaultFile, startTime, fileName, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
+            } catch (Exception e) {
+                if (!ObjectUtils.isEmpty(imageUIFile)) {
+                    SystemUtils.deleteLocalFiles(imageUIFile);
+                }
+                throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_SAVE_SOURCE_FAIL);
+            }
+        }
+
         VideoMetaInfo videoMetaInfo = null;
         try {
-            imageFile = new File(videoConfig.getCoverImagePath() + fileName );
-            if (!imageFile.exists()) {
-                imageFile.mkdirs();
+            imageDefaultFile = new File(videoConfig.getImageDefaultPath() + fileName );
+            if (!imageDefaultFile.exists()) {
+                imageDefaultFile.mkdirs();
             }
-            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageFile,startTime,fileName,width,high);
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,fileName,width,high,true);
 
         } catch (Exception e) {
-            if (!ObjectUtils.isEmpty(imageFile)) {
-                SystemUtils.deleteLocalFiles(imageFile);
+            if (!ObjectUtils.isEmpty(imageDefaultFile)) {
+                SystemUtils.deleteLocalFiles(imageDefaultFile);
             }
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_CUT_IMAGE_FAIL);
         }
@@ -85,7 +106,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }
-            asyncService.convertM3u8(sourceFile, videoFile,imageFile, fileName);
+            asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, fileName);
             video.setDefault();
             video.setId(UUID.randomUUID().toString());
             video.setTitle(title);
@@ -97,7 +118,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setCoverImageUrl(videoConfig.getImageUrl() + fileName + "/" +fileName + ".jpg");
+            video.setCoverImageUrl(videoConfig.getImageDefaultUrl() + fileName + "/" +fileName + ".jpg");
             String playUrl = videoConfig.getAccessUrl() + fileName + "/" +fileName + ".m3u8";
             video.setPlayUrl(playUrl);
             Date currentDate = new Date(System.currentTimeMillis());
@@ -107,7 +128,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
-            SystemUtils.deleteLocalFiles(imageFile);
+            SystemUtils.deleteLocalFiles(imageDefaultFile);
+            SystemUtils.deleteLocalFiles(imageUIFile);
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
         return Result.OK;

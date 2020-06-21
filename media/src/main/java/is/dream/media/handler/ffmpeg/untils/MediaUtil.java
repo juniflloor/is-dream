@@ -176,7 +176,7 @@ public class MediaUtil {
      * @param sourceFile 源视频路径
      * @param targetFile 转换后的文件路径
      */
-    public static VideoMetaInfo cutVideoFrame(File sourceFile, File targetFile, String startTime, String fileName,int width,int high) {
+    public static VideoMetaInfo cutVideoFrame(File sourceFile, File targetFile, String startTime, String fileName,int width,int high,Boolean isReturnVideoMetaInfo) {
 
         String fileOutPutPath = targetFile.getAbsolutePath();
         // 输出路径不是以.gif结尾，抽取并生成一张静态图
@@ -198,6 +198,9 @@ public class MediaUtil {
         commond.add("image2");
         commond.add(fileOutPutPath + "\\"+ fileName + ".jpg");
         String parseResult = executeCommand(commond);
+        if (!isReturnVideoMetaInfo) {
+            return null;
+        }
         VideoMetaInfo videoMetaInfo = getVideoMetaInfo(parseResult,sourceFile);
         return videoMetaInfo;
 

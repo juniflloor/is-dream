@@ -29,4 +29,7 @@ public interface ImageUiSettingDao {
     @Update("UPDATE ImageUiSetting set width=#{width},high=#{high},remark=#{remark},updateTime=#{updateTime} WHERE imageLocation=#{imageLocation}")
     void updateByImageLocation(String imageLocation, int width, int high,String remark,Date updateTime);
 
+    @Select("Select * from ImageUiSetting WHERE imageLocation=#{imageLocation}")
+    ImageUiSetting getByImageLocation(String imageLocation);
+
 }

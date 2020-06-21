@@ -28,4 +28,9 @@ public class ImageUiSettingServiceImpl implements ImageUiSettingService {
     public void save(ImageUiSetting imageUiSetting){
         imageUiSettingDao.save(imageUiSetting);
     }
+
+    @Override
+    public ImageUiSetting getByImageLocation(String imageLocation) {
+        return imageUiSettingDao.getByImageLocation(imageLocation);
+    }
 }

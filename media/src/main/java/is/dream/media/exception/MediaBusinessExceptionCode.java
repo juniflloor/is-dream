@@ -21,6 +21,10 @@ public enum MediaBusinessExceptionCode {
 
     VIDEO_CUT_IMAGE_FAIL ("M_100006","视频截取图片失败"),
 
+    IMAGE_UI_SETTING_NOT_FOUND ("M_200001","前端图片设置没找到"),
+
+    IMAGE_UI_GENERATE_FAUL ("M_200002","生成前端图片失败"),
+
     ;
 
     private String code;

@@ -37,9 +37,12 @@ zuul:
 video:
   sourcePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\
   targetPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\video\\
-  coverImagePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
+  imageDefaultPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
+  imageDefaultUrl:  http://localhost/defaultImage/
+  imageUIPath:  D:\\Learn\\Soft\\nginx-1.16.1\\html\\UI\\
+  imageUIUrl: http://localhost/uiImage/
   accessUrl:  http://localhost/video/
-  imageUrl:  http://localhost/image/
+
 
 task:
   pool:

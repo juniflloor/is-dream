@@ -25,17 +25,26 @@ public class VideoConfig {
     private String targetPath;
 
     /**
-     * 视频解截取封面图片 (正常的应该自己制作然后上传)
+     * 视频解截取默认图片 (正常的应该自己制作然后上传)
      */
-    private String coverImagePath;
+    private String imageDefaultPath;
 
     /**
-     * 封面图片url
+     * 默认图片图片URL
      */
-    private String imageUrl;
+    private String imageDefaultUrl;
 
     /**
-     * 视频访问地址
+     * 视频前端展示地址
+     */
+    private String imageUIPath;
+    /**
+     * 视频前端展示URL
+     */
+    private String imageUIUrl;
+
+    /**
+     * 视频访问URL
      */
     private String accessUrl;
 }

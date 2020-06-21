@@ -1,10 +1,7 @@
 package is.dream.dao.inter;
 
 import is.dream.dao.entiry.ImageUi;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @author chendongzhao
@@ -23,6 +20,6 @@ public interface ImageUiDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Select("SELECT * FROM ImageUi WHERE id = #{id}")
-    ImageUi getByUserId(String userId);
+    @Insert("INSERT into ImageUi values(#{id},#{imageUrl},#{associatedImageUiSettingId},#{associatedVideoId},#{createTime},#{updateTime})")
+    void save(ImageUi imageUi);
 }

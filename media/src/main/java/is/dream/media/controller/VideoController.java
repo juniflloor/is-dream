@@ -24,7 +24,7 @@ public class VideoController {
                                  @RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime,
                                  @RequestParam("width") int width,@RequestParam("high") int high) throws MediaBusinessException{
 
-        return videoBusinessService.upload(file, title, introduction,startTime,width,high);
+        return videoBusinessService.upload(file, title, introduction,startTime,width,high,false,null);
     }
 
     @CrossOrigin
