@@ -2,6 +2,8 @@ package is.dream.dao.base.service;
 
 import is.dream.dao.entiry.ImageUi;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -10,4 +12,6 @@ import is.dream.dao.entiry.ImageUi;
 public interface ImageUiService {
 
     void save(ImageUi imageUi);
+
+    List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 }

@@ -3,6 +3,8 @@ package is.dream.dao.inter;
 import is.dream.dao.entiry.ImageUi;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -22,4 +24,7 @@ public interface ImageUiDao {
 
     @Insert("INSERT into ImageUi values(#{id},#{imageUrl},#{associatedImageUiSettingId},#{associatedVideoId},#{createTime},#{updateTime})")
     void save(ImageUi imageUi);
+
+    @Select("SELECT * FROM ImageUi WHERE associatedImageUiSettingId=#{associatedImageUiSettingId}")
+    List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 }

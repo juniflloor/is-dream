@@ -149,7 +149,10 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
             SystemUtils.deleteLocalFiles(imageDefaultFile);
-            SystemUtils.deleteLocalFiles(imageUIFile);
+            File thisImageUiFile = new File(videoConfig.getImageUIPath() + imageUiSetting.getImageLocation() + "/" + fileName + ".jpg" );
+            if (thisImageUiFile.exists()) {
+                SystemUtils.deleteLocalFiles(thisImageUiFile);
+            }
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
         return Result.OK;

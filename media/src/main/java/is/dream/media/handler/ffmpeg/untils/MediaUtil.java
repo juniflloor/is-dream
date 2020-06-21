@@ -86,10 +86,10 @@ public class MediaUtil {
     public static void convertM3u8(File sourceFile, File videoFile, File imageFile, String outName){
 
 
-        String format = getFormat(sourceFile);
-        if (!isLegalFormat(format, VIDEO_TYPE)) {
-            throw new RuntimeException("无法解析的视频格式：" + format);
-        }
+//        String format = getFormat(sourceFile);
+//        if (!isLegalFormat(format, VIDEO_TYPE)) {
+//            throw new RuntimeException("无法解析的视频格式：" + format);
+//        }
         try {
             List<String> commond = new ArrayList<String>();
             commond.add("ffmpeg");

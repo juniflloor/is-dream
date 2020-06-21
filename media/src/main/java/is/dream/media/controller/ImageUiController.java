@@ -24,4 +24,9 @@ public class ImageUiController {
                                            @RequestParam("width") int width,@RequestParam("high") int high, @RequestParam("imageLocation") String imageLocation){
         return imageUiBusinessService.generateImageUrl(file,title,introduction,startTime,width,high,imageLocation);
     }
+
+    @GetMapping("/getImageUiByImageLocation")
+    public Result<Object> getImageUiByImageLocation(@RequestParam("imageLocation") String imageLocation){
+        return imageUiBusinessService.getImageUiByImageLocation(imageLocation);
+    }
 }

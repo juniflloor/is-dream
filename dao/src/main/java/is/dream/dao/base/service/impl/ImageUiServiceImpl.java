@@ -6,6 +6,8 @@ import is.dream.dao.inter.ImageUiDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -20,5 +22,9 @@ public class ImageUiServiceImpl implements ImageUiService {
     @Override
     public void save(ImageUi imageUi) {
         imageUiDao.save(imageUi);
+    }
+
+    public List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId){
+        return imageUiDao.getImageUiByAssociatedImageUiSettingId(associatedImageUiSettingId);
     }
 }
