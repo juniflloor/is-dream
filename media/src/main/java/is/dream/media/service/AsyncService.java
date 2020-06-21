@@ -11,5 +11,5 @@ import java.io.File;
  */
 public interface AsyncService {
 
-    void convertM3u8(File sourceFile, File videoFile,File imageFile, String fileName) throws MediaBusinessException;
+    void convertM3u8(File sourceFile, File videoFile,File imageFile, String fileName,String videoId) throws MediaBusinessException;
 }

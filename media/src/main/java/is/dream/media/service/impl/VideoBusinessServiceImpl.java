@@ -1,6 +1,7 @@
 package is.dream.media.service.impl;
 
 import is.dream.common.Result;
+import is.dream.dao.base.service.ImageUiService;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.ImageUi;
 import is.dream.dao.entiry.ImageUiSetting;
@@ -15,6 +16,7 @@ import is.dream.media.service.AsyncService;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -42,7 +44,11 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     @Autowired
     private AsyncService asyncService;
 
+    @Autowired
+    private ImageUiService imageUiService;
+
     @Override
+    @Transactional
     public Result<Object> upload(MultipartFile file, String title, String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
@@ -63,6 +69,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         File sourceFile = null, videoFile = null, imageDefaultFile = null, imageUIFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
+            if (sourceFile.exists()) {
+                throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_IS_EXIST);
+            }
             file.transferTo(sourceFile);
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(sourceFile)) {
@@ -114,9 +123,10 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }
-            asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, fileName);
+            String videoId = UUID.randomUUID().toString();
+            asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, fileName,videoId);
             video.setDefault();
-            video.setId(UUID.randomUUID().toString());
+            video.setId(videoId);
             video.setTitle(title);
             video.setName(originalFilename);
             video.setTag("1");
@@ -133,7 +143,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setCreateTime(currentDate);
             video.setUpdateTime(currentDate);
             videoService.saveFull(video);
-            imageui.setAssociatedImageUiSettingId(video.getId());
+            imageui.setAssociatedVideoId(video.getId());
+            imageUiService.save(imageui);
         } catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
