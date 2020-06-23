@@ -8,9 +8,11 @@ import is.dream.dao.base.service.ImageUiSettingService;
 import is.dream.dao.entiry.ImageUi;
 import is.dream.dao.entiry.ImageUiSetting;
 import is.dream.dao.entiry.Video;
+import is.dream.media.config.VideoConfig;
 import is.dream.media.dto.VideoDto;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.exception.MediaBusinessExceptionCode;
+import is.dream.media.handler.ffmpeg.untils.SystemUtils;
 import is.dream.media.service.ImageUiBusinessService;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.BeanUtils;
@@ -20,6 +22,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +44,9 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
 
     @Autowired
     private ImageUiService imageUiService;
+
+    @Autowired
+    private VideoConfig videoConfig;
 
     @Override
     public Result<Object> generateImageUrl(MultipartFile file, String title, String introduction, String startTime, int width, int high, String imageLocation){
@@ -83,6 +89,26 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
         });
 
         return Result.setSpecialData(videoDtoList);
+    }
+
+    @Override
+    public Result<Object> deleteImageUiByImageLocation(String imageLocation) {
+
+        if (StringUtils.isEmpty(imageLocation)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        File imageUiPath = new File(videoConfig.getImageUIPath() + imageLocation);
+        SystemUtils.deleteLocalFiles(imageUiPath);
+
+        ImageUiSetting imageUiSetting = imageUiSettingService.getByImageLocation(imageLocation);
+        if (ObjectUtils.isEmpty(imageUiSetting)) {
+            throw new MediaBusinessException(MediaBusinessExceptionCode.IMAGE_UI_SETTING_NOT_FOUND);
+        }
+
+        imageUiService.deleteByAssociatedImageUiSettingId(imageUiSetting.getId());
+
+        return Result.setSpecialData(null);
     }
 
 }

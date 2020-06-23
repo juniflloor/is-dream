@@ -27,4 +27,8 @@ public class ImageUiServiceImpl implements ImageUiService {
     public List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId){
         return imageUiDao.getImageUiByAssociatedImageUiSettingId(associatedImageUiSettingId);
     }
+
+    public void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId){
+         imageUiDao.deleteByAssociatedImageUiSettingId(associatedImageUiSettingId);
+    }
 }

@@ -27,4 +27,7 @@ public interface ImageUiDao {
 
     @Select("SELECT * FROM ImageUi WHERE associatedImageUiSettingId=#{associatedImageUiSettingId}")
     List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
+
+    @Delete("DELETE FROM ImageUi WHERE associatedImageUiSettingId = #{associatedImageUiSettingId}")
+    void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 }

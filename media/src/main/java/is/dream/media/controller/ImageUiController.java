@@ -29,4 +29,9 @@ public class ImageUiController {
     public Result<Object> getImageUiByImageLocation(@RequestParam("imageLocation") String imageLocation){
         return imageUiBusinessService.getImageUiByImageLocation(imageLocation);
     }
+
+    @PostMapping()
+    public Result<Object> deleteImageUiByImageLocation(@RequestParam("imageLocation") String imageLocation){
+        return null;
+    }
 }

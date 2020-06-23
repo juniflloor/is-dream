@@ -14,4 +14,6 @@ public interface ImageUiService {
     void save(ImageUi imageUi);
 
     List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
+
+    void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 }
