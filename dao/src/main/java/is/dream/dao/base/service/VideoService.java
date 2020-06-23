@@ -13,11 +13,7 @@ public interface VideoService {
 
     void saveFull(Video video);
 
-    Video getHighestScore();
-
-    Video getHottest();
-
-    List<Video> getNewest();
-
     Video getVideoById(String id);
+
+    List<Video> getByIdIn(List<String> idList);
 }

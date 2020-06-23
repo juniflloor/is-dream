@@ -159,18 +159,14 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     }
 
     @Override
-    public Result<Object> getSift() {
+    public Result<Object> getVideoById(String id) {
 
-        List<Video> data = new ArrayList<>();
-        data.addAll(videoService.getNewest());
-        data.add(videoService.getHottest());
-        data.add(videoService.getHighestScore());
-        return Result.setSpecialData(data);
+        return Result.setSpecialData(videoService.getVideoById(id));
     }
 
     @Override
-    public Result<Object> getVideoById(String id) {
-        return Result.setSpecialData(videoService.getVideoById(id));
+    public List<Video> getByIdIn(List<String> idList) {
+        return videoService.getByIdIn(idList);
     }
 
 }

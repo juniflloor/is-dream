@@ -28,13 +28,6 @@ public class VideoController {
     }
 
     @CrossOrigin
-    @GetMapping("/getSift")
-    public Result<Object> getSift() {
-
-        return videoBusinessService.getSift();
-    }
-
-    @CrossOrigin
     @GetMapping("/getVideoById")
     public Result<Object> getVideoById(@RequestParam("id") String id) {
 

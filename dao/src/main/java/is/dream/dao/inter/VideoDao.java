@@ -41,15 +41,18 @@ public interface VideoDao {
             "#{associatedCommentsId},#{createTime},#{updateTime})")
     void saveFull(Video video);
 
-    @Select("Select * from video ORDER BY startNumber DESC limit 1")
-    Video getHighestScore();
-
-    @Select("Select * from video ORDER BY watchCount DESC limit 1")
-    Video getHottest();
-
-    @Select("Select * from video ORDER BY createTime DESC limit 4")
-    List<Video> getNewest();
-
     @Select("SELECT * FROM video WHERE id = #{id}")
     Video getVideoById(String id);
+
+
+    @Select({
+            "<script>",
+            "SELECT * FROM video WHERE id in",
+            "<foreach collection='idList' item='item' open='(' separator=',' close=')'>",
+            "#{item}",
+            "</foreach>",
+            "</script>"
+    })
+    List<Video> getByIdIn(@Param("idList") List<String> idList);
+
 }

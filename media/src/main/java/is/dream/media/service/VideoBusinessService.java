@@ -2,8 +2,11 @@ package is.dream.media.service;
 
 import is.dream.common.Result;
 import is.dream.dao.entiry.ImageUiSetting;
+import is.dream.dao.entiry.Video;
 import is.dream.media.exception.MediaBusinessException;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * @author chendongzhao
@@ -14,7 +17,7 @@ public interface VideoBusinessService {
 
     Result<Object> upload(MultipartFile file, String title, String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException;
 
-    Result<Object> getSift();
-
     Result<Object> getVideoById(String id);
+
+    List<Video> getByIdIn(List<String> idList);
 }

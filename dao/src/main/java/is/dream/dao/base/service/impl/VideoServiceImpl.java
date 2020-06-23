@@ -25,22 +25,12 @@ public class VideoServiceImpl implements VideoService {
     }
 
     @Override
-    public Video getHighestScore(){
-        return videoDao.getHighestScore();
-    }
-
-    @Override
-    public Video getHottest(){
-        return videoDao.getHottest();
-    }
-
-    @Override
-    public List<Video> getNewest(){
-        return videoDao.getNewest();
-    }
-
-    @Override
     public Video getVideoById(String id) {
         return videoDao.getVideoById(id);
+    }
+
+    @Override
+    public List<Video> getByIdIn(List<String> idList) {
+        return videoDao.getByIdIn(idList);
     }
 }
