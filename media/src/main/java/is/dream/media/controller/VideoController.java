@@ -20,11 +20,12 @@ public class VideoController {
     private VideoBusinessService videoBusinessService;
 
     @PostMapping("/upload")
-    public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title,
-                                 @RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime,
-                                 @RequestParam("width") int width,@RequestParam("high") int high) throws MediaBusinessException{
+    public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("name") String name,@RequestParam("type") String type,
+                                 @RequestParam("tag") String tag, @RequestParam("title") String title,@RequestParam("subtitle") String subtitle,
+                                 @RequestParam("year") String year,@RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime
+                                 ) throws MediaBusinessException{
 
-        return videoBusinessService.upload(file, title, introduction,startTime,width,high,false,null);
+        return videoBusinessService.upload(file,name,type,tag,title,subtitle,year,introduction,startTime,false,null);
     }
 
     @CrossOrigin

@@ -2,6 +2,7 @@ package is.dream.media.service.impl;
 
 import is.dream.common.Result;
 import is.dream.dao.base.service.ImageUiService;
+import is.dream.dao.base.service.ImageUiSettingService;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.ImageUi;
 import is.dream.dao.entiry.ImageUiSetting;
@@ -23,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,10 +47,13 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     @Autowired
     private ImageUiService imageUiService;
 
+    @Autowired
+    private ImageUiSettingService imageUiSettingService;
+
     @Override
     @Transactional
     public Result<Object> upload(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
-                                 String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
+                                 String introduction, String startTime,boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_FILE_IS_NULL);
@@ -110,7 +113,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!imageDefaultFile.exists()) {
                 imageDefaultFile.mkdirs();
             }
-            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,fileName,width,high,true);
+            ImageUiSetting defaultImageUiSetting = imageUiSettingService.getByImageLocation("default_all");
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,fileName,defaultImageUiSetting.getWidth(),
+                                                    defaultImageUiSetting.getHigh(),true);
 
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(imageDefaultFile)) {

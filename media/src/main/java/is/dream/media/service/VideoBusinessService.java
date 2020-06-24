@@ -16,7 +16,7 @@ import java.util.List;
 public interface VideoBusinessService {
 
     Result<Object> upload(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
-                          String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException;
+                          String introduction, String startTime,boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException;
 
     Result<Object> getVideoById(String id);
 

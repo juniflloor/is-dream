@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 public interface ImageUiBusinessService {
 
     Result<Object> generateImageUrl(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
-                                    String introduction, String startTime, int width, int high, String imageLocation);
+                                    String introduction, String startTime, String imageLocation);
 
     Result<Object> getImageUiByImageLocation(String imageLocation);
 
