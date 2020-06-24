@@ -26,6 +26,8 @@ public class Video {
 
     private String title;
 
+    private String subtitle;
+
     private String year;
 
     private String defaultImageUrl;

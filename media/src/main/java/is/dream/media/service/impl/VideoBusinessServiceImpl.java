@@ -49,7 +49,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
     @Override
     @Transactional
-    public Result<Object> upload(MultipartFile file, String title, String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
+    public Result<Object> upload(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
+                                 String introduction, String startTime, int width, int high, boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException {
 
         if (ObjectUtils.isEmpty(file)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_FILE_IS_NULL);
@@ -128,11 +129,12 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setDefault();
             video.setId(videoId);
             video.setTitle(title);
-            video.setName(originalFilename);
-            video.setTag("1");
-            video.setYear("2020");
-            video.setSuffix("mp4");
-            video.setType("1");
+            video.setName(name);
+            video.setTag(tag);
+            video.setYear(year);
+            video.setSuffix(originalFilename.substring(originalFilename.lastIndexOf(".") + 1).toLowerCase());
+            video.setType(type);
+            video.setSubtitle(subtitle);
             video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);

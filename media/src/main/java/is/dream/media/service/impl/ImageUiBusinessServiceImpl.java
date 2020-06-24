@@ -49,7 +49,8 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
     private VideoConfig videoConfig;
 
     @Override
-    public Result<Object> generateImageUrl(MultipartFile file, String title, String introduction, String startTime, int width, int high, String imageLocation){
+    public Result<Object> generateImageUrl(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
+                                           String introduction, String startTime, int width, int high, String imageLocation){
 
         if (StringUtils.isEmpty(imageLocation)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
@@ -60,7 +61,7 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
             throw  new MediaBusinessException(MediaBusinessExceptionCode.IMAGE_UI_SETTING_NOT_FOUND);
         }
 
-        return videoBusinessService.upload(file, title, introduction,startTime,width,high,true,imageUiSetting);
+        return videoBusinessService.upload(file,name,type,tag,title,subtitle,year,introduction,startTime,width,high,true,imageUiSetting);
     }
 
     @Override

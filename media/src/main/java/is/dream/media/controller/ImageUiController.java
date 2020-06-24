@@ -19,10 +19,11 @@ public class ImageUiController {
     private ImageUiBusinessService imageUiBusinessService;
 
     @PostMapping("/generateImageUrl")
-    public Result<Object> generateImageUrl(@ModelAttribute("file") MultipartFile file, @RequestParam("title") String title,
-                                           @RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime,
+    public Result<Object> generateImageUrl(@ModelAttribute("file") MultipartFile file, @RequestParam("name") String name,@RequestParam("type") String type,
+                                           @RequestParam("tag") String tag, @RequestParam("title") String title,@RequestParam("subtitle") String subtitle,
+                                           @RequestParam("year") String year,@RequestParam("introduction") String introduction,@RequestParam("startTime") String startTime,
                                            @RequestParam("width") int width,@RequestParam("high") int high, @RequestParam("imageLocation") String imageLocation){
-        return imageUiBusinessService.generateImageUrl(file,title,introduction,startTime,width,high,imageLocation);
+        return imageUiBusinessService.generateImageUrl(file,name,type,tag,title,subtitle,year,introduction,startTime,width,high,imageLocation);
     }
 
     @GetMapping("/getImageUiByImageLocation")
@@ -30,7 +31,7 @@ public class ImageUiController {
         return imageUiBusinessService.getImageUiByImageLocation(imageLocation);
     }
 
-    @PostMapping()
+    @PostMapping("/deleteImageUiByImageLocation")
     public Result<Object> deleteImageUiByImageLocation(@RequestParam("imageLocation") String imageLocation){
         return null;
     }
