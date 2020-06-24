@@ -69,7 +69,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
         Video video = new Video();
         String originalFilename = file.getOriginalFilename();
-        String fileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
+        String videoId = UUID.randomUUID().toString();
+        String realFileName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
         File sourceFile = null, videoFile = null, imageDefaultFile = null, imageUIFile = null;
         try{
             sourceFile = new File(videoConfig.getSourcePath() + originalFilename );
@@ -92,7 +93,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
                 if (!imageUIFile.exists()) {
                     imageUIFile.mkdirs();
                 }
-                MediaUtil.cutVideoFrame(sourceFile, imageUIFile, startTime, fileName, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
+                MediaUtil.cutVideoFrame(sourceFile, imageUIFile, startTime, videoId, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
             } catch (Exception e) {
                 if (!ObjectUtils.isEmpty(imageUIFile)) {
                     SystemUtils.deleteLocalFiles(imageUIFile);
@@ -101,7 +102,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             }
             imageui = new ImageUi();
             imageui.setId(UUID.randomUUID().toString());
-            imageui.setImageUrl(videoConfig.getImageUIUrl() + imageUiSetting.getImageLocation() + "/" + fileName + ".jpg");
+            imageui.setImageUrl(videoConfig.getImageUIUrl() + imageUiSetting.getImageLocation() + "/" + videoId + ".jpg");
             imageui.setAssociatedImageUiSettingId(imageUiSetting.getId());
             imageui.setCreateTime(new Date(System.currentTimeMillis()));
             imageui.setUpdateTime(new Date(System.currentTimeMillis()));
@@ -109,12 +110,12 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
         VideoMetaInfo videoMetaInfo = null;
         try {
-            imageDefaultFile = new File(videoConfig.getImageDefaultPath() + fileName );
+            imageDefaultFile = new File(videoConfig.getImageDefaultPath() + videoId );
             if (!imageDefaultFile.exists()) {
                 imageDefaultFile.mkdirs();
             }
             ImageUiSetting defaultImageUiSetting = imageUiSettingService.getByImageLocation("default_all");
-            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,fileName,defaultImageUiSetting.getWidth(),
+            videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,videoId,defaultImageUiSetting.getWidth(),
                                                     defaultImageUiSetting.getHigh(),true);
 
         } catch (Exception e) {
@@ -125,16 +126,16 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         }
 
         try {
-            videoFile = new File(videoConfig.getTargetPath() + fileName );
+            videoFile = new File(videoConfig.getTargetPath() + videoId );
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }
-            String videoId = UUID.randomUUID().toString();
-            asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, fileName,videoId);
+            asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, videoId,videoId);
             video.setDefault();
             video.setId(videoId);
             video.setTitle(title);
             video.setName(name);
+            video.setFileName(realFileName);
             video.setTag(tag);
             video.setYear(year);
             video.setSuffix(originalFilename.substring(originalFilename.lastIndexOf(".") + 1).toLowerCase());
@@ -143,8 +144,8 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
             video.setDuration(videoMetaInfo.getDuration());
             video.setIntroduction(introduction);
-            video.setDefaultImageUrl(videoConfig.getImageDefaultUrl() + fileName + "/" +fileName + ".jpg");
-            String playUrl = videoConfig.getAccessUrl() + fileName + "/" +fileName + ".m3u8";
+            video.setDefaultImageUrl(videoConfig.getImageDefaultUrl() + videoId + "/" +videoId + ".jpg");
+            String playUrl = videoConfig.getAccessUrl() + videoId + "/" +videoId + ".m3u8";
             video.setPlayUrl(playUrl);
             Date currentDate = new Date(System.currentTimeMillis());
             video.setCreateTime(currentDate);
@@ -156,7 +157,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
             SystemUtils.deleteLocalFiles(imageDefaultFile);
-            File thisImageUiFile = new File(videoConfig.getImageUIPath() + imageUiSetting.getImageLocation() + "/" + fileName + ".jpg" );
+            File thisImageUiFile = new File(videoConfig.getImageUIPath() + imageUiSetting.getImageLocation() + "/" + videoId + ".jpg" );
             if (thisImageUiFile.exists()) {
                 SystemUtils.deleteLocalFiles(thisImageUiFile);
             }

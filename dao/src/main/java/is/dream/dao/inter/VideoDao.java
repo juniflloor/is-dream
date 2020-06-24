@@ -16,6 +16,7 @@ public interface VideoDao {
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "name", column = "name"),
+            @Result(property = "fileName", column = "fileName"),
             @Result(property = "sourceLocation", column = "sourceLocation"),
             @Result(property = "type", column = "type"),
             @Result(property = "tag", column = "tag"),
@@ -37,8 +38,8 @@ public interface VideoDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into Video values(#{id},#{name},#{sourceLocation},#{type},#{tag},#{title},#{subtitle},#{year},#{defaultImageUrl},#{duration},#{playUrl}," +
-            "#{suffix},#{watchCount},#{commentCount},#{startNumber},#{likeCount},#{notLikeCount},#{introduction}," +
+    @Insert("INSERT into Video values(#{id},#{name},#{fileName},#{sourceLocation},#{type},#{tag},#{title},#{subtitle},#{year},#{defaultImageUrl}," +
+            "#{duration},#{playUrl},#{suffix},#{watchCount},#{commentCount},#{startNumber},#{likeCount},#{notLikeCount},#{introduction}," +
             "#{associatedCommentsId},#{createTime},#{updateTime})")
     void saveFull(Video video);
 

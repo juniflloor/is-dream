@@ -18,6 +18,8 @@ public class Video {
 
     private String name;
 
+    private String fileName;
+
     private String sourceLocation;
 
     private String type;
