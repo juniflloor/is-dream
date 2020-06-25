@@ -20,7 +20,7 @@ public class VideoOperation {
 
     private String associatedUserId;
 
-    private int like;
+    private Integer like;
 
     private Date createTime;
 

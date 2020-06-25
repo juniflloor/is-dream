@@ -186,7 +186,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         VideoOperation videoOperation = videoOperationService.getByAssociatedId(id,"1");
         Video video = videoService.getVideoById(id);
         BeanUtils.copyProperties(video,videoDto);
-        if (ObjectUtils.isEmpty(videoOperation)) {
+        if (!ObjectUtils.isEmpty(videoOperation)) {
             videoDto.setLike(videoOperation.getLike());
         }
         return Result.setSpecialData(videoDto);

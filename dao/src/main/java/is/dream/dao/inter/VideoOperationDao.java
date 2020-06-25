@@ -1,10 +1,7 @@
 package is.dream.dao.inter;
 
 import is.dream.dao.entiry.VideoOperation;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @author chendongzhao
@@ -23,9 +20,9 @@ public interface VideoOperationDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into VideoOperation values({id},#{associatedVideoId},#{associatedUserId},#{like},#{createTime},#{updateTime}")
+    @Insert("INSERT into VideoOperation values(#{id},#{associatedVideoId},#{associatedUserId},#{like},#{createTime},#{updateTime})")
     void save(VideoOperation videoOperation);
 
-    @Insert("SELECT * FROM VideoOperation WHERE associatedVideoId=#{associatedVideoId} AND associatedUserId=#{associatedUserId}")
+    @Select("SELECT * FROM videoOperation WHERE associatedVideoId=#{associatedVideoId} AND associatedUserId=#{associatedUserId}")
     VideoOperation getByAssociatedId(String associatedVideoId,String associatedUserId);
 }
