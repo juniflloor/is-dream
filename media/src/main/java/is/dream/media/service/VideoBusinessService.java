@@ -24,7 +24,5 @@ public interface VideoBusinessService {
 
     Result<Object> addLikeCount(String id);
 
-    Result<Object> addNoLikeCount(String id);
-
     Result<Object> addWatchCount(String id);
 }

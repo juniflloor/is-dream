@@ -13,4 +13,6 @@ public class VideoDto extends Video {
 
     private String imageUrl;
 
+    private int like;
+
 }

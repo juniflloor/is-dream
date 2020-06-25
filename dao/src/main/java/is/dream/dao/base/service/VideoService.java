@@ -20,6 +20,4 @@ public interface VideoService {
     void addWatchCountById(String id);
 
     void addLikeCountById(String id);
-
-    void addNotLikeCountById(String id);
 }

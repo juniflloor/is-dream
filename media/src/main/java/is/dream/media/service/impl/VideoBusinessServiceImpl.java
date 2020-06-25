@@ -1,15 +1,19 @@
 package is.dream.media.service.impl;
 
 import is.dream.common.Result;
+import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.dao.base.service.ImageUiService;
 import is.dream.dao.base.service.ImageUiSettingService;
+import is.dream.dao.base.service.VideoOperationService;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.ImageUi;
 import is.dream.dao.entiry.ImageUiSetting;
 import is.dream.dao.entiry.Video;
+import is.dream.dao.entiry.VideoOperation;
 import is.dream.media.config.VideoConfig;
+import is.dream.media.dto.VideoDto;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.handler.ffmpeg.entity.VideoMetaInfo;
@@ -17,6 +21,7 @@ import is.dream.media.handler.ffmpeg.untils.MediaUtil;
 import is.dream.media.handler.ffmpeg.untils.SystemUtils;
 import is.dream.media.service.AsyncService;
 import is.dream.media.service.VideoBusinessService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,6 +56,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
     @Autowired
     private ImageUiSettingService imageUiSettingService;
+
+    @Autowired
+    private VideoOperationService videoOperationService;
 
     @Override
     @Transactional
@@ -174,7 +182,14 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         if (StringUtils.isEmpty(id)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
-        return Result.setSpecialData(videoService.getVideoById(id));
+        VideoDto videoDto = new VideoDto();
+        VideoOperation videoOperation = videoOperationService.getByAssociatedId(id,"1");
+        Video video = videoService.getVideoById(id);
+        BeanUtils.copyProperties(video,videoDto);
+        if (ObjectUtils.isEmpty(videoOperation)) {
+            videoDto.setLike(videoOperation.getLike());
+        }
+        return Result.setSpecialData(videoDto);
     }
 
     @Override
@@ -183,25 +198,25 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     }
 
     @Override
+    @Transactional
     public Result<Object> addLikeCount(String id) {
 
         if (StringUtils.isEmpty(id)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
         videoService.addLikeCountById(id);
+        VideoOperation videoOperation = new VideoOperation();
+        videoOperation.setId(UUID.randomUUID().toString());
+        videoOperation.setAssociatedUserId("1");
+        videoOperation.setAssociatedVideoId(id);
+        videoOperation.setLike(DBConstant.YES);
+        videoOperation.setCreateTime(new Date(System.currentTimeMillis()));
+        videoOperation.setUpdateTime(new Date(System.currentTimeMillis()));
+        videoOperationService.save(videoOperation);
+
         return Result.OK;
     }
 
-    @Override
-    public Result<Object> addNoLikeCount(String id) {
-
-        if (StringUtils.isEmpty(id)) {
-            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
-        }
-
-        videoService.addNotLikeCountById(id);
-        return Result.OK;
-    }
 
     @Override
     public Result<Object> addWatchCount(String id) {

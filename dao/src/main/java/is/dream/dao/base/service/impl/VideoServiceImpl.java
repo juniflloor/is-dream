@@ -39,7 +39,4 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public void addLikeCountById(String id){ videoDao.addLikeCountById(id); }
-
-    @Override
-    public void addNotLikeCountById(String id){ videoDao.addNotLikeCountById(id); }
 }

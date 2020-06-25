@@ -63,6 +63,4 @@ public interface VideoDao {
     @Update("UPDATE video set likeCount = likeCount + 1 WHERE id=#{id}")
     void addLikeCountById(String id);
 
-    @Update("UPDATE video set notLikeCount = notLikeCount + 1 WHERE id=#{id}")
-    void addNotLikeCountById(String id);
 }

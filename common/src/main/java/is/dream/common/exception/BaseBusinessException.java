@@ -7,7 +7,6 @@ package is.dream.common.exception;
  */
 public class BaseBusinessException extends RuntimeException{
 
-
     private String code;
 
     public String getCode() {
