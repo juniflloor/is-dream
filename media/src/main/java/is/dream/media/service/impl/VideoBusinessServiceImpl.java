@@ -1,6 +1,8 @@
 package is.dream.media.service.impl;
 
 import is.dream.common.Result;
+import is.dream.common.exception.BaseBusinessException;
+import is.dream.common.exception.BaseExceptionCode;
 import is.dream.dao.base.service.ImageUiService;
 import is.dream.dao.base.service.ImageUiSettingService;
 import is.dream.dao.base.service.VideoService;
@@ -169,6 +171,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     @Override
     public Result<Object> getVideoById(String id) {
 
+        if (StringUtils.isEmpty(id)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
         return Result.setSpecialData(videoService.getVideoById(id));
     }
 
@@ -177,4 +182,35 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         return videoService.getByIdIn(idList);
     }
 
+    @Override
+    public Result<Object> addLikeCount(String id) {
+
+        if (StringUtils.isEmpty(id)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+        videoService.addLikeCountById(id);
+        return Result.OK;
+    }
+
+    @Override
+    public Result<Object> addNoLikeCount(String id) {
+
+        if (StringUtils.isEmpty(id)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        videoService.addNotLikeCountById(id);
+        return Result.OK;
+    }
+
+    @Override
+    public Result<Object> addWatchCount(String id) {
+
+        if (StringUtils.isEmpty(id)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        videoService.addWatchCountById(id);
+        return Result.OK;
+    }
 }

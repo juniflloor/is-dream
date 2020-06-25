@@ -35,4 +35,25 @@ public class VideoController {
         return videoBusinessService.getVideoById(id);
     }
 
+    @CrossOrigin
+    @GetMapping("/addLikeCount")
+    public Result<Object> addLikeCount(@RequestParam("id") String id) {
+
+        return videoBusinessService.getVideoById(id);
+    }
+
+    @CrossOrigin
+    @GetMapping("/addNoLikeCount")
+    public Result<Object> addNoLikeCount(@RequestParam("id") String id) {
+
+        return videoBusinessService.getVideoById(id);
+    }
+
+    @CrossOrigin
+    @GetMapping("/addWatchCount")
+    public Result<Object> addWatchCount(@RequestParam("id") String id) {
+
+        return videoBusinessService.getVideoById(id);
+    }
+
 }

@@ -33,4 +33,13 @@ public class VideoServiceImpl implements VideoService {
     public List<Video> getByIdIn(List<String> idList) {
         return videoDao.getByIdIn(idList);
     }
+
+    @Override
+    public void addWatchCountById(String id){ videoDao.addWatchCountById(id); }
+
+    @Override
+    public void addLikeCountById(String id){ videoDao.addLikeCountById(id); }
+
+    @Override
+    public void addNotLikeCountById(String id){ videoDao.addNotLikeCountById(id); }
 }

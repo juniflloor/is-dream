@@ -21,4 +21,10 @@ public interface VideoBusinessService {
     Result<Object> getVideoById(String id);
 
     List<Video> getByIdIn(List<String> idList);
+
+    Result<Object> addLikeCount(String id);
+
+    Result<Object> addNoLikeCount(String id);
+
+    Result<Object> addWatchCount(String id);
 }

@@ -16,4 +16,10 @@ public interface VideoService {
     Video getVideoById(String id);
 
     List<Video> getByIdIn(List<String> idList);
+
+    void addWatchCountById(String id);
+
+    void addLikeCountById(String id);
+
+    void addNotLikeCountById(String id);
 }
