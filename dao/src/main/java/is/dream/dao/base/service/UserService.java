@@ -13,9 +13,9 @@ public interface UserService {
 
     User getByUserNameAndPassword(String userName, String password);
 
-    void updateUserToken(String userId,String token);
+    void updateUserToken(String id,String token);
 
-    User getByUserId(String userId);
+    User getById(String id);
 
     List<User> getByIdIn(List<String> idList);
 }

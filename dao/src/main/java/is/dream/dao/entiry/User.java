@@ -14,9 +14,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
-    private long id;
-
-    private String userId;
+    private String id;
 
     private String userName;
 

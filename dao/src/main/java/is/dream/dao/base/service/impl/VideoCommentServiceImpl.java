@@ -25,18 +25,17 @@ public class VideoCommentServiceImpl implements VideoCommentService {
     }
 
     @Override
-    public List<VideoComment> getById(String id, int startIndex){
-        return videoCommentDao.getById(id,startIndex);
+    public List<VideoComment> getByVideoId(String videoId, int startIndex){
+        return videoCommentDao.getByVideoId(videoId,startIndex);
     }
 
     @Override
-    public VideoComment getByCommentId(String commentId) {
-        return videoCommentDao.getByCommentId(commentId);
+    public VideoComment getById(String id) {
+        return videoCommentDao.getById(id);
     }
 
     @Override
-    public List<VideoComment> getByIdCommentIdIn(List<String> commentSessionIdList){
-        return videoCommentDao.getByIdCommentIdIn(commentSessionIdList);
+    public List<VideoComment> getByCommentSessionIdIn(List<String> commentSessionIdList){
+        return videoCommentDao.getByCommentSessionIdIn(commentSessionIdList);
     }
-
 }

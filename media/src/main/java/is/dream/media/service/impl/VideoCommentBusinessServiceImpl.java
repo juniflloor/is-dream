@@ -46,23 +46,23 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
 
         VideoComment videoComment = new VideoComment();
         String commentId = UUID.randomUUID().toString();
-        videoComment.setCommentId(commentId);
+        videoComment.setId(commentId);
+        videoComment.setVideoId(videoId);
         videoComment.setUserId("root");
+        videoComment.setParentId(parentId);
         if (StringUtils.isEmpty(parentId)) {
             videoComment.setCommentSessionId(commentId);
+            videoComment.setParentId(DBConstant.COMMENT_FIRST_PARENT);
         } else {
-            VideoComment parentVideoComment = videoCommentService.getByCommentId(parentId);
+            VideoComment parentVideoComment = videoCommentService.getById(parentId);
             if (ObjectUtils.isEmpty(parentVideoComment)) {
                 throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_COMMENT_IS_NOT_FOUND);
             }
             videoComment.setCommentSessionId(parentVideoComment.getCommentSessionId());
         }
         videoComment.setContent(content);
-        videoComment.setParentId(parentId);
         videoComment.setCreateTime(new Date(System.currentTimeMillis()));
         videoCommentService.save(videoComment);
-        videoComment.setCommentId(UUID.randomUUID().toString());
-
         return Result.OK;
     }
 
@@ -73,15 +73,15 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
 
-        List<VideoComment> topVideoCommentList = videoCommentService.getById(videoId,startIndex);
+        List<VideoComment> topVideoCommentList = videoCommentService.getByVideoId(videoId,startIndex);
         if (CollectionUtils.isEmpty(topVideoCommentList)) {
             return Result.OK;
         }
         List<String> commentSessionIdList = topVideoCommentList.stream().map(VideoComment::getCommentSessionId).collect(Collectors.toList());
-        List<VideoComment> videoCommentList = videoCommentService.getByIdCommentIdIn(commentSessionIdList);
+        List<VideoComment> videoCommentList = videoCommentService.getByCommentSessionIdIn(commentSessionIdList);
         List<String> userIdList = videoCommentList.stream().map(VideoComment::getUserId).collect(Collectors.toList());
         List<User> userList = userService.getByIdIn(userIdList);
-        Map<String,User> userMap = userList.stream().collect(Collectors.toMap(User::getUserId, Function.identity()));
+        Map<String,User> userMap = userList.stream().collect(Collectors.toMap(User::getId, Function.identity()));
         List<VideoCommentDto> videoCommentDtoList = new ArrayList<>();
         videoCommentList.forEach(videoComment -> {
             VideoCommentDto videoCommentDto = new VideoCommentDto();
@@ -106,14 +106,16 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
 
     private void generate(Map<String,List<VideoCommentDto>> perVideoCommentDtoMap,VideoCommentDto currentVideoCommentDto){
 
-        String parentId = currentVideoCommentDto.getCommentId();
+        String parentId = currentVideoCommentDto.getId();
         List<VideoCommentDto> videoCommentDtoList = perVideoCommentDtoMap.get(parentId);
         currentVideoCommentDto.setCommentDtoList(videoCommentDtoList);
-        videoCommentDtoList.forEach(videoCommentDto -> {
-            String nextParentId = currentVideoCommentDto.getCommentId();
-            if (!ObjectUtils.isEmpty(perVideoCommentDtoMap.get(nextParentId))) {
-                generate(perVideoCommentDtoMap,videoCommentDto);
-            }
-        });
+        if (!ObjectUtils.isEmpty(videoCommentDtoList)) {
+            videoCommentDtoList.forEach(videoCommentDto -> {
+                String nextParentId = currentVideoCommentDto.getId();
+                if (!ObjectUtils.isEmpty(perVideoCommentDtoMap.get(nextParentId))) {
+                    generate(perVideoCommentDtoMap, videoCommentDto);
+                }
+            });
+        }
     }
 }

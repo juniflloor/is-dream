@@ -15,7 +15,6 @@ public interface UserDao {
 
     @Results({
         @Result(property = "id", column = "id"),
-        @Result(property = "userId", column = "userId"),
         @Result(property = "userName", column = "userName"),
         @Result(property = "password", column = "password"),
         @Result(property = "token", column = "token"),
@@ -25,11 +24,11 @@ public interface UserDao {
     @Select("SELECT * FROM user WHERE userName = #{userName} and password = #{password}")
     User getByUserNameAndPassword(String userName, String password);
 
-    @Update("UPDATE user set token = #{token} WHERE userId = #{userId}")
-    void updateUserToken(String userId,String token);
+    @Update("UPDATE user set token = #{token} WHERE id = #{id}")
+    void updateUserToken(String id,String token);
 
-    @Select("SELECT * FROM user WHERE userId = #{userId}")
-    User getByUserId(String userId);;
+    @Select("SELECT * FROM user WHERE id = #{id}")
+    User getById(String id);;
 
     @Select({
             "<script>",

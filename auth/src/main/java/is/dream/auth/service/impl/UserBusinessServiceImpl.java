@@ -43,8 +43,8 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         }
 
         String token = JWTUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
-        userService.updateUserToken(dbUser.getUserId(), token.substring(0,50));
-        redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getUserId(),token, CacheConstants.USER_TOKEN_EXPIRE);
+        userService.updateUserToken(dbUser.getId(), token.substring(0,50));
+        redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getId(),token, CacheConstants.USER_TOKEN_EXPIRE);
         result.setData(dbUser);
         return result;
     }
@@ -73,14 +73,14 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         result.setData(user);
         Object redisVersion = redisUtils.get(CacheConstants.REDIS_START_VERSION);
         if (!ObjectUtils.isEmpty(redisVersion)) {
-            String cacheToken =  (String) redisUtils.get(CacheConstants.USER_TOKEN_REDIS_PREFIX + user.getUserId());
+            String cacheToken =  (String) redisUtils.get(CacheConstants.USER_TOKEN_REDIS_PREFIX + user.getId());
             if (!token.equals(cacheToken)) {
                 throw new AuthBusinessException(AuthBusinessExceptionCode.ERROR_TOKEN);
             }
             return  result;
         }
 
-        User dbUser = userService.getByUserId(user.getUserId());
+        User dbUser = userService.getById(user.getId());
         if (!(token.substring(0,50)).equals(dbUser.getToken())) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.ERROR_TOKEN);
         }

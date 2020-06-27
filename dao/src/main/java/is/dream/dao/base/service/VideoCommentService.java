@@ -13,9 +13,9 @@ public interface VideoCommentService {
 
     void save(VideoComment videoComment);
 
-    List<VideoComment> getById(String id, int startIndex);
+    List<VideoComment> getByVideoId(String videoId, int startIndex);
 
-    VideoComment getByCommentId(String commentId);
+    VideoComment getById(String id);
 
-    List<VideoComment> getByIdCommentIdIn(List<String> commentSessionIdList);
+    List<VideoComment> getByCommentSessionIdIn(List<String> commentSessionIdList);
 }

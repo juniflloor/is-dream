@@ -15,7 +15,7 @@ public interface VideoCommentDao {
 
     @Results({
             @Result(property = "id", column = "id"),
-            @Result(property = "commentId", column = "commentId"),
+            @Result(property = "videoId", column = "videoId"),
             @Result(property = "commentSessionId", column = "commentSessionId"),
             @Result(property = "parentId", column = "parentId"),
             @Result(property = "userId", column = "userId"),
@@ -23,14 +23,14 @@ public interface VideoCommentDao {
             @Result(property = "createTime", column = "createTime")
     })
 
-    @Insert("INSERT into VideoComment values(#{id},#{commentId},#{commentSessionId},#{parentId},#{userId},#{content},#{createTime})")
+    @Insert("INSERT into VideoComment values(#{id},#{videoId},#{commentSessionId},#{parentId},#{userId},#{content},#{createTime})")
     void save(VideoComment videoComment);
 
-    @Select("SELECT * FROM VideoComment WHERE id=#{id} AND parentId IS NULL ORDER BY createTime LIMIT #{startIndex},5")
-    List<VideoComment> getById(String id,int startIndex);
+    @Select("SELECT * FROM VideoComment WHERE videoId=#{videoId} AND parentId='FIRST' ORDER BY createTime LIMIT #{startIndex},5")
+    List<VideoComment> getByVideoId(String videoId,int startIndex);
 
-    @Select("SELECT * FROM VideoComment WHERE commentId=#{commentId}")
-    VideoComment getByCommentId(String commentId);
+    @Select("SELECT * FROM VideoComment WHERE id=#{id}")
+    VideoComment getById(String id);
 
     @Select({
             "<script>",
@@ -40,6 +40,6 @@ public interface VideoCommentDao {
             "</foreach>",
             "</script>"
     })
-    List<VideoComment> getByIdCommentIdIn(@Param("commentSessionIdList") List<String> commentSessionIdList);
+    List<VideoComment> getByCommentSessionIdIn(@Param("commentSessionIdList") List<String> commentSessionIdList);
 
 }

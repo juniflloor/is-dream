@@ -25,15 +25,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUserToken(String userId, String token) {
+    public void updateUserToken(String id, String token) {
 
-        userDao.updateUserToken(userId,token);
+        userDao.updateUserToken(id,token);
     }
 
     @Override
-    public User getByUserId(String userId) {
+    public User getById(String id) {
 
-        return userDao.getByUserId(userId);
+        return userDao.getById(id);
     }
 
     @Override

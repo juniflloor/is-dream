@@ -16,7 +16,7 @@ public class VideoComment {
 
     private String id;
 
-    private String commentId;
+    private String videoId;
 
     private String commentSessionId;
 
