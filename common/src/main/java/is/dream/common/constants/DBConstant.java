@@ -16,4 +16,9 @@ public class DBConstant {
      * 未活跃的 未选择的 默认的 未操作的
      */
     public static final int NO = 0;
+
+    /**
+     * 评论一级父类编号 默认的
+     */
+    public static final String COMMENT_FIRST_PARENT = "FIRST";
 }

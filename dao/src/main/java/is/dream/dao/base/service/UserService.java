@@ -2,6 +2,8 @@ package is.dream.dao.base.service;
 
 import is.dream.dao.entiry.User;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -14,4 +16,6 @@ public interface UserService {
     void updateUserToken(String userId,String token);
 
     User getByUserId(String userId);
+
+    List<User> getByIdIn(List<String> idList);
 }

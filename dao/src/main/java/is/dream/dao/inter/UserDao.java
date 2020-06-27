@@ -3,6 +3,8 @@ package is.dream.dao.inter;
 import is.dream.dao.entiry.User;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -28,4 +30,14 @@ public interface UserDao {
 
     @Select("SELECT * FROM user WHERE userId = #{userId}")
     User getByUserId(String userId);;
+
+    @Select({
+            "<script>",
+            "SELECT * FROM user WHERE id in",
+            "<foreach collection='idList' item='item' open='(' separator=',' close=')'>",
+            "#{item}",
+            "</foreach>",
+            "</script>"
+    })
+    List<User> getByIdIn(@Param("idList") List<String> idList);
 }

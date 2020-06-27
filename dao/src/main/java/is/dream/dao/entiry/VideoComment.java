@@ -18,13 +18,11 @@ public class VideoComment {
 
     private String commentId;
 
+    private String commentSessionId;
+
     private String parentId;
 
     private String userId;
-
-    private String userName;
-
-    private String headImageUrl;
 
     private String content;
 

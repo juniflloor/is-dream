@@ -6,6 +6,8 @@ import is.dream.dao.inter.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author chendongzhao
  * @version 1.0
@@ -24,12 +26,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserToken(String userId, String token) {
+
         userDao.updateUserToken(userId,token);
     }
 
     @Override
     public User getByUserId(String userId) {
+
         return userDao.getByUserId(userId);
+    }
+
+    @Override
+    public List<User> getByIdIn(List<String> idList) {
+        return userDao.getByIdIn(idList);
     }
 
 }

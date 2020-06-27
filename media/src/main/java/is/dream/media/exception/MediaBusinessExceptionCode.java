@@ -27,6 +27,10 @@ public enum MediaBusinessExceptionCode {
 
     IMAGE_UI_GENERATE_FAIL ("M_200002","生成前端图片失败"),
 
+    VIDEO_COMMENT_IS_NOT_FOUND ("M_200003","被回复的评论不存在"),
+
+    VIDEO_COMMENT_IS_OUT_LIMIT ("M_200003","评论超出层级限制"),
+
     ;
 
     private String code;
