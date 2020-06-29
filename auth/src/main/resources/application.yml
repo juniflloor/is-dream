@@ -3,6 +3,12 @@ spring:
     name: dream-auth
   profiles:
     include: mysql,redis
+  mail:
+    host: smtp.126.com
+    username: bikanshipin@126.com
+    password: DSGIBLZNVAMCHMRN
+    protocol: smtp
+
 
 
 server:

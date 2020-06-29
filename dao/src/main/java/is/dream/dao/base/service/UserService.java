@@ -11,6 +11,8 @@ import java.util.List;
  */
 public interface UserService {
 
+    void save(User user);
+
     User getByUserNameAndPassword(String userName, String password);
 
     void updateUserToken(String id,String token);
@@ -18,4 +20,8 @@ public interface UserService {
     User getById(String id);
 
     List<User> getByIdIn(List<String> idList);
+
+    User getByUserName(String userName);
+
+    User getByEmail(String email);
 }

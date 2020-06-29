@@ -95,7 +95,7 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
 
         List<VideoCommentDto> returnList = new ArrayList<>();
         videoCommentDtoMap.forEach((k,v) -> {
-            Map<String,List<VideoCommentDto>> perVideoCommentDtoMap = videoCommentDtoList.stream().collect(Collectors.groupingBy(VideoComment::getParentId));
+            Map<String,List<VideoCommentDto>> perVideoCommentDtoMap = v.stream().collect(Collectors.groupingBy(VideoComment::getParentId));
             VideoCommentDto finalVideoCommentDto = perVideoCommentDtoMap.get(DBConstant.COMMENT_FIRST_PARENT).get(0);
             generate(perVideoCommentDtoMap,finalVideoCommentDto);
             returnList.add(finalVideoCommentDto);

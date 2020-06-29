@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
+    public void save(User user){
+        userDao.save(user);
+    }
+
+    @Override
     public User getByUserNameAndPassword(String userName, String password){
         return userDao.getByUserNameAndPassword(userName,password);
     }
@@ -41,4 +46,13 @@ public class UserServiceImpl implements UserService {
         return userDao.getByIdIn(idList);
     }
 
+    @Override
+    public User getByUserName(String userName) {
+        return userDao.getByUserName(userName);
+    }
+
+    @Override
+    public User getByEmail(String email) {
+        return userDao.getByEmail(email);
+    }
 }

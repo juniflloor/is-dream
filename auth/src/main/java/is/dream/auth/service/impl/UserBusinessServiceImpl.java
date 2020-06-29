@@ -9,11 +9,14 @@ import is.dream.common.Result;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.JWTUtil;
+import is.dream.common.utils.RegexUtil;
 import is.dream.dao.base.service.UserService;
 import is.dream.dao.entiry.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+
+import java.util.UUID;
 
 /**
  * @author chendongzhao
@@ -51,7 +54,29 @@ public class UserBusinessServiceImpl implements UserBusinessService {
 
     @Override
     public Result<Object> register(User user) {
-        return null;
+
+        if (ObjectUtils.isEmpty(user)) {
+            throw  new  BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        if (!RegexUtil.isLawful(user.getPassword())) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.PASSWORD_IS_NOT_LAWFUL);
+        }
+
+        User nameUser = userService.getByUserName(user.getUserName());
+        if (!ObjectUtils.isEmpty(nameUser)) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
+        }
+
+        User emailUser = userService.getByEmail(user.getEmail());
+        if (!ObjectUtils.isEmpty(emailUser)) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_IS_EXIST);
+        }
+
+        user.setId(UUID.randomUUID().toString());
+
+        userService.save(user);
+        return Result.OK;
     }
 
     @Override
