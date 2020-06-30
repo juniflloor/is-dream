@@ -19,6 +19,8 @@ public enum AuthBusinessExceptionCode {
 
     EMAIL_SEND_FAIL ("A_100005","邮件发送失败"),
 
+    EMAIL_CODE_ERROR ("A_100006","验证码错误"),
+
     ;
 
     private String code;

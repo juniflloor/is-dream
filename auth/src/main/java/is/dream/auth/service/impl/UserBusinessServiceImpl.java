@@ -15,6 +15,7 @@ import is.dream.dao.entiry.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.UUID;
 
@@ -112,4 +113,36 @@ public class UserBusinessServiceImpl implements UserBusinessService {
 
         return result;
     }
+
+    @Override
+    public Result<Object> isLawfulUserName(String username) {
+
+        if (StringUtils.isEmpty(username)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        User user = userService.getByUserName(username);
+        if (!ObjectUtils.isEmpty(user)) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
+        }
+
+        return Result.OK;
+    }
+
+    @Override
+    public Result<Object> isLawfulEmail(String email) {
+
+        if (StringUtils.isEmpty(email)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        User user = userService.getByEmail(email);
+        if (!ObjectUtils.isEmpty(user)) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
+        }
+
+        return Result.OK;
+    }
+
+
 }

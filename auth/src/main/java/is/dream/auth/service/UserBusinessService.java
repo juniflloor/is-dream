@@ -21,4 +21,8 @@ public interface UserBusinessService {
 
      Result<Object> isLawful(String token) throws BaseBusinessException;
 
+     Result<Object> isLawfulUserName(String username);
+
+     Result<Object> isLawfulEmail(String email);
+
 }
