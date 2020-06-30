@@ -1,5 +1,6 @@
 package is.dream.auth.service.impl;
 
+import is.dream.auth.dto.UserDto;
 import is.dream.auth.exception.AuthBusinessException;
 import is.dream.auth.exception.AuthBusinessExceptionCode;
 import is.dream.auth.service.UserBusinessService;
@@ -12,6 +13,7 @@ import is.dream.common.utils.JWTUtil;
 import is.dream.common.utils.RegexUtil;
 import is.dream.dao.base.service.UserService;
 import is.dream.dao.entiry.User;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -54,25 +56,33 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     }
 
     @Override
-    public Result<Object> register(User user) {
+    public Result<Object> register(UserDto userDto) {
 
-        if (ObjectUtils.isEmpty(user)) {
+        if (ObjectUtils.isEmpty(userDto)) {
             throw  new  BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
 
-        if (!RegexUtil.isLawful(user.getPassword())) {
+        if (!RegexUtil.isLawful(userDto.getPassword())) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.PASSWORD_IS_NOT_LAWFUL);
         }
 
-        User nameUser = userService.getByUserName(user.getUserName());
+        User nameUser = userService.getByUserName(userDto.getUserName());
         if (!ObjectUtils.isEmpty(nameUser)) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
         }
 
-        User emailUser = userService.getByEmail(user.getEmail());
+        User emailUser = userService.getByEmail(userDto.getEmail());
         if (!ObjectUtils.isEmpty(emailUser)) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_IS_EXIST);
         }
+
+        String cacheCode = (String) redisUtils.get(userDto.getEmail());
+        if (userDto.getCode() == null || !cacheCode.equals(userDto.getCode())) {
+            throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_CODE_ERROR);
+        }
+
+        User user = new User();
+        BeanUtils.copyProperties(userDto,user);
 
         user.setId(UUID.randomUUID().toString());
 
@@ -113,36 +123,4 @@ public class UserBusinessServiceImpl implements UserBusinessService {
 
         return result;
     }
-
-    @Override
-    public Result<Object> isLawfulUserName(String username) {
-
-        if (StringUtils.isEmpty(username)) {
-            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
-        }
-
-        User user = userService.getByUserName(username);
-        if (!ObjectUtils.isEmpty(user)) {
-            throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
-        }
-
-        return Result.OK;
-    }
-
-    @Override
-    public Result<Object> isLawfulEmail(String email) {
-
-        if (StringUtils.isEmpty(email)) {
-            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
-        }
-
-        User user = userService.getByEmail(email);
-        if (!ObjectUtils.isEmpty(user)) {
-            throw new AuthBusinessException(AuthBusinessExceptionCode.USERNAME_IS_EXIST);
-        }
-
-        return Result.OK;
-    }
-
-
 }

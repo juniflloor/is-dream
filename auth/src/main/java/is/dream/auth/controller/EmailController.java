@@ -27,9 +27,4 @@ public class EmailController {
         return emailService.sendSimpleMail(to);
     }
 
-    @GetMapping( value = "/codeIsRight")
-    public Result<Object> codeIsRight(@RequestParam("email") String email,@RequestParam("code") String code) throws BaseBusinessException {
-
-        return emailService.codeIsRight(email,code);
-    }
 }

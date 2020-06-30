@@ -54,20 +54,4 @@ public class EmailBusinessServiceImpl implements EmailBusinessService {
         return Result.OK;
     }
 
-    @Override
-    public Result<Object> codeIsRight(String email, String code) {
-
-        if (StringUtils.isEmpty(email) || StringUtils.isEmpty(code)) {
-            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
-        }
-
-        String cacheCode = (String) redisUtils.get(email);
-
-        if (!cacheCode.equals(code)) {
-            throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_CODE_ERROR);
-        }
-
-        return Result.OK;
-    }
-
 }

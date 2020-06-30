@@ -1,5 +1,6 @@
 package is.dream.auth.controller;
 
+import is.dream.auth.dto.UserDto;
 import is.dream.auth.service.UserBusinessService;
 import is.dream.common.Result;
 import is.dream.common.exception.BaseBusinessException;
@@ -25,10 +26,11 @@ public class UserController {
         return userBusinessService.login(userName,password);
     }
 
+    @CrossOrigin
     @PostMapping( value = "/register")
-    public Result<Object> register(@RequestBody User user){
+    public Result<Object> register(@RequestBody UserDto userDto){
 
-        return null;
+        return userBusinessService.register(userDto);
     }
 
     @PostMapping( value = "/logout")
@@ -46,15 +48,5 @@ public class UserController {
     @PostMapping( value = "/isLawful")
     public Result<Object> isLawful(@RequestParam("token") String token) throws BaseBusinessException {
         return userBusinessService.isLawful(token);
-    }
-
-    @GetMapping( value = "/isLawfulUserName")
-    public Result<Object> isLawfulUserName(@RequestParam("username") String username){
-        return userBusinessService.isLawfulUserName(username);
-    }
-
-    @GetMapping( value = "/isLawfulEmail")
-    public Result<Object> isLawfulEmail(@RequestParam("email") String email){
-        return userBusinessService.isLawfulEmail(email);
     }
 }

@@ -11,6 +11,4 @@ public interface EmailBusinessService {
 
     Result<Object> sendSimpleMail(String to);
 
-    Result<Object> codeIsRight(String email, String code);
-
 }
