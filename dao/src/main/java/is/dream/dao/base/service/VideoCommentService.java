@@ -18,4 +18,6 @@ public interface VideoCommentService {
     VideoComment getById(String id);
 
     List<VideoComment> getByCommentSessionIdIn(List<String> commentSessionIdList);
+
+    List<VideoComment> getByCommentSessionId(String commentSessionId);
 }

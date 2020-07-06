@@ -42,4 +42,7 @@ public interface VideoCommentDao {
     })
     List<VideoComment> getByCommentSessionIdIn(@Param("commentSessionIdList") List<String> commentSessionIdList);
 
+    @Select("SELECT * FROM VideoComment WHERE commentSessionId=#{commentSessionId}")
+    List<VideoComment> getByCommentSessionId(String commentSessionId);
+
 }

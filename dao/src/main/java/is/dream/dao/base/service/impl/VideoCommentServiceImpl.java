@@ -38,4 +38,9 @@ public class VideoCommentServiceImpl implements VideoCommentService {
     public List<VideoComment> getByCommentSessionIdIn(List<String> commentSessionIdList){
         return videoCommentDao.getByCommentSessionIdIn(commentSessionIdList);
     }
+
+    @Override
+    public List<VideoComment> getByCommentSessionId(String commentSessionId){
+        return videoCommentDao.getByCommentSessionId(commentSessionId);
+    }
 }

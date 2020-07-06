@@ -47,17 +47,27 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
         videoComment.setVideoId(videoId);
         videoComment.setUserId("root");
         videoComment.setParentId(parentId);
+        videoComment.setContent(content);
         if (StringUtils.isEmpty(parentId)) {
             videoComment.setCommentSessionId(commentId);
             videoComment.setParentId(DBConstant.COMMENT_FIRST_PARENT);
         } else {
             VideoComment parentVideoComment = videoCommentService.getById(parentId);
+
             if (ObjectUtils.isEmpty(parentVideoComment)) {
                 throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_COMMENT_IS_NOT_FOUND);
             }
             videoComment.setCommentSessionId(parentVideoComment.getCommentSessionId());
+            if (!parentVideoComment.getParentId().equals(DBConstant.COMMENT_FIRST_PARENT)) {
+                List<VideoComment> videoCommentList = videoCommentService.getByCommentSessionId(parentVideoComment.getCommentSessionId());
+                VideoComment firstParentVideoComment = videoCommentList.stream().
+                        filter(filterVideoComment -> filterVideoComment.getParentId().equals(DBConstant.COMMENT_FIRST_PARENT)).
+                        collect(Collectors.toList()).get(0);
+                videoComment.setParentId(firstParentVideoComment.getCommentSessionId());
+                User user = userService.getById(parentVideoComment.getUserId());
+                videoComment.setContent(content + "  @<a>" + user.getUserName() + "</a>:" + parentVideoComment.getContent());
+            }
         }
-        videoComment.setContent(content);
         videoComment.setCreateTime(new Timestamp(new Date().getTime()));
         videoCommentService.save(videoComment);
         return Result.OK;
@@ -95,6 +105,7 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
         topVideoCommentList.forEach(videoComment -> {
             String commentSessionId = videoComment.getCommentSessionId();
             List<VideoCommentDto> v = videoCommentDtoMap.get(commentSessionId);
+            v.sort((a, b) -> (int) (b.getCreateTime().getTime() - a.getCreateTime().getTime()));
             Map<String,List<VideoCommentDto>> perVideoCommentDtoMap = v.stream().collect(Collectors.groupingBy(VideoComment::getParentId));
             VideoCommentDto finalVideoCommentDto = perVideoCommentDtoMap.get(DBConstant.COMMENT_FIRST_PARENT).get(0);
             generate(perVideoCommentDtoMap,finalVideoCommentDto);
