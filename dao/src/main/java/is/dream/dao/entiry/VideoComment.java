@@ -1,9 +1,11 @@
 package is.dream.dao.entiry;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+
 
 /**
  * @author chendongzhao
@@ -26,5 +28,6 @@ public class VideoComment {
 
     private String content;
 
-    private Date createTime;
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    private Timestamp createTime;
 }

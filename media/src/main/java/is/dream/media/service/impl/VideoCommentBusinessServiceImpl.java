@@ -19,11 +19,8 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.sql.Timestamp;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -61,7 +58,7 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
             videoComment.setCommentSessionId(parentVideoComment.getCommentSessionId());
         }
         videoComment.setContent(content);
-        videoComment.setCreateTime(new Date(System.currentTimeMillis()));
+        videoComment.setCreateTime(new Timestamp(new Date().getTime()));
         videoCommentService.save(videoComment);
         return Result.OK;
     }
@@ -94,7 +91,10 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
         Map<String,List<VideoCommentDto>> videoCommentDtoMap = videoCommentDtoList.stream().collect(Collectors.groupingBy(VideoComment::getCommentSessionId));
 
         List<VideoCommentDto> returnList = new ArrayList<>();
-        videoCommentDtoMap.forEach((k,v) -> {
+
+        topVideoCommentList.forEach(videoComment -> {
+            String commentSessionId = videoComment.getCommentSessionId();
+            List<VideoCommentDto> v = videoCommentDtoMap.get(commentSessionId);
             Map<String,List<VideoCommentDto>> perVideoCommentDtoMap = v.stream().collect(Collectors.groupingBy(VideoComment::getParentId));
             VideoCommentDto finalVideoCommentDto = perVideoCommentDtoMap.get(DBConstant.COMMENT_FIRST_PARENT).get(0);
             generate(perVideoCommentDtoMap,finalVideoCommentDto);

@@ -26,7 +26,7 @@ public interface VideoCommentDao {
     @Insert("INSERT into VideoComment values(#{id},#{videoId},#{commentSessionId},#{parentId},#{userId},#{content},#{createTime})")
     void save(VideoComment videoComment);
 
-    @Select("SELECT * FROM VideoComment WHERE videoId=#{videoId} AND parentId='FIRST' ORDER BY createTime LIMIT #{startIndex},5")
+    @Select("SELECT * FROM VideoComment WHERE videoId=#{videoId} AND parentId='FIRST' ORDER BY createTime DESC LIMIT #{startIndex},5")
     List<VideoComment> getByVideoId(String videoId,int startIndex);
 
     @Select("SELECT * FROM VideoComment WHERE id=#{id}")
