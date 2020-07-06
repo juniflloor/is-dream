@@ -7,9 +7,13 @@ package is.dream.common.utils;
  */
 public class RegexUtil {
 
-    public static final String PW_PATTERN = "^(?![A-Za-z0-9]+$)(?![a-z0-9\\W]+$)(?![A-Za-z\\W]+$)(?![A-Z0-9\\W]+$)[a-zA-Z0-9\\W]{8,}$";
+    public static final String PW_PATTERN = "^[a-z0-9A-Z]+$";;
 
     public static boolean isLawful(String matchString){
+
+        if (matchString.trim().length() <= 8) {
+            return false;
+        }
         return matchString.matches(PW_PATTERN);
     }
 }

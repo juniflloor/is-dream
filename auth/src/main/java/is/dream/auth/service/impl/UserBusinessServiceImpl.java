@@ -51,6 +51,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         String token = JWTUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
         userService.updateUserToken(dbUser.getId(), token.substring(0,50));
         redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getId(),token, CacheConstants.USER_TOKEN_EXPIRE);
+        dbUser.setToken(token);
         result.setData(dbUser);
         return result;
     }
@@ -85,7 +86,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         BeanUtils.copyProperties(userDto,user);
 
         user.setId(UUID.randomUUID().toString());
-
+        user.setUserHeadImageUrl("");
         userService.save(user);
         return Result.OK;
     }

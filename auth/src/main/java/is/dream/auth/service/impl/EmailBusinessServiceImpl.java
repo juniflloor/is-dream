@@ -6,15 +6,12 @@ import is.dream.auth.service.EmailBusinessService;
 import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
 import is.dream.common.constants.EmailConstant;
-import is.dream.common.exception.BaseBusinessException;
-import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.CodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 /**
  * @author chendongzhao

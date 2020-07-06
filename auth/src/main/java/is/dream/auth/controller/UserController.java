@@ -20,7 +20,8 @@ public class UserController {
     @Autowired
     private UserBusinessService userBusinessService;
 
-    @GetMapping( value = "/login")
+    @CrossOrigin
+    @PostMapping( value = "/login")
     public Result<Object> login(@RequestParam("userName") String userName,@RequestParam("password") String password) throws BaseBusinessException {
 
         return userBusinessService.login(userName,password);
