@@ -148,6 +148,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setFileName(realFileName);
             video.setTag(tag);
             video.setYear(year);
+            video.setLeadRole("陈冬照");
             video.setSuffix(originalFilename.substring(originalFilename.lastIndexOf(".") + 1).toLowerCase());
             video.setType(type);
             video.setSubtitle(subtitle);

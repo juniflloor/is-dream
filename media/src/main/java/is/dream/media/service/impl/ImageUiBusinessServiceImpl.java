@@ -1,6 +1,7 @@
 package is.dream.media.service.impl;
 
 import is.dream.common.Result;
+import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.dao.base.service.ImageUiService;
@@ -26,6 +27,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -71,23 +73,74 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
 
-        ImageUiSetting imageUiSetting = imageUiSettingService.getByImageLocation(imageLocation);
-        if (ObjectUtils.isEmpty(imageUiSetting)) {
+        List<ImageUiSetting> imageUiSettingList = imageUiSettingService.getByImageLocationLike(imageLocation);
+        if (ObjectUtils.isEmpty(imageUiSettingList)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.IMAGE_UI_SETTING_NOT_FOUND);
         }
 
-        List<ImageUi> imageUiList = imageUiService.getImageUiByAssociatedImageUiSettingId(imageUiSetting.getId());
-        List<String> associatedVideoIdList = imageUiList.stream().map(ImageUi::getAssociatedVideoId).collect(Collectors.toList());
-        List<Video> videoList = videoBusinessService.getByIdIn(associatedVideoIdList);
-        Map<String, Video> videoMap = videoList.stream().collect(Collectors.toMap(Video::getId, v->v));
-        List<VideoDto> videoDtoList = new ArrayList<>();
-        imageUiList.forEach(ImageUi-> {
-            VideoDto videoDto = new VideoDto();
-            videoDto.setImageUrl(ImageUi.getImageUrl());
-            Video video = videoMap.get(ImageUi.getAssociatedVideoId());
-            BeanUtils.copyProperties(video,videoDto);
-            videoDtoList.add(videoDto);
-        });
+        List<List<VideoDto>> videoDtoList = new ArrayList<>();
+        if (imageUiSettingList.size() == DBConstant.YES) {
+            ImageUiSetting imageUiSetting = imageUiSettingList.get(DBConstant.NO);
+            List<ImageUi> imageUiList = imageUiService.getImageUiByAssociatedImageUiSettingId(imageUiSetting.getId());
+            List<String> associatedVideoIdList = imageUiList.stream().map(ImageUi::getAssociatedVideoId).collect(Collectors.toList());
+            List<Video> videoList = videoBusinessService.getByIdIn(associatedVideoIdList);
+            Map<String, Video> videoMap = videoList.stream().collect(Collectors.toMap(Video::getId, v -> v));
+
+            imageUiList.forEach(ImageUi -> {
+                VideoDto videoDto = new VideoDto();
+                videoDto.setImageUrl(ImageUi.getImageUrl());
+                Video video = videoMap.get(ImageUi.getAssociatedVideoId());
+                BeanUtils.copyProperties(video, videoDto);
+                List<VideoDto> list = new ArrayList<>();
+                list.add(videoDto);
+                videoDtoList.add(list);
+            });
+        } else {
+
+            List<String> stringImageLocationList = imageUiSettingList.stream().map(ImageUiSetting::getId).collect(Collectors.toList());
+            List<ImageUi> imageUiList = imageUiService.getByAssociatedImageUiSettingIdList(stringImageLocationList);
+            Map<String,List<ImageUi>> imageUiMap = imageUiList.stream().collect(Collectors.groupingBy(imageUi -> imageUi.getAssociatedImageUiSettingId()));
+
+            List<String> associatedVideoIdList = imageUiList.stream().map(ImageUi::getAssociatedVideoId).collect(Collectors.toList());
+            List<Video> videoList = videoBusinessService.getByIdIn(associatedVideoIdList);
+            Map<String, Video> videoMap = videoList.stream().collect(Collectors.toMap(Video::getId, v -> v));
+
+            boolean flag = true;
+
+            while (flag) {
+
+                try {
+                    int fullCount = 0;
+                    List<VideoDto> list = new ArrayList<>();
+                    for (int i = 0; i < imageUiSettingList.size(); i++) {
+                        ImageUiSetting imageUiSetting = imageUiSettingList.get(i);
+                        int weight = imageUiSetting.getWeight();
+                        fullCount += weight;
+                        List<ImageUi> tempImageUiList = imageUiMap.get(imageUiSetting.getId()).subList(videoDtoList.size() * weight, (videoDtoList.size() + 1) * weight );
+                        tempImageUiList.forEach(ImageUi -> {
+                            VideoDto videoDto = new VideoDto();
+                            videoDto.setImageUrl(ImageUi.getImageUrl());
+                            Video video = videoMap.get(ImageUi.getAssociatedVideoId());
+                            BeanUtils.copyProperties(video, videoDto);
+                            list.add(videoDto);
+                        });
+                    }
+
+                    if (fullCount == list.size()) {
+                        videoDtoList.add(list);
+                    } else {
+                        flag = false;
+                    }
+
+                    if (fullCount * videoDtoList.size() == imageUiList.size()) {
+                        flag = false;
+                    }
+                }catch (Exception e) {
+                    flag = false;
+                }
+            }
+
+        }
 
         return Result.setSpecialData(videoDtoList);
     }

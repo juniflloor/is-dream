@@ -3,6 +3,7 @@ package is.dream.dao.base.service;
 import is.dream.dao.entiry.ImageUiSetting;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * @author chendongzhao
@@ -16,4 +17,6 @@ public interface ImageUiSettingService {
     void save(ImageUiSetting imageUiSetting);
 
     ImageUiSetting getByImageLocation(String imageLocation);
+
+    List<ImageUiSetting> getByImageLocationLike(String imageLocation);
 }

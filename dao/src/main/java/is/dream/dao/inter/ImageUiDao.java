@@ -30,4 +30,14 @@ public interface ImageUiDao {
 
     @Delete("DELETE FROM ImageUi WHERE associatedImageUiSettingId = #{associatedImageUiSettingId}")
     void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId);
+
+    @Select({
+            "<script>",
+            "SELECT * FROM ImageUi WHERE associatedImageUiSettingId in",
+            "<foreach collection='associatedImageUiSettingIdList' item='item' open='(' separator=',' close=')'>",
+            "#{item}",
+            "</foreach>",
+            "</script>"
+    })
+    List<ImageUi> getByAssociatedImageUiSettingIdList(@Param("associatedImageUiSettingIdList") List<String> associatedImageUiSettingIdList);
 }

@@ -8,12 +8,12 @@ package is.dream.common.constants;
 public class DBConstant {
 
     /**
-     * 未活跃的 已选择的
+     * 未活跃的 已选择的 大小为 1
      */
     public static final int YES = 1;
 
     /**
-     * 未活跃的 未选择的 默认的 未操作的
+     * 未活跃的 未选择的 默认的 未操作的 大小为 0
      */
     public static final int NO = 0;
 

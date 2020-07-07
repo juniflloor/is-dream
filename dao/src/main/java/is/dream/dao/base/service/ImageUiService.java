@@ -1,6 +1,7 @@
 package is.dream.dao.base.service;
 
 import is.dream.dao.entiry.ImageUi;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface ImageUiService {
     List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 
     void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId);
+
+    List<ImageUi> getByAssociatedImageUiSettingIdList(List<String> associatedImageUiSettingIdList);
 }

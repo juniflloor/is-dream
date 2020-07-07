@@ -32,6 +32,8 @@ public class Video {
 
     private String year;
 
+    private String leadRole;
+
     private String defaultImageUrl;
 
     private Long duration;;

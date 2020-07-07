@@ -4,6 +4,7 @@ import is.dream.dao.entiry.ImageUiSetting;
 import org.apache.ibatis.annotations.*;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * @author chendongzhao
@@ -18,12 +19,14 @@ public interface ImageUiSettingDao {
             @Result(property = "imageLocation", column = "imageLocation"),
             @Result(property = "width", column = "width"),
             @Result(property = "high", column = "high"),
+            @Result(property = "weight", column = "weight"),
+            @Result(property = "listLocation", column = "listLocation"),
             @Result(property = "remark", column = "remark"),
             @Result(property = "createTime", column = "createTime"),
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{remark},#{createTime},#{updateTime})")
+    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{weight},#{listLocation},#{remark},#{createTime},#{updateTime})")
     void save(ImageUiSetting imageUiSetting);
 
     @Update("UPDATE ImageUiSetting set width=#{width},high=#{high},remark=#{remark},updateTime=#{updateTime} WHERE imageLocation=#{imageLocation}")
@@ -31,5 +34,8 @@ public interface ImageUiSettingDao {
 
     @Select("Select * from ImageUiSetting WHERE imageLocation=#{imageLocation}")
     ImageUiSetting getByImageLocation(String imageLocation);
+
+    @Select("Select * from ImageUiSetting WHERE imageLocation like #{imageLocation} ORDER BY listLocation")
+    List<ImageUiSetting> getByImageLocationLike(String imageLocation);
 
 }

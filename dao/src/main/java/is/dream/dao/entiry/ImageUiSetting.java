@@ -24,6 +24,10 @@ public class ImageUiSetting {
 
     private int high;
 
+    private int weight;
+
+    private int listLocation;
+
     private String remark;
 
     private Date createTime;

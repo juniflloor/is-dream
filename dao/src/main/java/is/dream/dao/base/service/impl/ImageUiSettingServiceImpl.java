@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * @author chendongzhao
@@ -33,4 +34,11 @@ public class ImageUiSettingServiceImpl implements ImageUiSettingService {
     public ImageUiSetting getByImageLocation(String imageLocation) {
         return imageUiSettingDao.getByImageLocation(imageLocation);
     }
+
+    @Override
+    public List<ImageUiSetting> getByImageLocationLike(String imageLocation) {
+        return imageUiSettingDao.getByImageLocationLike(imageLocation+"%");
+    }
+
+
 }
