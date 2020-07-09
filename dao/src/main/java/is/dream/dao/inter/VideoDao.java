@@ -64,4 +64,19 @@ public interface VideoDao {
     @Update("UPDATE video set likeCount = likeCount + 1 WHERE id=#{id}")
     void addLikeCountById(String id);
 
+    @Select("SELECT * from video where name = #{name}")
+    List<Video> searchByName(String name);
+
+    @Select("SELECT * from video where type = #{type}")
+    List<Video> searchByType(String type);
+
+    @Select("SELECT * from video where tag = #{tag}")
+    List<Video> searchByTag(String tag);
+
+    @Select("SELECT * from video where leadRole = #{leadRole}")
+    List<Video> searchByLeadRole(String leadRole);
+
+    @Select("SELECT * from video where name like #{name} or type like #{type} or tag like #{tag} or leadRole like #{leadRole}")
+    List<Video> searchVideo(String name,String type,String tag,String leadRole);
+
 }

@@ -9,15 +9,14 @@ import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
-import is.dream.common.utils.JWTUtil;
-import is.dream.common.utils.RegexUtil;
+import is.dream.common.utils.JWTIUtil;
+import is.dream.common.utils.RegexIUtil;
 import is.dream.dao.base.service.UserService;
 import is.dream.dao.entiry.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
 
 import java.util.UUID;
 
@@ -48,7 +47,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
             throw new AuthBusinessException(AuthBusinessExceptionCode.USER_ERROR);
         }
 
-        String token = JWTUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
+        String token = JWTIUtil.createToken(dbUser, CacheConstants.USER_TOKEN_EXPIRE);
         userService.updateUserToken(dbUser.getId(), token.substring(0,50));
         redisUtils.set(CacheConstants.USER_TOKEN_REDIS_PREFIX + dbUser.getId(),token, CacheConstants.USER_TOKEN_EXPIRE);
         dbUser.setToken(token);
@@ -63,7 +62,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
             throw  new  BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
 
-        if (!RegexUtil.isLawful(userDto.getPassword())) {
+        if (!RegexIUtil.isLawful(userDto.getPassword())) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.PASSWORD_IS_NOT_LAWFUL);
         }
 
@@ -103,7 +102,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     public Result<Object> isLawful(String token) throws BaseBusinessException {
 
         Result result = Result.OK;
-        User user = JWTUtil.deciphering(token,User.class);
+        User user = JWTIUtil.deciphering(token,User.class);
         if (ObjectUtils.isEmpty(user)) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.ERROR_TOKEN);
         }

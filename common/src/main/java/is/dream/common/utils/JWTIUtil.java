@@ -14,7 +14,7 @@ import java.util.Map;
  * @version 1.0
  * @date 2020/6/10 14:06
  */
-public class JWTUtil {
+public class JWTIUtil {
 
     public  static final String TOKEN = "token";
     private static final String JWT_EXPIRE = "expire";

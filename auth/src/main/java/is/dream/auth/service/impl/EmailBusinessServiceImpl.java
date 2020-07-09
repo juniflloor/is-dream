@@ -6,7 +6,7 @@ import is.dream.auth.service.EmailBusinessService;
 import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
 import is.dream.common.constants.EmailConstant;
-import is.dream.common.utils.CodeUtil;
+import is.dream.common.utils.CodeIUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -38,7 +38,7 @@ public class EmailBusinessServiceImpl implements EmailBusinessService {
             message.setFrom(from);
             message.setTo(to);
             message.setSubject(EmailConstant.REGISTER_CODE_SUBJECT);
-            String code =  CodeUtil.getCode();
+            String code =  CodeIUtil.getCode();
             String content = EmailConstant.REGISTER_CODE_CONTENT_FIRST + code + EmailConstant.REGISTER_CODE_CONTENT_SECOND;
             message.setText(content);
             javaMailSender.send(message);

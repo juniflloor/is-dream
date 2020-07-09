@@ -5,7 +5,7 @@ package is.dream.common.utils;
  * @version 1.0
  * @date 2020/6/30 4:39
  */
-public class RegexUtil {
+public class RegexIUtil {
 
     public static final String PW_PATTERN = "^[a-z0-9A-Z]+$";;
 

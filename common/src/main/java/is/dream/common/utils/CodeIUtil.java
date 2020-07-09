@@ -7,7 +7,7 @@ import java.util.Random;
  * @version 1.0
  * @date 2020/6/30 5:44
  */
-public class CodeUtil {
+public class CodeIUtil {
 
     public static String getCode(){
         String code = "";

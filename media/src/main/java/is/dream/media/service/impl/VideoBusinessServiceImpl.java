@@ -4,6 +4,7 @@ import is.dream.common.Result;
 import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
+import is.dream.common.utils.StringIUtils;
 import is.dream.dao.base.service.ImageUiService;
 import is.dream.dao.base.service.ImageUiSettingService;
 import is.dream.dao.base.service.VideoOperationService;
@@ -30,6 +31,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
@@ -228,5 +231,22 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
         videoService.addWatchCountById(id);
         return Result.OK;
+    }
+
+    public  Result<Object> searchVideo(String keyword) throws UnsupportedEncodingException {
+
+        if (StringUtils.isEmpty(keyword)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        String decodeKeyword = URLDecoder.decode(keyword,"utf-8");
+        String likeParam = StringIUtils.addBothPercent(decodeKeyword);
+        List<Video> videoList = videoService.searchVideo(likeParam,likeParam,likeParam,likeParam);
+
+        if (ObjectUtils.isEmpty(videoList)) {
+            return Result.OK;
+        }
+
+        return Result.setSpecialData(videoList);
     }
 }

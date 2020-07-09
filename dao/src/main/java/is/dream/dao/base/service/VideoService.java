@@ -20,4 +20,14 @@ public interface VideoService {
     void addWatchCountById(String id);
 
     void addLikeCountById(String id);
+
+   List<Video> searchByName(String name);
+
+   List<Video> searchByType(String type);
+
+   List<Video> searchByTag(String tag);
+
+   List<Video> searchByLeadRole(String leadRole);
+
+   List<Video> searchVideo(String name,String type,String tag,String leadRole);
 }

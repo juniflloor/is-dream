@@ -4,8 +4,10 @@ import is.dream.common.Result;
 import is.dream.dao.entiry.ImageUiSetting;
 import is.dream.dao.entiry.Video;
 import is.dream.media.exception.MediaBusinessException;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -25,4 +27,6 @@ public interface VideoBusinessService {
     Result<Object> addLikeCount(String id);
 
     Result<Object> addWatchCount(String id);
+
+    Result<Object> searchVideo(String keyword) throws UnsupportedEncodingException;
 }

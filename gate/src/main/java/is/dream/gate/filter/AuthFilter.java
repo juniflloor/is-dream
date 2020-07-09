@@ -5,7 +5,7 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import is.dream.common.Result;
 import is.dream.common.exception.BaseBusinessException;
-import is.dream.common.utils.JWTUtil;
+import is.dream.common.utils.JWTIUtil;
 import is.dream.gate.contants.URLConstant;
 import is.dream.gate.fegin.AuthFegin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +58,7 @@ public class AuthFilter extends ZuulFilter {
         RequestContext requestContext = RequestContext.getCurrentContext();
         try {
             HttpServletRequest request = requestContext.getRequest();
-            Object token = request.getHeader(JWTUtil.TOKEN);
+            Object token = request.getHeader(JWTIUtil.TOKEN);
             String uri = request.getRequestURI();
             System.out.println("=========================>" + uri);
             Boolean isNoAuthenticationUrl = uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER);

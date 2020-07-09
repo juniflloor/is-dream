@@ -39,4 +39,25 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public void addLikeCountById(String id){ videoDao.addLikeCountById(id); }
+
+    @Override
+    public List<Video> searchByName(String name){
+        return videoDao.searchByName(name);
+    }
+
+    public List<Video> searchByType(String type) {
+        return videoDao.searchByType(type);
+    }
+
+    public List<Video> searchByTag(String tag) {
+        return videoDao.searchByTag(tag);
+    }
+
+    public List<Video> searchByLeadRole(String leadRole) {
+        return videoDao.searchByLeadRole(leadRole);
+    }
+
+    public List<Video> searchVideo(String name,String type,String tag,String leadRole){
+        return videoDao.searchVideo(name,type,tag,leadRole);
+    }
 }
