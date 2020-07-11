@@ -15,6 +15,7 @@ import org.springframework.util.ObjectUtils;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -37,6 +38,7 @@ public class UserPlayVideoLogBusinessServiceImpl implements UserPlayVideoLogBusi
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
 
+        userPlayVideoLog.setId(UUID.randomUUID().toString());
         userPlayVideoLog.setCreateTime(new Timestamp(new Date().getTime()));
         userPlayVideoLog.setUpdateTime(new Timestamp(new Date().getTime()));
 

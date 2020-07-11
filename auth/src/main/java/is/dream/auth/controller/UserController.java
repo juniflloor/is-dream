@@ -20,14 +20,12 @@ public class UserController {
     @Autowired
     private UserBusinessService userBusinessService;
 
-    @CrossOrigin
     @PostMapping( value = "/login")
     public Result<Object> login(@RequestParam("userName") String userName,@RequestParam("password") String password) throws BaseBusinessException {
 
         return userBusinessService.login(userName,password);
     }
 
-    @CrossOrigin
     @PostMapping( value = "/register")
     public Result<Object> register(@RequestBody UserDto userDto){
 

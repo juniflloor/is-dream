@@ -21,7 +21,7 @@ public class UserPlayVideoLogServiceImpl implements UserPlayVideoLogService {
 
     @Override
     public void save(UserPlayVideoLog userPlayVideoLog) {
-        userPlayVideoLogDao.save(userPlayVideoLogDao);
+        userPlayVideoLogDao.save(userPlayVideoLog);
     }
 
     @Override

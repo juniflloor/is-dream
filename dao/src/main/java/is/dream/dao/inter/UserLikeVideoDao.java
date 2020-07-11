@@ -1,6 +1,6 @@
 package is.dream.dao.inter;
 
-import is.dream.dao.entiry.UserPlayVideoLog;
+import is.dream.dao.entiry.UserLikeVideo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -8,11 +8,10 @@ import java.util.List;
 /**
  * @author chendongzhao
  * @version 1.0
- * @date 2020/7/11 11:46
+ * @date 2020/7/11 15:17
  */
 @Mapper
-public interface UserPlayVideoLogDao {
-
+public interface UserLikeVideoDao {
 
     @Results({
             @Result(property = "id", column = "id"),
@@ -22,10 +21,10 @@ public interface UserPlayVideoLogDao {
             @Result(property = "updateTime", column = "updateTime"),
     })
 
-    @Insert("INSERT INTO userPlayVideoLog values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
-    void save(UserPlayVideoLog userPlayVideoLog);
+    @Insert("INSERT INTO userLikeVideo values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
+    void save(UserLikeVideo userLikeVideo);
 
-    @Select("SELECT * FROM userPlayVideoLog WHERE associatedUserId = #{associatedUserId} limit 0, 10")
-    List<UserPlayVideoLog> getByAssociatedUserId(String associatedUserId);
+    @Select("SELECT * FROM userLikeVideo WHERE associatedUserId = #{associatedUserId} limit 0, 10")
+    List<UserLikeVideo> getByAssociatedUserId(String associatedUserId);
 
 }

@@ -5,7 +5,6 @@ import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.handler.ffmpeg.entity.MusicMetaInfo;
 import is.dream.media.handler.ffmpeg.entity.VideoMetaInfo;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import java.io.*;
 import java.sql.Time;
@@ -81,15 +80,9 @@ public class MediaUtil {
         musicStreamPattern = Pattern.compile(musicStreamRegex);
     }
 
-
     //ffmpeg -i 1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list playlist.m3u8 -segment_time 10 D:\test\out%03d.ts
     public static void convertM3u8(File sourceFile, File videoFile, File imageFile, String outName){
 
-
-//        String format = getFormat(sourceFile);
-//        if (!isLegalFormat(format, VIDEO_TYPE)) {
-//            throw new RuntimeException("无法解析的视频格式：" + format);
-//        }
         try {
             List<String> commond = new ArrayList<String>();
             commond.add("ffmpeg");
@@ -146,12 +139,9 @@ public class MediaUtil {
             inputStream.start();
             // 等待ffmpeg命令执行完
             ffmpeg.waitFor();
-
             // 获取执行结果字符串
             String result = errorStream.stringBuffer.append(inputStream.stringBuffer).toString();
-
             // 输出执行的命令信息
-            System.out.println("执行结果 ========》" + result);
             return result;
 
         } catch (Exception e) {
@@ -178,7 +168,6 @@ public class MediaUtil {
     public static VideoMetaInfo cutVideoFrame(File sourceFile, File targetFile, String startTime, String fileName,int width,int high,Boolean isReturnVideoMetaInfo) {
 
         String fileOutPutPath = targetFile.getAbsolutePath();
-        // 输出路径不是以.gif结尾，抽取并生成一张静态图
         List<String> commond = new ArrayList<String>();
         commond.add("ffmpeg");
         commond.add("-i");

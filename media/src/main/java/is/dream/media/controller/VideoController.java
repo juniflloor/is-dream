@@ -30,28 +30,24 @@ public class VideoController {
         return videoBusinessService.upload(file,name,type,tag,title,subtitle,year,introduction,startTime,false,null);
     }
 
-    @CrossOrigin
     @GetMapping("/getVideoById")
     public Result<Object> getVideoById(@RequestParam("id") String id,@RequestParam("userId") String userId) {
 
         return videoBusinessService.getVideoById(id,userId);
     }
 
-    @CrossOrigin
     @GetMapping("/addLikeCount")
     public Result<Object> addLikeCount(@RequestParam("id") String id) {
 
         return videoBusinessService.addLikeCount(id);
     }
 
-    @CrossOrigin
     @GetMapping("/addWatchCount")
     public Result<Object> addWatchCount(@RequestParam("id") String id) {
 
         return videoBusinessService.addWatchCount(id);
     }
 
-    @CrossOrigin
     @GetMapping("/searchVideo")
     public Result<Object> searchVideo(@RequestParam("keyword") String keyword) throws UnsupportedEncodingException {
 
