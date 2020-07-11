@@ -115,6 +115,14 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
         return Result.setSpecialData(returnList);
     }
 
+    public Result<Object> getCommentByUserId(String associatedUserId){
+        if (StringUtils.isEmpty(associatedUserId)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        return null;
+    }
+
     private void generate(Map<String,List<VideoCommentDto>> perVideoCommentDtoMap,VideoCommentDto currentVideoCommentDto){
 
         String parentId = currentVideoCommentDto.getId();

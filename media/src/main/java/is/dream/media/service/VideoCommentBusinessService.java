@@ -12,4 +12,6 @@ public interface VideoCommentBusinessService {
     Result<Object> saveComment(String videoId, String content, String parentId);
 
     Result<Object> getVoidComment(String videoId, int startIndex);
+
+    Result<Object> getCommentByUserId(String associatedUserId);
 }

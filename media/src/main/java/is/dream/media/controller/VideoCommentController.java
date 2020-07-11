@@ -31,4 +31,12 @@ public class VideoCommentController {
 
         return videoCommentBusinessService.getVoidComment(videoId,startIndex);
     }
+
+    @PostMapping("/getCommentByUserId")
+    public Result<Object> getCommentByUserId(@RequestParam("associatedUserId") String associatedUserId){
+
+        return videoCommentBusinessService.getCommentByUserId(associatedUserId);
+    }
+
+
 }
