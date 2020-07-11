@@ -20,7 +20,7 @@ public interface VideoBusinessService {
     Result<Object> upload(MultipartFile file,String name,String type,String tag,String title,String subtitle,String year,
                           String introduction, String startTime,boolean isGenerateUiImage, ImageUiSetting imageUiSetting) throws MediaBusinessException;
 
-    Result<Object> getVideoById(String id);
+    Result<Object> getVideoById(String id,String userId);
 
     List<Video> getByIdIn(List<String> idList);
 

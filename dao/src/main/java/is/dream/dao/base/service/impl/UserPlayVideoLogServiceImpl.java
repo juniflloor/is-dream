@@ -4,6 +4,7 @@ import is.dream.dao.base.service.UserPlayVideoLogService;
 import is.dream.dao.entiry.UserPlayVideoLog;
 import is.dream.dao.inter.UserPlayVideoLogDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @version 1.0
  * @date 2020/7/11 11:51
  */
+@Service
 public class UserPlayVideoLogServiceImpl implements UserPlayVideoLogService {
 
     @Autowired

@@ -9,6 +9,7 @@ import is.dream.dao.entiry.UserPlayVideoLog;
 import is.dream.dao.entiry.Video;
 import is.dream.media.service.UserPlayVideoLogBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.sql.Timestamp;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
  * @version 1.0
  * @date 2020/7/11 12:28
  */
+@Service
 public class UserPlayVideoLogBusinessServiceImpl implements UserPlayVideoLogBusinessService {
 
     @Autowired

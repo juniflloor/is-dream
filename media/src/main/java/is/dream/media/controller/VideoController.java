@@ -32,9 +32,9 @@ public class VideoController {
 
     @CrossOrigin
     @GetMapping("/getVideoById")
-    public Result<Object> getVideoById(@RequestParam("id") String id) {
+    public Result<Object> getVideoById(@RequestParam("id") String id,@RequestParam("userId") String userId) {
 
-        return videoBusinessService.getVideoById(id);
+        return videoBusinessService.getVideoById(id,userId);
     }
 
     @CrossOrigin

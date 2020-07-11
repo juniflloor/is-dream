@@ -5,14 +5,8 @@ import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.StringIUtils;
-import is.dream.dao.base.service.ImageUiService;
-import is.dream.dao.base.service.ImageUiSettingService;
-import is.dream.dao.base.service.VideoOperationService;
-import is.dream.dao.base.service.VideoService;
-import is.dream.dao.entiry.ImageUi;
-import is.dream.dao.entiry.ImageUiSetting;
-import is.dream.dao.entiry.Video;
-import is.dream.dao.entiry.VideoOperation;
+import is.dream.dao.base.service.*;
+import is.dream.dao.entiry.*;
 import is.dream.media.config.VideoConfig;
 import is.dream.media.dto.VideoDto;
 import is.dream.media.exception.MediaBusinessException;
@@ -34,6 +28,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.UUID;
 
@@ -62,6 +57,9 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
     @Autowired
     private VideoOperationService videoOperationService;
+
+    @Autowired
+    private UserPlayVideoLogService userPlayVideoLogService;
 
     @Override
     @Transactional
@@ -181,7 +179,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
     }
 
     @Override
-    public Result<Object> getVideoById(String id) {
+    public Result<Object> getVideoById(String id,String userId) {
 
         if (StringUtils.isEmpty(id)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
@@ -193,6 +191,19 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         if (!ObjectUtils.isEmpty(videoOperation)) {
             videoDto.setLike(videoOperation.getLike());
         }
+
+        if (!StringUtils.isEmpty(userId)) {
+            UserPlayVideoLog userPlayVideoLog = new UserPlayVideoLog();
+            String userPlayVideoLogId = UUID.randomUUID().toString();
+            userPlayVideoLog.setId(userPlayVideoLogId);
+            userPlayVideoLog.setAssociatedUserId(userId);
+            userPlayVideoLog.setAssociatedVideoId(id);
+            userPlayVideoLog.setCreateTime(new Timestamp(new java.util.Date().getTime()));
+            userPlayVideoLog.setUpdateTime(new Timestamp(new java.util.Date().getTime()));
+            userPlayVideoLogService.save(userPlayVideoLog);
+        }
+
+
         return Result.setSpecialData(videoDto);
     }
 
