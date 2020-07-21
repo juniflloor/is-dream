@@ -1,4 +1,5 @@
-# is-dream
+# is-dream 
+author 陈冬照
 dream service 
 
 ---- 该项目主要是做点播视频网站 
