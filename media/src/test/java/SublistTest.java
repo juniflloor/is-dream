@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author chendongzhao
@@ -19,6 +20,9 @@ import java.util.Map;
 public class SublistTest {
 
     public static void main(String [] args){
+
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
 
         Map<String, List<Integer>> myMap = new HashMap<>();
         List<Integer> myList = new ArrayList<>();
