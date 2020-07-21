@@ -45,19 +45,27 @@ public class VideoServiceImpl implements VideoService {
         return videoDao.searchByName(name);
     }
 
+    @Override
     public List<Video> searchByType(String type) {
         return videoDao.searchByType(type);
     }
 
+    @Override
     public List<Video> searchByTag(String tag) {
         return videoDao.searchByTag(tag);
     }
 
+    @Override
     public List<Video> searchByLeadRole(String leadRole) {
         return videoDao.searchByLeadRole(leadRole);
     }
 
+    @Override
     public List<Video> searchVideo(String name,String type,String tag,String leadRole){
         return videoDao.searchVideo(name,type,tag,leadRole);
     }
+
+    @Override
+    public List<Video> getMostViewVideo() { return videoDao.getMostViewVideo(); }
+
 }

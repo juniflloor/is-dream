@@ -260,4 +260,43 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
         return Result.setSpecialData(videoList);
     }
+
+    @Override
+    public Result<Object> getAssociatedVideo(String id) {
+
+        if (StringUtils.isEmpty(id)) {
+            throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
+        }
+
+        Video video = videoService.getVideoById(id);
+
+        if (ObjectUtils.isEmpty(video)) {
+            return Result.OK;
+        }
+
+        String name = StringIUtils.addBothPercent(video.getName());
+        String type = StringIUtils.addBothPercent(video.getType());
+        String tag = StringIUtils.addBothPercent(video.getTag());
+        String leadRole = StringIUtils.addBothPercent(video.getLeadRole());
+        List<Video> videoList = videoService.searchVideo(name,type,tag,leadRole);
+
+        if (ObjectUtils.isEmpty(videoList)) {
+            return Result.OK;
+        }
+
+        return Result.setSpecialData(videoList);
+
+    }
+
+    @Override
+    public Result<Object> getMostViewVideo() {
+        List<Video> videoList =  videoService.getMostViewVideo();
+
+        if (ObjectUtils.isEmpty(videoList)) {
+            return Result.OK;
+        }
+
+        return Result.setSpecialData(videoList);
+    }
+
 }

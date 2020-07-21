@@ -53,4 +53,14 @@ public class VideoController {
 
         return videoBusinessService.searchVideo(keyword);
     }
+
+    @GetMapping("/getAssociatedVideo")
+    public Result<Object> getAssociatedVideo(@RequestParam("id") String id){
+        return videoBusinessService.getAssociatedVideo(id);
+    }
+
+    @GetMapping("/getMostViewVideo")
+    public Result<Object> getMostViewVideo(){
+        return videoBusinessService.getMostViewVideo();
+    }
 }

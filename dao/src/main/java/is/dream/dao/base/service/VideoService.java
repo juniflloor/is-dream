@@ -30,4 +30,6 @@ public interface VideoService {
    List<Video> searchByLeadRole(String leadRole);
 
    List<Video> searchVideo(String name,String type,String tag,String leadRole);
+
+   List<Video> getMostViewVideo();
 }
