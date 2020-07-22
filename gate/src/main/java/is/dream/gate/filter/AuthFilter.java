@@ -1,17 +1,20 @@
 package is.dream.gate.filter;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import is.dream.common.Result;
-import is.dream.common.exception.BaseBusinessException;
+import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.JWTIUtil;
 import is.dream.gate.contants.URLConstant;
 import is.dream.gate.fegin.AuthFegin;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ObjectUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +47,7 @@ public class AuthFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return 0;
+        return 100;
     }
 
     @Override
@@ -52,34 +55,47 @@ public class AuthFilter extends ZuulFilter {
         return true;
     }
 
+    @SneakyThrows
     @Override
     public Object run() throws ZuulException {
 
         RequestContext requestContext = RequestContext.getCurrentContext();
         try {
             HttpServletRequest request = requestContext.getRequest();
-            Object token = request.getHeader(JWTIUtil.TOKEN);
-            if (token == null) {
+            String uri = request.getRequestURI();
+            if (request.getMethod().equals("OPTIONS")) {
                 return null;
             }
-//            String uri = request.getRequestURI();
-//            System.out.println("=========================>" + uri);
-//            Boolean isNoAuthenticationUrl = uri.endsWith(URLConstant.NO_AUTH_LOGIN) || uri.endsWith(URLConstant.NO_AUTH_REGISTER);
-//            if (ObjectUtils.isEmpty(token) && isNoAuthenticationUrl) {
-//                return null;
-//            }
-
-            Result result = authFegin.checkTokenIsLawful((String) token);
-            if (!result.getCode().equals(Result.OK.getCode())) {
-                throw new BaseBusinessException(result.getCode(),result.getMessage());
+            System.out.println("=========================>" + uri);
+            Boolean isNoAuthenticationUrl = uri.endsWith(URLConstant.NO_AUTH_COMMENT);
+            Object token = request.getHeader(JWTIUtil.TOKEN);
+            if (isNoAuthenticationUrl && token == null) {
+                setUnauthorizedResponse(requestContext,Result.ofFail(BaseExceptionCode.B_NOT_INVALID.getCode(),BaseExceptionCode.B_PARAM_FAIL.getMessage()));
             }
+            if (isNoAuthenticationUrl && token != null) {
 
+                Result result = authFegin.checkTokenIsLawful((String) token);
+                if (!result.getCode().equals(Result.OK.getCode())) {
+                    setUnauthorizedResponse(requestContext,result);
+                }
+            }
         } catch (Exception e) {
-            requestContext.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            requestContext.set("error.exception", e);
+            setUnauthorizedResponse(requestContext,Result.ofFail(BaseExceptionCode.B_NOT_INVALID.getCode(),BaseExceptionCode.B_PARAM_FAIL.getMessage()));
         }
 
         return null;
     }
+
+    private void setUnauthorizedResponse(RequestContext requestContext, Result result) throws JsonProcessingException {
+        requestContext.setSendZuulResponse(false);
+        requestContext.setResponseStatusCode(HttpStatus.OK.value());
+
+        ObjectMapper mapper = new ObjectMapper();
+        String body = mapper.writeValueAsString(result);
+
+        requestContext.setResponseBody(body);
+        requestContext.getResponse().setContentType("application/json; charset=UTF-8");
+    }
+
 
 }

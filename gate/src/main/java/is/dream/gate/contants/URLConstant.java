@@ -12,4 +12,6 @@ public class URLConstant {
 
     public static final String NO_AUTH_REGISTER = "/register";
 
+    public static final String NO_AUTH_COMMENT = "/saveComment";
+
 }
