@@ -44,7 +44,7 @@ public class UserController {
         return null;
     }
 
-    @PostMapping( value = "/isLawful")
+    @GetMapping( value = "/isLawful")
     public Result<Object> isLawful(@RequestParam("token") String token) throws BaseBusinessException {
         return userBusinessService.isLawful(token);
     }

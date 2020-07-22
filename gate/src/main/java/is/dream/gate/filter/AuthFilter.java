@@ -42,12 +42,12 @@ public class AuthFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
-        return FilterConstants.PRE_TYPE;
+        return FilterConstants.POST_TYPE;
     }
 
     @Override
     public int filterOrder() {
-        return 100;
+            return FilterConstants.PRE_DECORATION_FILTER_ORDER - 1;
     }
 
     @Override
@@ -88,8 +88,8 @@ public class AuthFilter extends ZuulFilter {
 
     private void setUnauthorizedResponse(RequestContext requestContext, Result result) throws JsonProcessingException {
         requestContext.setSendZuulResponse(false);
-        requestContext.setResponseStatusCode(HttpStatus.OK.value());
-
+        requestContext.set("sendForwardFilter.ran", true);
+        requestContext.setResponseStatusCode(401);
         ObjectMapper mapper = new ObjectMapper();
         String body = mapper.writeValueAsString(result);
 
