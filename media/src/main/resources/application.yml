@@ -35,13 +35,13 @@ zuul:
 
 
 video:
-  sourcePath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\
-  targetPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\video\\
-  imageDefaultPath:   D:\\Learn\\Soft\\nginx-1.16.1\\html\\hls\\image\\
-  imageDefaultUrl:  http://localhost/defaultImage/
-  imageUIPath:  D:\\Learn\\Soft\\nginx-1.16.1\\html\\ui\\
-  imageUIUrl: http://localhost/uiImage/
-  accessUrl:  http://localhost/video/
+  sourcePath:   /usr/video/hls/
+  targetPath:   /usr/video/hls/video/
+  imageDefaultPath:   /usr/video/hls/image/
+  imageDefaultUrl:  http://47.93.35.64/defaultImage/
+  imageUIPath:  /usr/video/ui/
+  imageUIUrl: http://47.93.35.64/uiImage/
+  accessUrl:  http://47.93.35.64/video/
 
 task:
   pool:
