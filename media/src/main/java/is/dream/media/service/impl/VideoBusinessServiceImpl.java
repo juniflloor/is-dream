@@ -16,6 +16,7 @@ import is.dream.media.handler.ffmpeg.untils.MediaUtil;
 import is.dream.media.handler.ffmpeg.untils.SystemUtils;
 import is.dream.media.service.AsyncService;
 import is.dream.media.service.VideoBusinessService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,7 @@ import java.util.UUID;
  * @date 2020/6/16 4:00
  */
 @Service
+@Slf4j
 public class VideoBusinessServiceImpl implements VideoBusinessService {
 
     @Autowired
@@ -88,6 +90,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (sourceFile.exists()) {
                 throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_IS_EXIST);
             }
+            log.info("start transfer file {}",realFileName);
             file.transferTo(sourceFile);
         } catch (Exception e) {
             if (!ObjectUtils.isEmpty(sourceFile)) {
@@ -104,6 +107,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
                 if (!imageUIFile.exists()) {
                     imageUIFile.mkdirs();
                 }
+                log.info("start cutVideoFrame file {}",realFileName);
                 MediaUtil.cutVideoFrame(sourceFile, imageUIFile, startTime, videoId, imageUiSetting.getWidth(), imageUiSetting.getHigh(), false);
             } catch (Exception e) {
                 if (!ObjectUtils.isEmpty(imageUIFile)) {
@@ -126,6 +130,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
                 imageDefaultFile.mkdirs();
             }
             ImageUiSetting defaultImageUiSetting = imageUiSettingService.getByImageLocation("default_all");
+            log.info("start cutVideoFrame defaultImageUiSetting file {}",realFileName);
             videoMetaInfo = MediaUtil.cutVideoFrame(sourceFile,imageDefaultFile,startTime,videoId,defaultImageUiSetting.getWidth(),
                                                     defaultImageUiSetting.getHigh(),true);
 
@@ -141,6 +146,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }
+            log.info("start convertM3u8  file {}",realFileName);
             asyncService.convertM3u8(sourceFile, videoFile,imageDefaultFile, videoId,videoId);
             video.setDefault();
             video.setId(videoId);
@@ -164,8 +170,10 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setUpdateTime(currentDate);
             videoService.saveFull(video);
             imageui.setAssociatedVideoId(video.getId());
+            log.info("start save  imageui {}",realFileName);
             imageUiService.save(imageui);
         } catch (Exception e) {
+            log.info("upload video exception",e);
             SystemUtils.deleteLocalFiles(sourceFile);
             SystemUtils.deleteLocalFiles(videoFile);
             SystemUtils.deleteLocalFiles(imageDefaultFile);

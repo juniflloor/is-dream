@@ -10,6 +10,9 @@ spring:
       max-file-size: 2048MB
       file-size-threshold: 20MB
 
+logging:
+  config:
+    classpath: logback.xml
 
 server:
   port: 10920
