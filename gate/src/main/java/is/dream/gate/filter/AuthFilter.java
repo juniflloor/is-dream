@@ -13,11 +13,9 @@ import is.dream.gate.fegin.AuthFegin;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author chendongzhao
@@ -96,6 +94,5 @@ public class AuthFilter extends ZuulFilter {
         requestContext.setResponseBody(body);
         requestContext.getResponse().setContentType("application/json; charset=UTF-8");
     }
-
 
 }
