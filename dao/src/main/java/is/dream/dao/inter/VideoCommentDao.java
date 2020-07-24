@@ -23,18 +23,18 @@ public interface VideoCommentDao {
             @Result(property = "createTime", column = "createTime")
     })
 
-    @Insert("INSERT into VideoComment values(#{id},#{videoId},#{commentSessionId},#{parentId},#{userId},#{content},#{createTime})")
+    @Insert("INSERT into videocomment values(#{id},#{videoId},#{commentSessionId},#{parentId},#{userId},#{content},#{createTime})")
     void save(VideoComment videoComment);
 
-    @Select("SELECT * FROM VideoComment WHERE videoId=#{videoId} AND parentId='FIRST' ORDER BY createTime DESC LIMIT #{startIndex},5")
+    @Select("SELECT * FROM videocomment WHERE videoId=#{videoId} AND parentId='FIRST' ORDER BY createTime DESC LIMIT #{startIndex},5")
     List<VideoComment> getByVideoId(String videoId,int startIndex);
 
-    @Select("SELECT * FROM VideoComment WHERE id=#{id}")
+    @Select("SELECT * FROM videocomment WHERE id=#{id}")
     VideoComment getById(String id);
 
     @Select({
             "<script>",
-            "SELECT * FROM VideoComment WHERE commentSessionId in",
+            "SELECT * FROM videocomment WHERE commentSessionId in",
             "<foreach collection='commentSessionIdList' item='item' open='(' separator=',' close=')'>",
             "#{item}",
             "</foreach>",
@@ -42,7 +42,7 @@ public interface VideoCommentDao {
     })
     List<VideoComment> getByCommentSessionIdIn(@Param("commentSessionIdList") List<String> commentSessionIdList);
 
-    @Select("SELECT * FROM VideoComment WHERE commentSessionId=#{commentSessionId}")
+    @Select("SELECT * FROM videocomment WHERE commentSessionId=#{commentSessionId}")
     List<VideoComment> getByCommentSessionId(String commentSessionId);
 
 }

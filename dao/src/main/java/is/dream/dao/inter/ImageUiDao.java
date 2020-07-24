@@ -22,18 +22,18 @@ public interface ImageUiDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into ImageUi values(#{id},#{imageUrl},#{associatedImageUiSettingId},#{associatedVideoId},#{createTime},#{updateTime})")
+    @Insert("INSERT into imageui values(#{id},#{imageUrl},#{associatedImageUiSettingId},#{associatedVideoId},#{createTime},#{updateTime})")
     void save(ImageUi imageUi);
 
-    @Select("SELECT * FROM ImageUi WHERE associatedImageUiSettingId=#{associatedImageUiSettingId}")
+    @Select("SELECT * FROM imageui WHERE associatedImageUiSettingId=#{associatedImageUiSettingId}")
     List<ImageUi> getImageUiByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 
-    @Delete("DELETE FROM ImageUi WHERE associatedImageUiSettingId = #{associatedImageUiSettingId}")
+    @Delete("DELETE FROM imageui WHERE associatedImageUiSettingId = #{associatedImageUiSettingId}")
     void deleteByAssociatedImageUiSettingId(String associatedImageUiSettingId);
 
     @Select({
             "<script>",
-            "SELECT * FROM ImageUi WHERE associatedImageUiSettingId in",
+            "SELECT * FROM imageui WHERE associatedImageUiSettingId in",
             "<foreach collection='associatedImageUiSettingIdList' item='item' open='(' separator=',' close=')'>",
             "#{item}",
             "</foreach>",

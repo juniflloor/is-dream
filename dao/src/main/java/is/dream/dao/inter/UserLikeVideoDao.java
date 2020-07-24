@@ -21,10 +21,10 @@ public interface UserLikeVideoDao {
             @Result(property = "updateTime", column = "updateTime"),
     })
 
-    @Insert("INSERT INTO userLikeVideo values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
+    @Insert("INSERT INTO userlikevideo values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
     void save(UserLikeVideo userLikeVideo);
 
-    @Select("SELECT * FROM userLikeVideo WHERE associatedUserId = #{associatedUserId} limit 0, 10")
+    @Select("SELECT * FROM userlikevideo WHERE associatedUserId = #{associatedUserId} limit 0, 10")
     List<UserLikeVideo> getByAssociatedUserId(String associatedUserId);
 
 }

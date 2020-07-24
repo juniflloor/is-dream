@@ -81,6 +81,7 @@ public class MediaUtil {
     }
 
     //ffmpeg -i 1.mp4 -vcodec libx264 -acodec mp3 -map 0 -f ssegment -segment_format mpegts -segment_list playlist.m3u8 -segment_time 10 D:\test\out%03d.ts
+    //ffmpeg -i test.mp4 -c copy -map 0 -f ssegment -segment_list video_playlist.m3u8 -segment_time 2 %03d.ts
     public static void convertM3u8(File sourceFile, File videoFile, File imageFile, String outName){
 
         try {
@@ -88,21 +89,21 @@ public class MediaUtil {
             commond.add("ffmpeg");
             commond.add("-i");
             commond.add(sourceFile.getAbsolutePath());
-            commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
-            commond.add("libx264"); // 指定使用x264编码器
-            commond.add("-acodec");
-            commond.add("mp3");
+//          commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
+//          commond.add("libx264"); // 指定使用x264编码器
+//          commond.add("-acodec");
+//          commond.add("mp3");
             commond.add("-map");
             commond.add("0");
             commond.add("-f");
             commond.add("ssegment");
-            commond.add("-segment_format");
-            commond.add("mpegts");
+//          commond.add("-segment_format");
+//          commond.add("mpegts");
             commond.add("-segment_list");
-            commond.add(videoFile.getAbsolutePath() + "\\" + outName + ".m3u8");
+            commond.add(videoFile.getAbsolutePath() + File.separator + outName + ".m3u8");
             commond.add("-segment_time");
             commond.add("5");
-            commond.add(videoFile.getAbsolutePath() + "\\" + outName + "%03d.ts");
+            commond.add(videoFile.getAbsolutePath() + File.separator + outName + "%03d.ts");
             executeCommand(commond);
         }catch (Exception e) {
             SystemUtils.deleteLocalFiles(sourceFile);
@@ -184,7 +185,7 @@ public class MediaUtil {
         commond.add(width + "*" + high);
         commond.add("-f");
         commond.add("image2");
-        commond.add(fileOutPutPath + "\\"+ fileName + ".jpg");
+        commond.add(fileOutPutPath + File.separator + fileName + ".jpg");
         String parseResult = executeCommand(commond);
         if (!isReturnVideoMetaInfo) {
             return null;

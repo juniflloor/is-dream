@@ -20,9 +20,9 @@ public interface VideoOperationDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into VideoOperation values(#{id},#{associatedVideoId},#{associatedUserId},#{like},#{createTime},#{updateTime})")
+    @Insert("INSERT into videooperation values(#{id},#{associatedVideoId},#{associatedUserId},#{like},#{createTime},#{updateTime})")
     void save(VideoOperation videoOperation);
 
-    @Select("SELECT * FROM videoOperation WHERE associatedVideoId=#{associatedVideoId} AND associatedUserId=#{associatedUserId}")
+    @Select("SELECT * FROM videooperation WHERE associatedVideoId=#{associatedVideoId} AND associatedUserId=#{associatedUserId}")
     VideoOperation getByAssociatedId(String associatedVideoId,String associatedUserId);
 }

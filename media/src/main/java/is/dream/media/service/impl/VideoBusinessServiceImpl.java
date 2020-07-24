@@ -125,7 +125,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
 
         VideoMetaInfo videoMetaInfo = null;
         try {
-            imageDefaultFile = new File(videoConfig.getImageDefaultPath() + videoId );
+            imageDefaultFile = new File(videoConfig.getImageDefaultPath() +File.separator + videoId );
             if (!imageDefaultFile.exists()) {
                 imageDefaultFile.mkdirs();
             }
@@ -142,7 +142,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         }
 
         try {
-            videoFile = new File(videoConfig.getTargetPath() + videoId );
+            videoFile = new File(videoConfig.getTargetPath() +File.separator + videoId );
             if (!videoFile.exists()) {
                 videoFile.mkdirs();
             }

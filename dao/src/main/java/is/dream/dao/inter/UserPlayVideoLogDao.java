@@ -22,10 +22,10 @@ public interface UserPlayVideoLogDao {
             @Result(property = "updateTime", column = "updateTime"),
     })
 
-    @Insert("INSERT INTO userPlayVideoLog values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
+    @Insert("INSERT INTO userplayvideolog values(#{id},#{associatedVideoId},#{associatedUserId},#{createTime},#{updateTime})")
     void save(UserPlayVideoLog userPlayVideoLog);
 
-    @Select("SELECT * FROM userPlayVideoLog WHERE associatedUserId = #{associatedUserId} limit 0, 10")
+    @Select("SELECT * FROM userplayvideolog WHERE associatedUserId = #{associatedUserId} limit 0, 10")
     List<UserPlayVideoLog> getByAssociatedUserId(String associatedUserId);
 
 }

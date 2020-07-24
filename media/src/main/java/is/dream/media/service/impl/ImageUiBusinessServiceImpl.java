@@ -16,6 +16,7 @@ import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.handler.ffmpeg.untils.SystemUtils;
 import is.dream.media.service.ImageUiBusinessService;
 import is.dream.media.service.VideoBusinessService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,7 @@ import java.util.stream.Collectors;
  * @date 2020/6/21 20:40
  */
 @Service
+@Slf4j
 public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
 
     @Autowired
@@ -74,6 +76,8 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
         }
 
         List<ImageUiSetting> imageUiSettingList = imageUiSettingService.getByImageLocationLike(imageLocation);
+
+        log.info("imageUiSettingList size {}",imageUiSettingList.size());
         if (ObjectUtils.isEmpty(imageUiSettingList)) {
             throw new MediaBusinessException(MediaBusinessExceptionCode.IMAGE_UI_SETTING_NOT_FOUND);
         }

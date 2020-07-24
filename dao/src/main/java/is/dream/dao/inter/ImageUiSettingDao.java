@@ -26,16 +26,16 @@ public interface ImageUiSettingDao {
             @Result(property = "updateTime", column = "updateTime")
     })
 
-    @Insert("INSERT into ImageUiSetting values(#{id},#{imageLocation},#{width},#{high},#{weight},#{listLocation},#{remark},#{createTime},#{updateTime})")
+    @Insert("INSERT into imageuisetting values(#{id},#{imageLocation},#{width},#{high},#{weight},#{listLocation},#{remark},#{createTime},#{updateTime})")
     void save(ImageUiSetting imageUiSetting);
 
-    @Update("UPDATE ImageUiSetting set width=#{width},high=#{high},remark=#{remark},updateTime=#{updateTime} WHERE imageLocation=#{imageLocation}")
+    @Update("UPDATE imageuisetting set width=#{width},high=#{high},remark=#{remark},updateTime=#{updateTime} WHERE imageLocation=#{imageLocation}")
     void updateByImageLocation(String imageLocation, int width, int high,String remark,Date updateTime);
 
-    @Select("Select * from ImageUiSetting WHERE imageLocation=#{imageLocation}")
+    @Select("Select * from imageuisetting WHERE imageLocation=#{imageLocation}")
     ImageUiSetting getByImageLocation(String imageLocation);
 
-    @Select("Select * from ImageUiSetting WHERE imageLocation like #{imageLocation} ORDER BY listLocation")
+    @Select("Select * from imageuisetting WHERE imageLocation like #{imageLocation} ORDER BY listLocation")
     List<ImageUiSetting> getByImageLocationLike(String imageLocation);
 
 }

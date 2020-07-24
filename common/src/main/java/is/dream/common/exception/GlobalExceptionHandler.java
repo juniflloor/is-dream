@@ -70,7 +70,7 @@ public class GlobalExceptionHandler {
         if (cause instanceof FeignException) {
             return handlerFeignException((FeignException) cause);
         }
-        return Result.ofFail(BaseExceptionCode.EXCEPTION);
+        return Result.ofFail(BaseExceptionCode.EXCEPTION.getCode(),cause.toString());
     }
 
     /**
