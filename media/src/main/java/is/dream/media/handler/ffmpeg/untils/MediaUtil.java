@@ -89,16 +89,16 @@ public class MediaUtil {
             commond.add("ffmpeg");
             commond.add("-i");
             commond.add(sourceFile.getAbsolutePath());
-//          commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
-//          commond.add("libx264"); // 指定使用x264编码器
-//          commond.add("-acodec");
-//          commond.add("mp3");
+            commond.add("-vcodec"); // 指定输出视频文件时使用的编码器
+            commond.add("libx264"); // 指定使用x264编码器
+            commond.add("-acodec");
+            commond.add("mp3");
             commond.add("-map");
             commond.add("0");
             commond.add("-f");
             commond.add("ssegment");
-//          commond.add("-segment_format");
-//          commond.add("mpegts");
+            commond.add("-segment_format");
+            commond.add("mpegts");
             commond.add("-segment_list");
             commond.add(videoFile.getAbsolutePath() + File.separator + outName + ".m3u8");
             commond.add("-segment_time");
