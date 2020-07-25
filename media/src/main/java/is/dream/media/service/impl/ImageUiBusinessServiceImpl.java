@@ -86,8 +86,12 @@ public class ImageUiBusinessServiceImpl implements ImageUiBusinessService {
         if (imageUiSettingList.size() == DBConstant.YES) {
             ImageUiSetting imageUiSetting = imageUiSettingList.get(DBConstant.NO);
             List<ImageUi> imageUiList = imageUiService.getImageUiByAssociatedImageUiSettingId(imageUiSetting.getId());
+            log.info("imageUiList size {}",imageUiList.size());
             List<String> associatedVideoIdList = imageUiList.stream().map(ImageUi::getAssociatedVideoId).collect(Collectors.toList());
+
+            log.info("start videoBusinessService.getByIdIn");
             List<Video> videoList = videoBusinessService.getByIdIn(associatedVideoIdList);
+            log.info("end videoBusinessService.getByIdIn videoList {}",videoList.size());
             Map<String, Video> videoMap = videoList.stream().collect(Collectors.toMap(Video::getId, v -> v));
 
             imageUiList.forEach(ImageUi -> {
