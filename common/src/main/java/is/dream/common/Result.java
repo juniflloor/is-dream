@@ -40,6 +40,12 @@ public class Result<T>{
 
     public static final Result OK = new Result<>("0","SUCCESS","成功");
 
+    public static Result setOk(){
+        Result result = OK;
+        result.data = null;
+        return result;
+    }
+
     public static Result setSpecialData(Object data) {
         Result result = OK;
         result.data = data;

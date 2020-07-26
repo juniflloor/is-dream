@@ -33,7 +33,7 @@ public class ImageUiSettingBusinessServiceImpl implements ImageUiSettingBusiness
         Date updateTime = new Date(System.currentTimeMillis());
         imageUiSettingService.updateByImageLocation(imageLocation,width,high,remark,updateTime);
 
-        return Result.OK;
+        return Result.setOk();
     }
 
     @Override
@@ -48,6 +48,6 @@ public class ImageUiSettingBusinessServiceImpl implements ImageUiSettingBusiness
         imageUiSetting.setUpdateTime(new Date(System.currentTimeMillis()));
         imageUiSettingService.save(imageUiSetting);
 
-        return Result.OK;
+        return Result.setOk();
     }
 }

@@ -46,7 +46,7 @@ public class UserLikeVideoBusinessServiceImpl implements UserLikeVideoBusinessSe
         userLikeVideo.setUpdateTime(new Timestamp(new Date().getTime()));
 
        userLikeVideoService.save(userLikeVideo);
-       return Result.OK;
+       return Result.setOk();
     }
 
     @Override

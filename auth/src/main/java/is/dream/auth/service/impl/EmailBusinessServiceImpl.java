@@ -48,7 +48,7 @@ public class EmailBusinessServiceImpl implements EmailBusinessService {
             throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_SEND_FAIL);
         }
 
-        return Result.OK;
+        return Result.setOk();
     }
 
 }

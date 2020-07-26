@@ -73,7 +73,7 @@ public class AuthFilter extends ZuulFilter {
             if (isNoAuthenticationUrl && token != null) {
 
                 Result result = authFegin.checkTokenIsLawful((String) token);
-                if (!result.getCode().equals(Result.OK.getCode())) {
+                if (!result.getCode().equals(Result.setOk().getCode())) {
                     setUnauthorizedResponse(requestContext,result);
                 }
             }

@@ -44,7 +44,7 @@ public class UserPlayVideoLogBusinessServiceImpl implements UserPlayVideoLogBusi
 
         userPlayVideoLogService.save(userPlayVideoLog);
 
-        return Result.OK;
+        return Result.setOk();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class UserPlayVideoLogBusinessServiceImpl implements UserPlayVideoLogBusi
 
         List<UserPlayVideoLog> userPlayVideoLogList = userPlayVideoLogService.getByAssociatedUserId(associatedUserId);
         if (ObjectUtils.isEmpty(userPlayVideoLogList)) {
-            return Result.OK;
+            return Result.setOk();
         }
 
         List<String> videoIdList = userPlayVideoLogList.stream().map(UserPlayVideoLog::getAssociatedVideoId).collect(Collectors.toList());

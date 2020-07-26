@@ -37,7 +37,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     @Override
     public Result<Object> login(String userName, String password) throws BaseBusinessException {
 
-        Result<Object> result = Result.OK;
+        Result<Object> result = Result.setOk();
         if (ObjectUtils.isEmpty(userName) || ObjectUtils.isEmpty(password)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
         }
@@ -87,7 +87,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
         user.setId(UUID.randomUUID().toString());
         user.setUserHeadImageUrl("");
         userService.save(user);
-        return Result.OK;
+        return Result.setOk();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     @Override
     public Result<Object> isLawful(String token) throws BaseBusinessException {
 
-        Result result = Result.OK;
+        Result result = Result.setOk();
         User user = JWTIUtil.deciphering(token,User.class);
         if (ObjectUtils.isEmpty(user)) {
             throw new AuthBusinessException(AuthBusinessExceptionCode.ERROR_TOKEN);

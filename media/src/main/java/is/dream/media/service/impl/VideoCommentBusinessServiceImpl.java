@@ -70,7 +70,7 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
         }
         videoComment.setCreateTime(new Timestamp(new Date().getTime()));
         videoCommentService.save(videoComment);
-        return Result.OK;
+        return Result.setOk();
     }
 
     @Override
@@ -82,7 +82,7 @@ public class VideoCommentBusinessServiceImpl implements VideoCommentBusinessServ
 
         List<VideoComment> topVideoCommentList = videoCommentService.getByVideoId(videoId,startIndex);
         if (CollectionUtils.isEmpty(topVideoCommentList)) {
-            return Result.OK;
+            return Result.setOk();
         }
         List<String> commentSessionIdList = topVideoCommentList.stream().map(VideoComment::getCommentSessionId).collect(Collectors.toList());
         List<VideoComment> videoCommentList = videoCommentService.getByCommentSessionIdIn(commentSessionIdList);

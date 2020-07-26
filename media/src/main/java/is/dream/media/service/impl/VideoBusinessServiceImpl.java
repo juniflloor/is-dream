@@ -183,7 +183,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             }
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_TRANS_TARGET_FAIL);
         }
-        return Result.OK;
+        return Result.setOk();
     }
 
     @Override
@@ -237,7 +237,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         videoOperation.setUpdateTime(new Date(System.currentTimeMillis()));
         videoOperationService.save(videoOperation);
 
-        return Result.OK;
+        return Result.setOk();
     }
 
 
@@ -249,7 +249,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         }
 
         videoService.addWatchCountById(id);
-        return Result.OK;
+        return Result.setOk();
     }
 
     public  Result<Object> searchVideo(String keyword) throws UnsupportedEncodingException {
@@ -263,7 +263,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         List<Video> videoList = videoService.searchVideo(likeParam,likeParam,likeParam,likeParam);
 
         if (ObjectUtils.isEmpty(videoList)) {
-            return Result.OK;
+            return Result.setOk();
         }
 
         return Result.setSpecialData(videoList);
@@ -279,7 +279,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         Video video = videoService.getVideoById(id);
 
         if (ObjectUtils.isEmpty(video)) {
-            return Result.OK;
+            return Result.setOk();
         }
 
         String name = StringIUtils.addBothPercent(video.getName());
@@ -289,7 +289,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         List<Video> videoList = videoService.searchVideo(name,type,tag,leadRole);
 
         if (ObjectUtils.isEmpty(videoList)) {
-            return Result.OK;
+            return Result.setOk();
         }
 
         return Result.setSpecialData(videoList);
@@ -301,7 +301,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
         List<Video> videoList =  videoService.getMostViewVideo();
 
         if (ObjectUtils.isEmpty(videoList)) {
-            return Result.OK;
+            return Result.setOk();
         }
 
         return Result.setSpecialData(videoList);
