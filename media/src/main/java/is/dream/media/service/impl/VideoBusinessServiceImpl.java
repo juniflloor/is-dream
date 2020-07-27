@@ -5,6 +5,7 @@ import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.common.utils.StringIUtils;
+import is.dream.common.utils.TimeUtils;
 import is.dream.dao.base.service.*;
 import is.dream.dao.entiry.*;
 import is.dream.media.config.VideoConfig;
@@ -160,7 +161,7 @@ public class VideoBusinessServiceImpl implements VideoBusinessService {
             video.setType(type);
             video.setSubtitle(subtitle);
             video.setSourceLocation(videoConfig.getSourcePath() + originalFilename);
-            video.setDuration(videoMetaInfo.getDuration());
+            video.setDuration(TimeUtils.formatDateTime(videoMetaInfo.getDuration()));
             video.setIntroduction(introduction);
             video.setDefaultImageUrl(videoConfig.getImageDefaultUrl() + videoId + "/" +videoId + ".jpg");
             String playUrl = videoConfig.getAccessUrl() + videoId + "/" +videoId + ".m3u8";

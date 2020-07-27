@@ -36,7 +36,7 @@ public class Video {
 
     private String defaultImageUrl;
 
-    private Long duration;;
+    private String duration;;
 
     private String playUrl;
 
