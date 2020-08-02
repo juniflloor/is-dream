@@ -75,15 +75,17 @@ zuul:
 
 
 video:
-  sourcePath:   /usr/video/hls/
-  targetPath:   /usr/video/hls/video/
-  imageDefaultPath:   /usr/video/hls/image/
-  imageDefaultUrl:  http://47.93.35.64/defaultImage/
-  imageUIPath:  /usr/video/ui/
-  imageUIUrl: http://47.93.35.64/uiImage/
-  accessUrl:  http://47.93.35.64/video/
-  pushUrl: rtmp://47.93.35.64/live/live
-  pullUrl: http://47.93.35.64/live_hls/live.m3u8
+  sourcePath:   D:\\Learn\\Soft\\nginx\\html\\hls\\
+  targetPath:   D:\\Learn\\Soft\\nginx\\html\\hls\\video\\
+  imageDefaultPath:   D:\\Learn\\Soft\\nginx\\html\\hls\\image\\
+  imageDefaultUrl:  http://localhost/defaultImage/
+  imageUIPath:  D:\\Learn\\Soft\\nginx\\html\\UI\\
+  imageUIUrl: http://localhost/uiImage/
+  accessUrl:  http://localhost/video/
+
+  pushUrl: rtmp://localhost/live/live
+  pullUrl: http://localhost/live_hls/live.m3u8
+
 
 task:
   pool:

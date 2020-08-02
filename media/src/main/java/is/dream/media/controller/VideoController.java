@@ -2,7 +2,6 @@ package is.dream.media.controller;
 
 import is.dream.common.Result;
 import is.dream.media.exception.MediaBusinessException;
-import is.dream.media.service.LiveVideoBusinessService;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
