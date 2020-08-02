@@ -31,6 +31,10 @@ public enum MediaBusinessExceptionCode {
 
     VIDEO_COMMENT_IS_OUT_LIMIT ("M_200003","评论超出层级限制"),
 
+    VIDEO_DB_IS_OUT_FOUNT ("M_200003","不存在视频数据信息"),
+
+    VIDEO_lIVE_START_OUT_FOUNT ("M_200003","直播列表缺失"),
+
     ;
 
     private String code;

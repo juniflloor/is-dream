@@ -7,6 +7,7 @@ import is.dream.cache.utils.RedisUtils;
 import is.dream.common.Result;
 import is.dream.common.constants.EmailConstant;
 import is.dream.common.utils.CodeIUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
  * @date 2020/6/30 5:40
  */
 @Service
+@Slf4j
 public class EmailBusinessServiceImpl implements EmailBusinessService {
 
     @Autowired
@@ -44,7 +46,7 @@ public class EmailBusinessServiceImpl implements EmailBusinessService {
             javaMailSender.send(message);
             redisUtils.set(to,code,EmailConstant.REGISTER_CODE_EXPIRE);
         } catch (Exception e) {
-
+            log.error("send email error {}",e);
             throw new AuthBusinessException(AuthBusinessExceptionCode.EMAIL_SEND_FAIL);
         }
 

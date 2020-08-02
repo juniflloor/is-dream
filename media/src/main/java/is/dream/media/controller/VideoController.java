@@ -63,4 +63,14 @@ public class VideoController {
     public Result<Object> getMostViewVideo(){
         return videoBusinessService.getMostViewVideo();
     }
+
+    @GetMapping("/addLiveVideo")
+    public void addLiveVideo(@RequestParam("id") String id) {
+
+    }
+
+    @GetMapping("/getLiveVideo")
+    public void getLiveVideo(@RequestParam("id") String id) {
+
+    }
 }

@@ -370,4 +370,23 @@ public class MediaUtil {
         }
     }
 
+
+    public static String hlsLive(String filePath) {
+
+        List<String> commond = new ArrayList<String>();
+        commond.add("ffmpeg");
+        commond.add("-re");
+        commond.add("-i");
+        commond.add(filePath);
+        commond.add("-vcodec");
+        commond.add("copy");
+        commond.add("-acodec");
+        commond.add("copy");
+        commond.add("-f");
+        commond.add("flv");
+        String parseResult = executeCommand(commond);
+
+        return parseResult;
+    }
+
 }
