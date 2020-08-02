@@ -73,10 +73,19 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
         return null;
     }
 
-    public Result<Object> startLiveVideo() throws JsonProcessingException {
+    @Override
+    public Result<Object> startLiveVideo(int orderBy,boolean isStart) throws JsonProcessingException {
 
-        liveVideoService.resetIsPlay();
-        LiveVideo liveVideo = liveVideoService.getStartLiveVideo();
+        if (isStart) {
+            liveVideoService.resetIsPlay();
+        }
+
+        int maxOrderBy = liveVideoService.getMaxOrderBy();
+        if (orderBy == maxOrderBy) {
+            orderBy = DBConstant.NO;
+        }
+
+        LiveVideo liveVideo = liveVideoService.getLiveVideoByOrderBy(orderBy);
 
         if (ObjectUtils.isEmpty(liveVideo)) {
             throw new  MediaBusinessException(MediaBusinessExceptionCode.VIDEO_lIVE_START_OUT_FOUNT);
@@ -90,11 +99,13 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
         String filePath = videoConfig.getSourcePath() + File.separator + video.getFileName();
         Map<String,String> kafkaMap = new HashMap<>();
         kafkaMap.put("filePath",filePath);
+        kafkaMap.put("orderBy", String.valueOf(orderBy));
         kafkaProducer.send(kafkaMap);
 
         return Result.setOk();
     }
 
+    @Override
     public Result<Object> endLiveVideo() {
         liveVideoService.endVideo();
         return Result.setOk();

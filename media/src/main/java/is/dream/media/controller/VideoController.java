@@ -22,9 +22,6 @@ public class VideoController {
     @Autowired
     private VideoBusinessService videoBusinessService;
 
-    @Autowired
-    private LiveVideoBusinessService liveVideoBusinessService;
-
     @PostMapping("/upload")
     public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("name") String name,@RequestParam("type") String type,
                                  @RequestParam("tag") String tag, @RequestParam("title") String title,@RequestParam("subtitle") String subtitle,
@@ -68,13 +65,4 @@ public class VideoController {
         return videoBusinessService.getMostViewVideo();
     }
 
-    @GetMapping("/addLiveVideo")
-    public Result<Object> addLiveVideo(@RequestParam("id") String id,@RequestParam("orderBy") int orderBy) {
-        return liveVideoBusinessService.save(id,orderBy);
-    }
-
-    @GetMapping("/getLiveVideo")
-    public Result<Object> getLiveVideo(@RequestParam("id") String id) {
-        return null;
-    }
 }

@@ -1,10 +1,7 @@
 package is.dream.media.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import is.dream.common.Result;
-import is.dream.dao.entiry.LiveVideo;
-
-import java.util.List;
+import is.dream.common.Result;;
 
 /**
  * @author chendongzhao
@@ -17,7 +14,7 @@ public interface LiveVideoBusinessService {
 
     Result<Object> getCurrentLiveVideo();
 
-    Result<Object> startLiveVideo() throws JsonProcessingException;
+    Result<Object> startLiveVideo(int orderBy, boolean isStart) throws JsonProcessingException;
 
     Result<Object> endLiveVideo();
 }

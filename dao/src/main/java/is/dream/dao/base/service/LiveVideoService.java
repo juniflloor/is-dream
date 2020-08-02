@@ -15,9 +15,11 @@ public interface LiveVideoService {
 
     List<LiveVideo> getLiveVideo();
 
-    LiveVideo getStartLiveVideo();
+    LiveVideo getLiveVideoByOrderBy(int orderBy);
 
     LiveVideo endVideo();
 
     LiveVideo resetIsPlay();
+
+    int getMaxOrderBy();
 }

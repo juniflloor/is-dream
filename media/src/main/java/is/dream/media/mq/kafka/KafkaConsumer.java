@@ -3,6 +3,7 @@ package is.dream.media.mq.kafka;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import is.dream.media.handler.ffmpeg.untils.MediaUtil;
+import is.dream.media.service.LiveVideoBusinessService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.Map;
 import java.util.Optional;
@@ -28,6 +30,9 @@ public class KafkaConsumer {
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
 
+    @Autowired
+    private LiveVideoBusinessService liveVideoBusinessService;
+
     @KafkaListener(topics = KafkaProducer.TOPIC_LIVE_VIDEO, groupId = KafkaProducer.TOPIC_GROUP_LIVE_VIDEO)
     public void liveVideo(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws JsonProcessingException {
 
@@ -36,9 +41,13 @@ public class KafkaConsumer {
             Object msg = message.get();
             ObjectMapper mapper = new ObjectMapper();
             Map<String, String> map = mapper.readValue((String) msg, Map.class);
-            MediaUtil.hlsLive(map.get("filePath"));
-            log.info("topic 消费了： Topic:" + topic + ",Message:" + msg);
             ack.acknowledge();
+            log.info("topic 消费了： Topic:" + topic + ",Message:" + msg);
+            String result = MediaUtil.hlsLive(map.get("filePath"));
+            int orderBy = Integer.parseInt(map.get("orderBy"));
+            if (StringUtils.isEmpty(result)) {
+                liveVideoBusinessService.startLiveVideo(orderBy,false);
+            }
         }
     }
 

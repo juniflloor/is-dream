@@ -30,8 +30,8 @@ public class LiveVideoServiceImpl implements LiveVideoService {
     }
 
     @Override
-    public LiveVideo getStartLiveVideo() {
-        return liveVideoDao.getStartLiveVideo();
+    public LiveVideo getLiveVideoByOrderBy(int orderBy) {
+        return liveVideoDao.getLiveVideoByOrderBy(orderBy);
     }
 
     @Override
@@ -44,4 +44,8 @@ public class LiveVideoServiceImpl implements LiveVideoService {
         return liveVideoDao.resetIsPlay();
     }
 
+    @Autowired
+    public int getMaxOrderBy(){
+        return liveVideoDao.getMaxOrderBy();
+    }
 }
