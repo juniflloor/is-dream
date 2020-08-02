@@ -2,6 +2,7 @@ package is.dream.media.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import is.dream.common.Result;
+import is.dream.common.constants.DBConstant;
 import is.dream.common.exception.BaseBusinessException;
 import is.dream.common.exception.BaseExceptionCode;
 import is.dream.dao.base.service.LiveVideoService;
@@ -44,7 +45,7 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
     private KafkaProducer kafkaProducer;
 
     @Override
-    public Result<Object> save(String videoId){
+    public Result<Object> save(String videoId,int orderBy){
 
         if (StringUtils.isEmpty(videoId)) {
             throw new BaseBusinessException(BaseExceptionCode.B_PARAM_FAIL);
@@ -59,10 +60,8 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
         String id = UUID.randomUUID().toString();
         liveVideo.setId(id);
         liveVideo.setAssociatedVideoId(video.getId());
-        liveVideo.setStartTime(System.currentTimeMillis());
-        liveVideo.setAssociatedVideoDuration(1);
-        liveVideo.setIsPlay(0);
-        liveVideo.setOrderBy(0);
+        liveVideo.setIsPlay(DBConstant.YES);
+        liveVideo.setOrderBy(orderBy);
 
         liveVideoService.save(liveVideo);
         return Result.setOk();

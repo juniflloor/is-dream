@@ -16,13 +16,11 @@ public interface LiveVideoDao {
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "associatedVideoId", column = "associatedVideoId"),
-            @Result(property = "startTime", column = "startTime"),
-            @Result(property = "associatedVideoDuration", column = "associatedVideoDuration"),
             @Result(property = "isPlay", column = "isPlay"),
             @Result(property = "orderBy", column = "orderBy")
     })
 
-    @Insert("INSERT into livevideo values(#{id},#{associatedVideoId},#{startTime},#{associatedVideoDuration},#{isPlay},#{orderBy})")
+    @Insert("INSERT into livevideo values(#{id},#{associatedVideoId},#{isPlay},#{orderBy})")
     void save(LiveVideo liveVideo);
 
     @Select("SELECT * FROM livevideo ORDEY BY orderBy")

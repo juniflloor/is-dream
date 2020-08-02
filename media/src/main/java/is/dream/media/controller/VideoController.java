@@ -2,6 +2,7 @@ package is.dream.media.controller;
 
 import is.dream.common.Result;
 import is.dream.media.exception.MediaBusinessException;
+import is.dream.media.service.LiveVideoBusinessService;
 import is.dream.media.service.VideoBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,9 @@ public class VideoController {
 
     @Autowired
     private VideoBusinessService videoBusinessService;
+
+    @Autowired
+    private LiveVideoBusinessService liveVideoBusinessService;
 
     @PostMapping("/upload")
     public Result<Object> upload(@ModelAttribute("file") MultipartFile file, @RequestParam("name") String name,@RequestParam("type") String type,
@@ -65,12 +69,12 @@ public class VideoController {
     }
 
     @GetMapping("/addLiveVideo")
-    public void addLiveVideo(@RequestParam("id") String id) {
-
+    public Result<Object> addLiveVideo(@RequestParam("id") String id,@RequestParam("orderBy") int orderBy) {
+        return liveVideoBusinessService.save(id,orderBy);
     }
 
     @GetMapping("/getLiveVideo")
-    public void getLiveVideo(@RequestParam("id") String id) {
-
+    public Result<Object> getLiveVideo(@RequestParam("id") String id) {
+        return null;
     }
 }

@@ -20,10 +20,6 @@ public class LiveVideo {
 
     private String associatedVideoId;
 
-    private long startTime;
-
-    private int associatedVideoDuration;
-
     private int isPlay;
 
     private int orderBy;

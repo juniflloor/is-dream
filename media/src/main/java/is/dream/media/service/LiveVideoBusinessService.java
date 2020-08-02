@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface LiveVideoBusinessService {
 
-    Result<Object> save(String videoId);
+    Result<Object> save(String videoId,int orderBy);
 
     Result<Object> getCurrentLiveVideo();
 

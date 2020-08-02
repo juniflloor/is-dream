@@ -29,19 +29,4 @@ public class TimeUtils {
         return sb.toString();
     }
 
-    public static int getMilliseconds(String time){
-
-        String[] my =time.split(":");
-
-        int hour =Integer.parseInt(my[0]);
-
-        int min =Integer.parseInt(my[1]);
-
-        int sec =Integer.parseInt(my[2]);
-        int zong =hour*3600+min*60+sec;
-
-        System.out.println("共"+zong+"秒");
-
-        return 0;
-    }
 }
