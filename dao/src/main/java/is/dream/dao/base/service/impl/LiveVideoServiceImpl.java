@@ -45,7 +45,7 @@ public class LiveVideoServiceImpl implements LiveVideoService {
     }
 
     @Autowired
-    public int getMaxOrderBy(){
+    public Integer getMaxOrderBy(){
         return liveVideoDao.getMaxOrderBy();
     }
 }

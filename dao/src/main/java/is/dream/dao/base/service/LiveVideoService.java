@@ -21,5 +21,5 @@ public interface LiveVideoService {
 
     LiveVideo resetIsPlay();
 
-    int getMaxOrderBy();
+    Integer getMaxOrderBy();
 }

@@ -80,8 +80,8 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
             liveVideoService.resetIsPlay();
         }
 
-        int maxOrderBy = liveVideoService.getMaxOrderBy();
-        if (orderBy == maxOrderBy) {
+        Integer maxOrderBy = liveVideoService.getMaxOrderBy();
+        if (maxOrderBy != null && orderBy == maxOrderBy) {
             orderBy = DBConstant.NO;
         }
 

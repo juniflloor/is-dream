@@ -29,8 +29,8 @@ public interface LiveVideoDao {
     @Select("SELECT * FROM livevideo where orderBy = #{orderBy}")
     LiveVideo getLiveVideoByOrderBy(int orderBy);
 
-    @Select("SELECT max(orderBy) FROM livevideo")
-    int getMaxOrderBy();
+    @Select("SELECT max(1) FROM livevideo")
+    Integer getMaxOrderBy();
 
     @Update("UPDATE livevideo set isPlay = 0")
     LiveVideo endVideo();
