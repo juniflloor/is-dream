@@ -10,10 +10,12 @@ import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.LiveVideo;
 import is.dream.dao.entiry.Video;
 import is.dream.media.config.VideoConfig;
+import is.dream.media.dto.VideoDto;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.exception.MediaBusinessExceptionCode;
 import is.dream.media.mq.kafka.KafkaProducer;
 import is.dream.media.service.LiveVideoBusinessService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -30,6 +32,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
+
+    private static String currentLiveVideoId;
 
     @Autowired
     private VideoService videoService;
@@ -85,6 +89,7 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
         }
 
         LiveVideo liveVideo = liveVideoService.getLiveVideoByOrderBy(orderBy);
+        currentLiveVideoId = liveVideo.getAssociatedVideoId();
 
         if (ObjectUtils.isEmpty(liveVideo)) {
             throw new  MediaBusinessException(MediaBusinessExceptionCode.VIDEO_lIVE_START_OUT_FOUNT);

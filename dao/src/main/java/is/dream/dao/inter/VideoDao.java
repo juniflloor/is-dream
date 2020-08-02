@@ -79,7 +79,7 @@ public interface VideoDao {
     @Select("SELECT * from video where name like #{name} or type like #{type} or tag like #{tag} or leadRole like #{leadRole} limit 0,12")
     List<Video> searchVideo(String name,String type,String tag,String leadRole);
 
-    @Select("SELECT * FROM video  ORDER BY watchCount DESC LIMIT 0,100")
+    @Select("SELECT * FROM video  ORDER BY watchCount DESC LIMIT 0,6")
     List<Video> getMostViewVideo();
 
     @Update("UPDATE video set duration = #{duration} WHERE id=#{id}")

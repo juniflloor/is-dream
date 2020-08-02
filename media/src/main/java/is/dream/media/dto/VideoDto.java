@@ -15,4 +15,6 @@ public class VideoDto extends Video {
 
     private int like;
 
+    private String liveVideoUrl;
+
 }
