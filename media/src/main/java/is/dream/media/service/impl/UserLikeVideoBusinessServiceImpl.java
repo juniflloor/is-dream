@@ -59,7 +59,6 @@ public class UserLikeVideoBusinessServiceImpl implements UserLikeVideoBusinessSe
         List<UserLikeVideo> userLikeVideoList = userLikeVideoService.getByAssociatedUserId(associatedUserId);
         List<String> videoIdList = userLikeVideoList.stream().map(UserLikeVideo::getAssociatedVideoId).collect(Collectors.toList());
         List<Video> videoList = videoService.getByIdIn(videoIdList);
-
-        return Result.setSpecialData(videoIdList);
+        return Result.setSpecialData(videoList);
     }
 }

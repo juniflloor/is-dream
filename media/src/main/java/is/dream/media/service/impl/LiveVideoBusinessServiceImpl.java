@@ -9,7 +9,6 @@ import is.dream.dao.base.service.LiveVideoService;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.LiveVideo;
 import is.dream.dao.entiry.Video;
-import is.dream.dao.entiry.VideoComment;
 import is.dream.media.config.VideoConfig;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.exception.MediaBusinessExceptionCode;

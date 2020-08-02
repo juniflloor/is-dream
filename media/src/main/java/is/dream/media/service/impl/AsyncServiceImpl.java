@@ -50,7 +50,7 @@ public class AsyncServiceImpl implements AsyncService {
 
         String result = MediaUtil.hlsLive(filePath,pushUrl);
         if (!StringUtils.isEmpty(result)) {
-            liveVideoBusinessService.startLiveVideo(orderBy,false);
+            liveVideoBusinessService.startLiveVideo(orderBy + 1,false);
         }
     }
 }

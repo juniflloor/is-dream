@@ -46,6 +46,11 @@ spring:
       ack-mode: manual_immediate
       missing-topics-fatal: false
 
+log4j:
+  logger:
+    kafka:
+      consumer:
+        ZookeeperConsumerConnector=OFF:
 
 logging:
   config:

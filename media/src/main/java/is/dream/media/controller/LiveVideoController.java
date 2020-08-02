@@ -28,11 +28,11 @@ public class LiveVideoController {
 
     @GetMapping("/getLiveVideoList")
     public Result<Object> getLiveVideoList() {
-        return liveVideoBusinessService.getCurrentLiveVideo();
+        return liveVideoBusinessService.getLiveVideoList();
     }
 
     @GetMapping("/getCurrentLiveVideo")
-    public Result<Object> getCurrentLiveVideo(@RequestParam("id") String id) {
+    public Result<Object> getCurrentLiveVideo() {
         return liveVideoBusinessService.getCurrentLiveVideo();
     }
 

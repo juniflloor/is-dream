@@ -42,7 +42,7 @@ public class KafkaConsumer {
     private AsyncService asyncService;
 
     @KafkaListener(topics = KafkaProducer.TOPIC_LIVE_VIDEO, groupId = KafkaProducer.TOPIC_GROUP_LIVE_VIDEO)
-    public void liveVideo(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws JsonProcessingException {
+    public  void  liveVideo(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws JsonProcessingException {
 
         Optional message = Optional.ofNullable(record.value());
         if (message.isPresent()) {
