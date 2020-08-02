@@ -371,7 +371,7 @@ public class MediaUtil {
     }
 
 
-    public static String hlsLive(String filePath) {
+    public static String hlsLive(String filePath,String pushUrl) {
 
         List<String> commond = new ArrayList<String>();
         commond.add("ffmpeg");
@@ -384,6 +384,7 @@ public class MediaUtil {
         commond.add("copy");
         commond.add("-f");
         commond.add("flv");
+        commond.add(pushUrl);
         String parseResult = executeCommand(commond);
 
         return parseResult;

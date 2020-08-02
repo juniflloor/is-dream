@@ -47,4 +47,14 @@ public class VideoConfig {
      * 视频访问URL
      */
     private String accessUrl;
+
+    /**
+     * 直播推流url
+     */
+    private String pushUrl;
+
+    /**
+     * 直播拉流url
+     */
+    private String pullUrl;
 }

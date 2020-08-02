@@ -2,6 +2,7 @@ package is.dream.media.mq.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import is.dream.media.config.VideoConfig;
 import is.dream.media.handler.ffmpeg.untils.MediaUtil;
 import is.dream.media.service.LiveVideoBusinessService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +34,9 @@ public class KafkaConsumer {
     @Autowired
     private LiveVideoBusinessService liveVideoBusinessService;
 
+    @Autowired
+    private VideoConfig videoConfig;
+
     @KafkaListener(topics = KafkaProducer.TOPIC_LIVE_VIDEO, groupId = KafkaProducer.TOPIC_GROUP_LIVE_VIDEO)
     public void liveVideo(ConsumerRecord<?, ?> record, Acknowledgment ack, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) throws JsonProcessingException {
 
@@ -43,7 +47,7 @@ public class KafkaConsumer {
             Map<String, String> map = mapper.readValue((String) msg, Map.class);
             ack.acknowledge();
             log.info("topic 消费了： Topic:" + topic + ",Message:" + msg);
-            String result = MediaUtil.hlsLive(map.get("filePath"));
+            String result = MediaUtil.hlsLive(map.get("filePath"),videoConfig.getPushUrl());
             int orderBy = Integer.parseInt(map.get("orderBy"));
             if (StringUtils.isEmpty(result)) {
                 liveVideoBusinessService.startLiveVideo(orderBy,false);

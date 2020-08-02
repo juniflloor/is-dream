@@ -70,7 +70,7 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
     @Override
     public Result<Object> getCurrentLiveVideo(){
 
-        return null;
+        return Result.setSpecialData(videoConfig.getPullUrl());
     }
 
     @Override
