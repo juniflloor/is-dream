@@ -9,6 +9,7 @@ import is.dream.dao.base.service.LiveVideoService;
 import is.dream.dao.base.service.VideoService;
 import is.dream.dao.entiry.LiveVideo;
 import is.dream.dao.entiry.Video;
+import is.dream.dao.entiry.VideoComment;
 import is.dream.media.config.VideoConfig;
 import is.dream.media.exception.MediaBusinessException;
 import is.dream.media.exception.MediaBusinessExceptionCode;
@@ -20,9 +21,8 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author chendongzhao
@@ -96,7 +96,7 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
             throw new MediaBusinessException(MediaBusinessExceptionCode.VIDEO_DB_IS_OUT_FOUNT);
         }
 
-        String filePath = videoConfig.getSourcePath() + File.separator + video.getFileName();
+        String filePath = videoConfig.getSourcePath() + File.separator + video.getFileName() +"." + video.getSuffix();
         Map<String,String> kafkaMap = new HashMap<>();
         kafkaMap.put("filePath",filePath);
         kafkaMap.put("orderBy", String.valueOf(orderBy));
@@ -109,5 +109,14 @@ public class LiveVideoBusinessServiceImpl implements LiveVideoBusinessService {
     public Result<Object> endLiveVideo() {
         liveVideoService.endVideo();
         return Result.setOk();
+    }
+
+    @Override
+    public Result<Object> getLiveVideoList() {
+
+        List<LiveVideo> liveVideoList = liveVideoService.getLiveVideoList();
+        List<String> videoIdList =   liveVideoList.stream().map(LiveVideo::getAssociatedVideoId).collect(Collectors.toList());
+        List<Video> videoList = videoService.getByIdIn(videoIdList);
+        return Result.setSpecialData(videoList);
     }
 }

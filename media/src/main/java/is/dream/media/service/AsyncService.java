@@ -1,5 +1,6 @@
 package is.dream.media.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import is.dream.media.exception.MediaBusinessException;
 
 import java.io.File;
@@ -12,4 +13,6 @@ import java.io.File;
 public interface AsyncService {
 
     void convertM3u8(File sourceFile, File videoFile,File imageFile, String fileName,String videoId) throws MediaBusinessException;
+
+    void hlsLive(String filePath,String pushUrl, int orderBy) throws MediaBusinessException, JsonProcessingException;
 }

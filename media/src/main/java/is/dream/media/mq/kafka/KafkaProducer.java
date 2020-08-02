@@ -31,7 +31,7 @@ public class KafkaProducer {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(obj);
         log.info("准备发送消息为：{}", jsonString);
-        ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send(TOPIC_LIVE_VIDEO, obj);
+        ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send(TOPIC_LIVE_VIDEO, jsonString);
         future.addCallback(new ListenableFutureCallback<SendResult<String, Object>>() {
             @Override
             public void onFailure(Throwable throwable) {

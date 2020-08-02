@@ -26,6 +26,11 @@ public class LiveVideoController {
         return liveVideoBusinessService.save(id,orderBy);
     }
 
+    @GetMapping("/getLiveVideoList")
+    public Result<Object> getLiveVideoList() {
+        return liveVideoBusinessService.getCurrentLiveVideo();
+    }
+
     @GetMapping("/getCurrentLiveVideo")
     public Result<Object> getCurrentLiveVideo(@RequestParam("id") String id) {
         return liveVideoBusinessService.getCurrentLiveVideo();

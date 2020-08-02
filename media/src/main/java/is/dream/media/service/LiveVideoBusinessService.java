@@ -17,4 +17,6 @@ public interface LiveVideoBusinessService {
     Result<Object> startLiveVideo(int orderBy, boolean isStart) throws JsonProcessingException;
 
     Result<Object> endLiveVideo();
+
+    Result<Object> getLiveVideoList();
 }

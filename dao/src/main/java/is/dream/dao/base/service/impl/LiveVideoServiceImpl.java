@@ -35,17 +35,22 @@ public class LiveVideoServiceImpl implements LiveVideoService {
     }
 
     @Override
-    public LiveVideo endVideo() {
-        return liveVideoDao.endVideo();
+    public void endVideo() {
+         liveVideoDao.endVideo();
     }
 
     @Override
-    public LiveVideo resetIsPlay() {
-        return liveVideoDao.resetIsPlay();
+    public void resetIsPlay() {
+         liveVideoDao.resetIsPlay();
     }
 
     @Autowired
     public Integer getMaxOrderBy(){
         return liveVideoDao.getMaxOrderBy();
+    }
+
+
+    public List<LiveVideo> getLiveVideoList(){
+        return liveVideoDao.getLiveVideoList();
     }
 }

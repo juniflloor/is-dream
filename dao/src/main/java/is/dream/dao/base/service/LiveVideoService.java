@@ -17,9 +17,11 @@ public interface LiveVideoService {
 
     LiveVideo getLiveVideoByOrderBy(int orderBy);
 
-    LiveVideo endVideo();
+    void endVideo();
 
-    LiveVideo resetIsPlay();
+    void resetIsPlay();
 
     Integer getMaxOrderBy();
+
+    List<LiveVideo> getLiveVideoList();
 }
