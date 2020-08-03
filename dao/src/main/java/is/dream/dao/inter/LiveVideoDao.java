@@ -32,7 +32,7 @@ public interface LiveVideoDao {
     @Select("SELECT * FROM livevideo")
     List<LiveVideo> getLiveVideoList();
 
-    @Select("SELECT max(1) FROM livevideo")
+    @Select("SELECT max(orderBy) FROM livevideo")
     Integer getMaxOrderBy();
 
     @Update("UPDATE livevideo set isPlay = 0")
