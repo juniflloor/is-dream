@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 @Service
 public class UserLikeVideoBusinessServiceImpl implements UserLikeVideoBusinessService {
 
-
     @Autowired
     private UserLikeVideoService userLikeVideoService;
 

@@ -3,7 +3,6 @@ package is.dream.media.mq.kafka;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import is.dream.media.config.VideoConfig;
-import is.dream.media.handler.ffmpeg.untils.MediaUtil;
 import is.dream.media.service.AsyncService;
 import is.dream.media.service.LiveVideoBusinessService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +14,6 @@ import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.util.Map;
 import java.util.Optional;

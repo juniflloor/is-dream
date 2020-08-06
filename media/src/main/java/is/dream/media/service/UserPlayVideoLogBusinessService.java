@@ -2,7 +2,6 @@ package is.dream.media.service;
 
 import is.dream.common.Result;
 import is.dream.dao.entiry.UserPlayVideoLog;
-import is.dream.media.dto.VideoDto;
 
 /**
  * @author chendongzhao
