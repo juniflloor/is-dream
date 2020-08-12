@@ -1,5 +1,5 @@
 # is-dream  视频网站  http://47.93.35.64:8888/dream/videoLive.html
-author 陈冬照
+author 陈冬照  有问题可以联系我 15122734305  可以解答  希望可以给个start
 dream service 
 
 ---- 该项目主要是做点播和直播视频网站 
